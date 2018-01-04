@@ -6,7 +6,6 @@
 	<!-- Google Tag Manager -->
 	<!-- Google Site Verification -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <script> window.FontAwesomeConfig = { searchPseudoElements: true } </script> -->
 	<jdoc:include type="head" />
 </head>
 <body>
