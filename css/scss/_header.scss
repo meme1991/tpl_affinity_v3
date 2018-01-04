@@ -1,0 +1,428 @@
+//main: template.scss
+header{
+  width: 100%;
+  // color: $header-top_text_color;
+
+  .header-banner,
+  .header-nav{
+    width: 100%;
+    padding: 10px 0 10px 0;
+  }
+
+  /*******************************
+           NAVBAR BANNER
+  *******************************/
+  .header-top{
+    background-color: $headerTop_bgcolor;
+    color: $headerTop_color;
+
+    @media #{$media_md}{
+      > .container{
+        max-width: 100% !important;
+      }
+    }
+
+    .htop-left{
+      > div{
+        margin-right: 10px;
+      }
+    }
+    .htop-right{
+      > div{
+        margin-left: 10px;
+      }
+    }
+
+    // inline menu
+    .inline-menu{
+      ul{
+        margin-bottom: 0;
+        li{
+          position: relative;
+          margin: 0;
+          padding: 10px 0;
+          @include link-hover($headerTop_color, $headerTop_color);
+          &:not(:last-child){
+            padding-right: 8px;
+            &::after{
+              content: '';
+              position: absolute;
+              right: 0;
+              bottom: 50%;
+              margin-bottom: -9px;
+              width: 1px;
+              height: 18px;
+              background-color: $headerTop_color;
+            }
+          }
+          &:not(:first-child){
+            padding-left: 8px;
+          }
+        }
+      }
+    }
+
+    // link in evidenza... es. SERVIZI AI CITTADINI
+    .featured-htop{
+      background-color: $primary;
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+      &::after{
+        display: none;
+      }
+    }
+
+    // social top bar
+    .social-topbar{
+      li{
+        margin: 0;
+        padding: 10px 0;
+        width: 50px;
+        border-left: 1px $light solid;
+        text-align: center;
+        @include link-hover($headerTop_color, $headerTop_color);
+        &:last-child{
+          border-right: 1px $light solid;
+        }
+      }
+    }
+
+    // search topbar
+    .search{
+      //padding-left: 10px;
+      margin: 0 !important;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-right: 1px $light solid;
+      &:hover input.form-control{
+        padding-left: 10px;
+        border-bottom: 2px $white solid;
+        width: 250px;
+        @include transition(all, 0.3s, ease-in-out);
+      }
+      form{
+        input.form-control{
+          background-color: transparent;
+          border-color: transparent;
+          width: 0;
+          border-radius: 0;
+          padding: 0;
+          color: $light;
+          @include transition(all, 0.3s, ease-in-out);
+          &:focus{
+            padding-left: 10px;
+            border-bottom: 2px $white solid;
+            width: 250px;
+            @include transition(all, 0.3s, ease-in-out);
+          }
+          &::-webkit-input-placeholder,
+          &::-moz-placeholder,
+          &:-ms-input-placeholder,
+          &:-moz-placeholder{
+            color: $light;
+          }
+        }
+        button{
+          background-color: transparent;
+          border: 0;
+          color: $headerTop_color;
+        }
+      }
+    }
+
+    // multilingua
+    .mod-languages{
+      .btn-group{
+        padding-top: 15px;
+        button{
+          padding: 0 4px;
+          border: 0;
+          font-size: 16px;
+          background-color: transparent;
+          color: $headerTop_color;
+        }
+        .btn-secondary:active,
+        .btn-secondary.active,
+        .show>.btn-secondary.dropdown-toggle {
+          color: $headerTop_color;
+          background-color: transparent;
+          background-image: none;
+          border: 0;
+        }
+        .dropdown-menu{
+          text-align: center;
+          min-width: 50px;
+          padding: 0;
+          margin: 0;
+          font-size: 1rem;
+          color: $dark;
+          background-color: $white;
+          border: 0;
+          border-radius: 0;
+        }
+      }
+      .list-inline{
+        @include link-hover($headerTop_color, $headerTop_color);
+        li{
+          position: relative;
+          margin: 0;
+          padding: 10px 0;
+          @include link-hover($headerTop_color, $headerTop_color);
+          &:not(:last-child){
+            padding-right: 8px;
+            &::after{
+              content: '';
+              position: absolute;
+              right: 0;
+              bottom: 50%;
+              margin-bottom: -9px;
+              width: 1px;
+              height: 18px;
+              background-color: $headerTop_color;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+  /*******************************
+             NAVBAR TOP
+  *******************************/
+  .header-banner{
+    background-color: $light;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include transition(all, 0.3s, ease-in-out);
+    @media #{$media_sm}{
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    // site name
+    .site-name{
+      @include link-hover($dark, $dark);
+      a{
+        @include transition(all, 0.3s, ease-in-out);
+        h1{
+          font-size: 36px;
+          @media #{$media_sm}{
+            font-size: 25px;
+          }
+        }
+      }
+      img{
+        max-height: 80px;
+        width: auto;
+        @include transition(all, 0.3s, ease-in-out);
+        @media #{$media_sm}{
+          max-height: 50px;
+        }
+      }
+      @media (max-width: 1280px) and (min-width: 1200px){
+        padding-left: 50px;
+      }
+      @media (max-width: 1120px) and (min-width: 992px){
+        padding-left: 70px;
+      }
+      @media (max-width: 870px) and (min-width: 768px){
+        padding-left: 60px;
+      }
+      @media (max-width: 690px) and (min-width: 576px){
+        padding-left: 60px;
+      }
+      @media #{$media_xs}{
+        padding-left: 60px;
+      }
+    }
+
+    // social bar
+    .social-bar-wrapper{
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+      .social-bar{
+        @include link-hover($primary, $primary);
+        a{
+          font-size: 15px;
+          .fa-inverse{
+            color: $light;
+          }
+        }
+      }
+    }
+
+    // search bar
+    .search-wrapper,
+    .search,
+    .search form,
+    .search form .input-group{
+      @media #{$media_md}{
+        width: 100% !important;
+      }
+    }
+    .search{
+      form{
+        input{
+          border: 2px $primary solid;
+          border-right: 0;
+          width: 200px;
+          @include transition(all, 0.3s, ease-in-out);
+          &:focus{
+            width: 250px;
+            @include transition(all, 0.3s, ease-in-out);
+          }
+        }
+        button{
+          background-color: $white;
+          border: 2px $primary solid;
+          border-left: 0;
+        }
+      }
+    }
+    // search bar icon
+    .search-bar-icon{
+      font-size: 30px;
+      text-align: right;
+      @include link-hover($dark, $dark);
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+
+    &.fixed-top{
+      padding: 5px;
+      border-bottom: 1px $primary solid;
+      @include transition(all, 0.3s, ease-in-out);
+      .site-name{
+        a{
+          @include transition(all, 0.3s, ease-in-out);
+          h1{
+            font-size: 25px;
+          }
+        }
+        img{
+          max-height: 50px;
+          width: auto;
+          @include transition(all, 0.3s, ease-in-out);
+        }
+      }
+      .social-bar-wrapper{
+        display: none;
+      }
+    }
+  }
+
+  /*******************************
+           NAVBAR STYLE
+  *******************************/
+
+  .header-nav{
+    background-color: $primary;
+    padding: 0;
+    @include transition(all, 0.3s, ease-in-out);
+    @media #{$media_md}{
+      > .container{
+        max-width: 100% !important;
+      }
+    }
+
+    .navbar{
+      background-color: $primary;
+      padding: 0 8px;
+
+      @media #{$media_sm}{
+        padding: 5px 0;
+      }
+
+      .navbar-collapse{
+        @media #{$media_sm}{
+          margin-top: 5px;
+          background-color: $white;
+        }
+      }
+
+      .navbar-nav{
+        > .nav-item{
+          @media #{$media_sm}{
+            border-top: 1px $primary solid;
+          }
+          &.show{
+            .nav-link{
+              position: relative;
+              background-color: $white;
+              color: $primary;
+              &.dropdown-toggle::after{
+                transform: rotate(180deg);
+                @include transition(all, 0.3s, ease-in-out);
+              }
+              @media #{$media_sm}{
+                background-color: $primary;
+                color: $white;
+                &:hover{
+                  background-color: $primary !important;
+                }
+              }
+            }
+          }
+
+          .nav-link{
+            position: relative;
+            padding: 15px 20px;
+            text-transform: uppercase;
+            @media #{$media_sm}{
+              color: $primary;
+              &:hover{
+                background-color: rgba($primary, .3);
+              }
+            }
+
+            &.dropdown-toggle::after{
+              width: auto;
+              height: auto;
+              content: "\f078";
+              vertical-align: 0;
+              // font-size: 12px;
+              font-family: 'Font Awesome 5 Pro';
+              font-weight: 900;
+              border-width: 0;
+              transform: rotate(0);
+              @include transition(all, .3s, ease-in-out);
+            }
+          }
+        }
+
+      }
+
+      .dropdown-item{
+        padding: 4px 10px;
+        border-bottom: 1px $light solid;
+        @media #{$media_sm}{
+          padding-top: 15px !important;
+          padding-bottom: 15px !important;
+          &:hover{
+            background-color: rgba($primary, .3);
+          }
+        }
+      }
+      .navbar-toggler{
+        border-color: $light;
+        margin-left: 15px;
+        i, .navbar-toggler-text{
+          display: block;
+        }
+        i{
+          font-size: 30px;
+        }
+        .navbar-toggler-text{
+          font-size: 10px;
+        }
+      }
+
+    }
+
+
+
+  }
+}

@@ -1,0 +1,46 @@
+// main:template.scss
+
+.alert{
+  background-color: $white;
+  border-left-width: 10px;
+  @include boh-shadow_default;
+  color: $dark;
+  .icon{
+    float: left;
+    font-size: 40px;
+  }
+  h6,p{
+    padding-left: 50px;
+  }
+  h6{
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+  p{
+    margin: 0;
+  }
+}
+
+//info
+.alert-info{
+  border-color: $primary;
+  border-left: 10px $primary solid;
+}
+
+//warning
+.alert-warning{
+  border-color: $warning;
+  border-left: 10px $warning solid;
+}
+
+//danger
+.alert-danger{
+  border-color: $danger;
+  border-left: 10px $danger solid;
+}
+
+//success
+.alert-success{
+  border-color: $success;
+  border-left: 10px $success solid;
+}

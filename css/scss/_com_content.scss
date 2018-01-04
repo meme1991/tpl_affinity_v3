@@ -1,0 +1,98 @@
+// main:template.scss
+
+/*******************************
+CUSTOMIZZAZIONE ARTICOLO - singolo articolo
+*******************************/
+.article-view{
+
+  article{
+
+    img{
+      @extend .img-fluid;
+      position: relative;
+      &.pull-left{
+        @extend .float-left;
+        margin: 15px 15px 15px 0;
+      }
+      &.pull-right{
+        @extend .float-right;
+        margin: 15px 0 15px 15px;
+      }
+    }
+
+    figure{
+      &.float-left{
+        margin: 15px 15px 15px 0;
+        img{
+          margin: 0;
+        }
+      }
+      &.float-right{
+        margin: 15px 0 15px 15px;
+        img{
+          margin: 0;
+        }
+      }
+    }
+
+    p,
+    ul{
+      margin-bottom: 32px;
+    }
+
+    .articleBody{
+      margin-top: 32px;
+    }
+
+    figure.default{
+      position: relative;
+      figcaption{
+        background-color: $featured;
+        color: #fff;
+        opacity: 0;
+        transform: scale(0.5);
+        @include transition(all, 0.3s, ease-in-out);
+      }
+      a, figcaption{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &:hover{
+        figcaption{
+          opacity: 0.7;
+          transform: scale(1);
+          @include transition(all, 0.3s, ease-in-out);
+        }
+      }
+    }
+
+
+  }
+}
+
+
+.icons-share{
+  .fa-circle{
+    color: $white;
+    @include transition(all, .3s, ease-in-out);
+  }
+  .fa-inverse{
+    color: $gray-500;
+    @include transition(all, .3s, ease-in-out);
+  }
+  // .fa-stack{
+  //   &:hover{
+  //     .fa-circle{
+  //       color: #007bff;
+  //       @include transition(all, .3s, ease-in-out);
+  //     }
+  //     .fa-inverse{
+  //       color: #fff;
+  //       @include transition(all, .3s, ease-in-out);
+  //     }
+  //   }
+  // }
+}

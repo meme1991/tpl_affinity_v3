@@ -1,0 +1,442 @@
+// main:template.scss
+
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:200,200i,300,300i,400,400i,600,600i,700,700i,900');
+
+body{
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 18px;
+}
+
+h1, h2, h3, h4, h6{
+  font-weight: bold;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+  color: $dark;
+}
+
+.fw-500{
+  font-weight: 500;
+}
+.fw-600{
+  font-weight: 600;
+}
+
+/*******************************
+              FONT
+*******************************/
+
+.size-default{
+  font-size: 18px !important;
+}
+.size-small{
+  font-size: 16px !important;
+}
+.size-xs{
+  font-size: 14px !important;
+}
+
+
+/*******************************
+          BLOCKQUOTE
+*******************************/
+blockquote{
+  @extend .blockquote;
+  border-left-color: $gray-500;
+  margin-bottom: 32px;
+  > p{
+    margin-bottom: 0 !important;
+    font-size: 18px;
+    &::before{
+      content: '\f10d';
+      font-family: 'Font Awesome 5 Pro';
+      position: relative;
+      font-style: 40px;
+      padding-right: 15px;
+      font-weight: 900;
+      color: $gray-500;
+    }
+    &::after{
+      content: '\f10e';
+      font-family: 'Font Awesome 5 Pro';
+      position: relative;
+      font-style: 40px;
+      padding-left: 15px;
+      font-weight: 900;
+      color: $gray-500;
+    }
+  }
+}
+
+/*******************************
+           LINK STYLE
+*******************************/
+a{
+  color: $dark;
+  &:hover,
+  &:active,
+  &:focus{
+    color: $dark;
+  }
+
+  &.link-primary{
+    color: $primary;
+    &:hover,
+    &:active,
+    &:focus{
+      color: $primary;
+    }
+  }
+
+  &.link-default{
+    color: $dark;
+    &:hover,
+    &:active,
+    &:focus{
+      color: $dark;
+    }
+  }
+
+  &.link-secondary{
+    color: $featured;
+    text-decoration: underline;
+    &-blod{
+      @extend .link-secondary;
+      font-weight: bold;
+      &:hover,
+      &:active,
+      &:focus{
+        color: $featured;
+      }
+    }
+    &:hover,
+    &:active,
+    &:focus{
+      color: $featured;
+    }
+  }
+
+  &.no-underline{
+    text-decoration: none;
+  }
+
+}
+
+// link dentro un paragrafo
+p{
+  line-height: 1.55;
+  a{
+    text-decoration: underline;
+  }
+  &.small{
+    font-size: 15px;
+  }
+}
+
+.article-view{
+  h1{
+    font-size: 45px;
+    line-height: 1.2;
+  }
+  h2{
+    font-size: 40px;
+    line-height: 1.2;
+  }
+  h3{
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  h4{
+    font-size: 23px;
+    line-height: 1.2;
+  }
+  h5{
+    font-size: 21px;
+    line-height: 1.2;
+  }
+  h6{
+    font-size: 18px;
+    line-height: 1.55;
+  }
+}
+
+/*******************************
+          TITLE STYLE
+*******************************/
+
+// tutti mb-2 = 8px
+.page-heading,
+.page-title,
+.page-subtitle,
+.title-section{
+  width: 100%;
+  padding: 0 15px;
+}
+
+.page-heading{
+  h6{
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.page-subtitle{
+  h4{
+    font-weight: 300;
+  }
+}
+
+.aside-title{
+  border-bottom: $sepLine_hieght $light solid;
+  margin-bottom: 8px;
+  h4{
+    position: relative;
+    padding: 8px 8px 8px 0;
+    margin: 0;
+    font-weight: 600;
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: -$sepLine_hieght;
+      left: 0;
+      width: 100px;
+      height: $sepLine_hieght;
+      background-color: $primary;
+    }
+  }
+}
+
+/********************************
+            BUTTONS
+********************************/
+button{
+  cursor: pointer;
+}
+
+.btn:focus{
+  box-shadow: none;
+}
+
+.btn{
+  text-decoration: none;
+}
+
+// open collapse
+.btn-collapse{
+  padding: 0;
+  font-size: 20px;
+  border-width: 0;
+  background-color: transparent;
+  transform: rotate(0);
+  @include transition(transform, 0.3s, ease-in-out);
+  &.active{
+    transform: rotate(180deg);
+    @include transition(transform, 0.3s, ease-in-out);
+  }
+  &:hover{
+    background-color: transparent;
+  }
+}
+
+.btn-link{
+  color: $primary;
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+// button default
+.btn-primary{
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-box-shadow: 0 2px 4px 0 #bdbdbd;
+  -moz-box-shadow: 0 2px 4px 0 #bdbdbd;
+  box-shadow: 0 2px 4px 0 #bdbdbd;
+}
+.btn-secondary{
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-box-shadow: 0 2px 4px 0 #bdbdbd;
+  -moz-box-shadow: 0 2px 4px 0 #bdbdbd;
+  box-shadow: 0 2px 4px 0 #bdbdbd;
+}
+
+/********************************
+            ICONES
+********************************/
+
+// fa-chevron-circle-right >
+.icon-go{
+  &::after{
+    content: '\f0a9';
+    font-family: 'Font Awesome 5 Pro';
+    position: relative;
+    font-weight: 900;
+    margin-left: 2px;
+  }
+}
+// fa-chevron-circle-left <
+// .icon-undo{
+//   &::before{
+//     content: '\f137';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+// fa-check-circle
+.icon-confirm{
+  &::before{
+    content: '\f058';
+    font-family: 'Font Awesome 5 Pro';
+    position: relative;
+    padding-right: 4px;
+  }
+}
+// fa-minus-circle
+// .icon-delete{
+//   &::before{
+//     content: '\f056';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+
+.icon-down{
+  &::before{
+    content: '\f078';
+    font-family: 'Font Awesome 5 Pro';
+    position: relative;
+    font-weight: 900;
+    // padding-right: 4px;
+  }
+}
+.icon-up{
+  &::before{
+    content: '\f139';
+    font-family: 'Font Awesome 5 Pro';
+    position: relative;
+    font-weight: 400;
+    // padding-right: 4px;
+  }
+}
+
+// .icon-folder-open{
+//   &::before{
+//     content: '\f115';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+
+// .icon-link{
+//   &::before{
+//     content: '\f0da';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+
+// data di pubblicazione
+.icon-clock{
+  &::before{
+    content: '\f017';
+    font-family: 'Font Awesome 5 Pro';
+    position: relative;
+    padding-right: 4px;
+    font-weight: 300;
+  }
+}
+
+// .icon-news{
+//   &::before{
+//     content: '\f1ea';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+
+// .icon-search{
+//   &::before{
+//     content: '\f002';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+//
+// .icon-user{
+//   &::before{
+//     content: '\f2be';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+//
+// .icon-phone{
+//   &::before{
+//     content: '\f095';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+//
+// .icon-mobile{
+//   &::before{
+//     content: '\f10b';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+//
+// .icon-marker{
+//   &::before{
+//     content: '\f041';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+//
+// .icon-location{
+//   &::before{
+//     content: '\f124';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+//
+// .icon-web{
+//   &::before{
+//     content: '\f0ac';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+//
+// .icon-fax{
+//   &::before{
+//     content: '\f1ac';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }
+//
+// .icon-email{
+//   &::before{
+//     content: '\f0e0';
+//     font-family: 'Font Awesome 5 Pro';
+//     position: relative;
+//     padding-right: 4px;
+//   }
+// }

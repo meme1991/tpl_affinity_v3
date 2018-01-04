@@ -1,0 +1,13 @@
+// main:template.scss
+
+.com_users{
+  .page-title{
+    padding: 0;
+    h1{
+      @extend .display-4;
+    }
+  }
+  p{
+    margin: 0;
+  }
+}

@@ -1,0 +1,77 @@
+// main: template.scss
+
+/*******************************
+        VISTA CATEGORIA
+********************************/
+.pd-category-view{
+  img{
+    @extend .img-fluid;
+  }
+
+  .list-group.file-list{
+    .button-box{
+      .btn-primary{
+        position: relative;
+        &::before{
+          position: relative;
+          content: 'DOWNLOAD';
+          color: $white !important;
+        }
+        &::after{
+          position: relative;
+          content: '\f33d';
+          font-family: 'Font Awesome 5 Pro';
+          padding-left: 4px;
+          font-weight: 900;
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+
+/*******************************
+          VISTA FILE
+********************************/
+.pd-file-view{
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+/*******************************
+LISTA FILE NEL PLUGINS
+********************************/
+.article-list{
+  border: 1px $light solid;
+  span{
+    background-color: $primary;
+    color: $white;
+    padding: 8px 16px;
+  }
+  a{
+    padding: 8px;
+  }
+  small{
+    display: inline-block !important;
+  }
+}
+
+.phocadownloadfilelist{
+  i{
+    @include transition(all, 0.3s, ease-in-out);
+    transform: rotate(0);
+  }
+  &--open{
+    i{
+      @include transition(all, 0.3s, ease-in-out);
+      transform: rotate(45deg);
+    }
+  }
+}
+.phocadownloadfilelist-container{
+  li{
+    &:nth-child(odd){
+      background-color: $light !important;
+    }
+  }
+}
