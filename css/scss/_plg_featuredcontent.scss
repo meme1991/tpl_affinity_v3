@@ -1,0 +1,10 @@
+// main: template.scss
+
+// servizi correlati
+.featured-content{
+  border: 1px $light solid;
+  span{
+    background-color: $primary;
+    color: $white;
+  }
+}
