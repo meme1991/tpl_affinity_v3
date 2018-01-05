@@ -1,43 +1,40 @@
-<?php defined('_JEXEC') or die('Restricted access');
+<?php defined('_JEXEC') or die('Restricted access'); ?>
+<?php $tmpl = JFactory::getApplication()->getTemplate(); ?>
+<?php require_once JPATH_ROOT . '/templates/'.$tmpl.'/libreries/extHelper.inc.php'; ?>
 
-$heading = '';
-if ($this->t['p']->get( 'page_heading' ) != '') {
-	$heading .= $this->t['p']->get( 'page_heading' );
-}
+<section class="wrapper pd-categories-view">
+	<div class="container">
+		<div class="row">
+			<?php if ($this->t['showpageheading'] != 0) : ?>
+				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->escape($this->t['p']->get( 'page_heading' ))) ?>
+			<?php endif; ?>
 
-if ($this->t['showpageheading'] != 0) {
-	if ( $heading != '') {
-	    echo '<h1>'. $this->escape($heading) . '</h1>';
-	}
-}
-$tab = 0;
-switch ($this->t['tab']) {
-	case 'up':
-		$tab = 1;
-	break;
+			<?php $tab = 0;
+				switch ($this->t['tab']) {
+					case 'up':
+						$tab = 1;
+					break;
 
-	case 'cc':
-	default:
-		$tab = 0;
-	break;
-}
+					case 'cc':
+					default:
+						$tab = 0;
+					break;
+				}
+			 ?>
 
-echo '<div>&nbsp;</div>';
+			 <?php if ($this->t['displaytabs'] > 0) : ?>
+				<div class="col-12 mt-3">
 
-if ($this->t['displaytabs'] > 0) {
-	echo '<div id="phocadownload-pane">';
-	//$pane =& J Pane::getInstance('Tabs', array('startOffset'=> $this->t['tab']));
-	//echo $pane->startPane( 'pane' );
-	echo JHtml::_('tabs.start', 'config-tabs-com_phocadownload-user', array('useCookie'=>1, 'startOffset'=> $this->t['tab']));
+					<?php echo JHtml::_('tabs.start', 'config-tabs-com_phocadownload-user', array('useCookie'=>1, 'startOffset'=> $this->t['tab'])); ?>
 
-	//echo $pane->startPanel( JHTML::_( 'image .site', $this->t['pi'].'icon-document-16.png','', '', '', '', '') . '&nbsp;'.JText::_('COM_PHOCADOWNLOAD_UPLOAD'), 'files' );
-	echo JHtml::_('tabs.panel', JHtml::_( 'image', $this->t['pi'].'icon-document-16.png', '') . '&nbsp;'.JText::_('COM_PHOCADOWNLOAD_UPLOAD'), 'files' );
-	echo $this->loadTemplate('files');
-	//echo $pane->endPanel();
+					<?php echo JHtml::_('tabs.panel', JHtml::_( 'image', $this->t['pi'].'icon-document-16.png', '') . '&nbsp;'.JText::_('COM_PHOCADOWNLOAD_UPLOAD'), 'files' ); ?>
 
-	//echo $pane->endPane();
-	echo JHtml::_('tabs.end');
-	echo '</div>';
-}
-echo $this->t['pw'];
-?>
+					<?php echo $this->loadTemplate('files'); ?>
+
+					<?php echo JHtml::_('tabs.end'); ?>
+
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+</section>

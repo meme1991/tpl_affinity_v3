@@ -145,6 +145,8 @@ body label {
 
 
 input[type=text],
-input[type=select]{
+input[type=select],
+textarea,
+input[readonly=readonly]{
   @extend .form-control;
 }
