@@ -15,9 +15,9 @@ $lang = JFactory::getLanguage(); ?>
 	<ul class="list-inline">
 	<?php if ($row->prev) :
 		$direction = $lang->isRtl() ? 'right' : 'left'; ?>
-		<li class="previous list-inline-item">
+		<li class="previous list-inline-item float-left">
 			<a href="<?php echo $row->prev; ?>" rel="prev" class="btn btn-primary previous">
-				<?php echo '<i class="fa fa-chevron-circle-left" aria-hidden="true"></i> ' . $row->prev_label; ?>
+				<?php echo '<i class="fas fa-chevron-circle-left mr-2"></i>' . $row->prev_label; ?>
 			</a>
 		</li>
 	<?php endif; ?>
@@ -25,7 +25,7 @@ $lang = JFactory::getLanguage(); ?>
 		$direction = $lang->isRtl() ? 'left' : 'right'; ?>
 		<li class="next list-inline-item float-right">
 			<a href="<?php echo $row->next; ?>" rel="next" class="btn btn-primary next">
-				<?php echo $row->next_label . ' <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>'; ?>
+				<?php echo $row->next_label . ' <i class="fas fa-chevron-circle-right ml-2"></i>'; ?>
 			</a>
 		</li>
 	<?php endif; ?>
