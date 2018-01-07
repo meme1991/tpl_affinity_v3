@@ -84,6 +84,6 @@ E' conforme
 * com_user
 
 ## Posizioni
-Nelle due immagini qui elencate si possono vedere tutte le posizioni disponibili per Affinity 3.0 
-![Index position](tpl_affinity_v3/images/template/index.png)
-![Content position](tpl_affinity_v3/images/template/content.png)
+Nelle due immagini qui elencate si possono vedere tutte le posizioni disponibili per Affinity 3.0
+![Index position](https://github.com/meme1991/tpl_affinity_v3/blob/master/images/template/index.png)
+![Content position](https://github.com/meme1991/tpl_affinity_v3/blob/master/images/template/content.png)
