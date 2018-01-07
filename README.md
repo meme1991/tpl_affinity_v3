@@ -7,19 +7,52 @@
   - default (layout)
   - footer (layout)
 * ### mod_articles_categories
+  - list (layout)
+  - navside (layout)
 * ### mod_articles_category
+  - list (layout)
+  - navside (layout)
 * ### mod_articles_news
+  - list (layout)
+  - grid (layout)
 * ### mod_articles_popular
+  - default (layout)
 * ### mod_bannners
+  - default (layout)
 * ### mod_breadcrumbs
+  - default (layout)
 * ### mod_chronoforms6
+  - default (layout)
 * ### mod_custom
+  - dafault (layout)
 * ### mod_feed
+  - default (layout)
 * ### mod_languages
+  - default (layout)
 * ### mod_login
+  - default (layout)
+  - modal (layout)
 * ### mod_menu
+  - entrypoint (layout)
+  - inline (layout)
+  - list (layout)
+  - megamenu (layout)
+  - navside (layout)
+  - social (layout)
+  - socialtopbar (layout)
+  - topmegamenu (layout)
 * ### mod_related_items
+  - list (layout)
+  - grid (layout)
 * ### mod_search
+  - default (layout)
+  - search-overlay (layout)
+  - serach-overlay-alt (layout)
 * ### mod_syndicate
+  - default (layout)
 * ### mod_tags_popular
+  - cloud-aside (layout)
+  - cloud-footer (layout)
+  - cloud-fw (layout)
 * ### mod_tags_similar
+  - default (layout)
