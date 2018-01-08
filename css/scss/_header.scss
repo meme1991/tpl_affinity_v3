@@ -16,6 +16,12 @@ header{
     background-color: $headerTop_bgcolor;
     color: $headerTop_color;
 
+      // per top-nav collapse
+      @include media-breakpoint-down(md){
+        position: relative;
+        z-index: 1101;
+      }
+
     // @media #{$media_md}{
     //   > .container{
     //     max-width: 100% !important;
@@ -31,18 +37,19 @@ header{
       > div{
         margin-left: 10px;
       }
+      // per top-nav collapse
       @include media-breakpoint-down(md){
         justify-content: flex-start !important;
       }
     }
 
+    // per top-nav collapse
     .htop-right,
     .htop-left{
       @include media-breakpoint-down(md){
         display: block !important;
         .inline-menu, .social-topbar{
           width: 100% !important;
-          // display: block !important;
         }
         .inline-menu{
           .list-inline{
@@ -126,6 +133,7 @@ header{
         &:last-child{
           border-right: 1px $light solid;
         }
+        // per top-nav collapse
         @include media-breakpoint-down(md){
           border: 0 !important;
           display: inline-block;
@@ -138,47 +146,47 @@ header{
     }
 
     // search topbar
-    .search{
-      //padding-left: 10px;
-      margin: 0 !important;
-      padding-left: 5px;
-      padding-right: 5px;
-      border-right: 1px $light solid;
-      &:hover input.form-control{
-        padding-left: 10px;
-        border-bottom: 2px $white solid;
-        width: 250px;
-        @include transition(all, 0.3s, ease-in-out);
-      }
-      form{
-        input.form-control{
-          background-color: transparent;
-          border-color: transparent;
-          width: 0;
-          border-radius: 0;
-          padding: 0;
-          color: $light;
-          @include transition(all, 0.3s, ease-in-out);
-          &:focus{
-            padding-left: 10px;
-            border-bottom: 2px $white solid;
-            width: 250px;
-            @include transition(all, 0.3s, ease-in-out);
-          }
-          &::-webkit-input-placeholder,
-          &::-moz-placeholder,
-          &:-ms-input-placeholder,
-          &:-moz-placeholder{
-            color: $light;
-          }
-        }
-        button{
-          background-color: transparent;
-          border: 0;
-          color: $headerTop_color;
-        }
-      }
-    }
+    // .search{
+    //   //padding-left: 10px;
+    //   margin: 0 !important;
+    //   padding-left: 5px;
+    //   padding-right: 5px;
+    //   border-right: 1px $light solid;
+    //   &:hover input.form-control{
+    //     padding-left: 10px;
+    //     border-bottom: 2px $white solid;
+    //     width: 250px;
+    //     @include transition(all, 0.3s, ease-in-out);
+    //   }
+    //   form{
+    //     input.form-control{
+    //       background-color: transparent;
+    //       border-color: transparent;
+    //       width: 0;
+    //       border-radius: 0;
+    //       padding: 0;
+    //       color: $light;
+    //       @include transition(all, 0.3s, ease-in-out);
+    //       &:focus{
+    //         padding-left: 10px;
+    //         border-bottom: 2px $white solid;
+    //         width: 250px;
+    //         @include transition(all, 0.3s, ease-in-out);
+    //       }
+    //       &::-webkit-input-placeholder,
+    //       &::-moz-placeholder,
+    //       &:-ms-input-placeholder,
+    //       &:-moz-placeholder{
+    //         color: $light;
+    //       }
+    //     }
+    //     button{
+    //       background-color: transparent;
+    //       border: 0;
+    //       color: $headerTop_color;
+    //     }
+    //   }
+    // }
 
     // multilingua
     .mod-languages{
