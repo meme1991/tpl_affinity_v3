@@ -50,7 +50,8 @@ CUSTOMIZZAZIONE ARTICOLO - singolo articolo
         background-color: $featured;
         color: #fff;
         opacity: 0;
-        transform: scale(0.5);
+        -webkit-transform: scale(0.5);
+                transform: scale(0.5);
         @include transition(all, 0.3s, ease-in-out);
       }
       a, figcaption{
@@ -63,7 +64,8 @@ CUSTOMIZZAZIONE ARTICOLO - singolo articolo
       &:hover{
         figcaption{
           opacity: 0.7;
-          transform: scale(1);
+          -webkit-transform: scale(1);
+                  transform: scale(1);
           @include transition(all, 0.3s, ease-in-out);
         }
       }

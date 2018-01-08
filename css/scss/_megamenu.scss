@@ -60,7 +60,8 @@
         > i{
           @include transition(all, .3s, ease-in-out);
           &.active{
-            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+                    transform: rotate(180deg);
             @include transition(all, .3s, ease-in-out);
           }
         }

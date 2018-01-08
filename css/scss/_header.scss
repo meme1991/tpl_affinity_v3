@@ -39,7 +39,9 @@ header{
       }
       // per top-nav collapse
       @include media-breakpoint-down(md){
-        justify-content: flex-start !important;
+        -webkit-box-pack: start !important;
+            -ms-flex-pack: start !important;
+                justify-content: flex-start !important;
       }
     }
 
@@ -412,7 +414,8 @@ header{
               background-color: $white;
               color: $primary;
               &.dropdown-toggle::after{
-                transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                        transform: rotate(180deg);
                 @include transition(all, 0.3s, ease-in-out);
               }
               @media #{$media_sm}{
@@ -445,7 +448,8 @@ header{
               font-family: 'Font Awesome 5 Pro';
               font-weight: 900;
               border-width: 0;
-              transform: rotate(0);
+              -webkit-transform: rotate(0);
+                      transform: rotate(0);
               @include transition(all, .3s, ease-in-out);
             }
           }
