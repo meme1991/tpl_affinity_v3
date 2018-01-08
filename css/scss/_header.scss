@@ -22,7 +22,7 @@ header{
         z-index: 1101;
       }
 
-    // @media #{$media_md}{
+    // @include media-breakpoint-down(md){
     //   > .container{
     //     max-width: 100% !important;
     //   }
@@ -255,7 +255,7 @@ header{
     padding-top: 20px;
     padding-bottom: 20px;
     @include transition(all, 0.3s, ease-in-out);
-    @media #{$media_sm}{
+    @include media-breakpoint-down(sm){
       padding-top: 15px;
       padding-bottom: 15px;
     }
@@ -267,7 +267,7 @@ header{
         @include transition(all, 0.3s, ease-in-out);
         h1{
           font-size: 36px;
-          @media #{$media_sm}{
+          @include media-breakpoint-down(sm){
             font-size: 25px;
           }
         }
@@ -276,7 +276,7 @@ header{
         max-height: 80px;
         width: auto;
         @include transition(all, 0.3s, ease-in-out);
-        @media #{$media_sm}{
+        @include media-breakpoint-down(sm){
           max-height: 50px;
         }
       }
@@ -292,7 +292,7 @@ header{
       @media (max-width: 690px) and (min-width: 576px){
         padding-left: 60px;
       }
-      @media #{$media_xs}{
+      @include media-breakpoint-down(xs){
         padding-left: 60px;
       }
     }
@@ -318,7 +318,7 @@ header{
     .search,
     .search form,
     .search form .input-group{
-      @media #{$media_md}{
+      @include media-breakpoint-down(md){
         width: 100% !important;
       }
     }
@@ -392,12 +392,12 @@ header{
       background-color: $primary;
       padding: 0 8px;
 
-      @media #{$media_sm}{
+      @include media-breakpoint-down(sm){
         padding: 5px 0;
       }
 
       .navbar-collapse{
-        @media #{$media_sm}{
+        @include media-breakpoint-down(sm){
           margin-top: 5px;
           background-color: $white;
         }
@@ -405,7 +405,7 @@ header{
 
       .navbar-nav{
         > .nav-item{
-          @media #{$media_sm}{
+          @include media-breakpoint-down(sm){
             border-top: 1px $primary solid;
           }
           &.show{
@@ -418,7 +418,7 @@ header{
                         transform: rotate(180deg);
                 @include transition(all, 0.3s, ease-in-out);
               }
-              @media #{$media_sm}{
+              @include media-breakpoint-down(sm){
                 background-color: $primary;
                 color: $white;
                 &:hover{
@@ -432,7 +432,7 @@ header{
             position: relative;
             padding: 15px 20px;
             text-transform: uppercase;
-            @media #{$media_sm}{
+            @include media-breakpoint-down(sm){
               color: $primary;
               &:hover{
                 background-color: rgba($primary, .3);
@@ -460,7 +460,7 @@ header{
       .dropdown-item{
         padding: 4px 10px;
         border-bottom: 1px $light solid;
-        @media #{$media_sm}{
+        @include media-breakpoint-down(sm){
           padding-top: 15px !important;
           padding-bottom: 15px !important;
           &:hover{
