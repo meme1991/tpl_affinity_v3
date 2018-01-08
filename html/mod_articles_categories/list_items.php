@@ -11,7 +11,7 @@ defined('_JEXEC') or die;
 
 foreach ($list as $item) : ?>
 <li class="list-group-item d-flex justify-content-between <?php if ($_SERVER['REQUEST_URI'] === JRoute::_(ContentHelperRoute::getCategoryRoute($item->id))) echo 'active'; ?>">
-	<a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($item->id)); ?>">
+	<a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($item->id)); ?>" title="<?php echo $item->title; ?>">
 		<?php echo $item->title; ?>
 	</a>
 	<?php if ($params->get('show_children', 0) && (($params->get('maxlevel', 0) == 0)
