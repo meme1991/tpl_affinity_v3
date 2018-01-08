@@ -88,7 +88,7 @@ $logo_s         = $templateparams->get('logo-s');
 
   <?php if($params->get('show_modify_date')) : ?>
     <small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_MODIFIED_DATE') ?>" itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
-      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <i class="fa fa-pencil-square-o"></i>
       <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_MODIFIED_DATE') ?></span>
       <?php echo JHtml::_('date', $displayData->modified, JText::_('DATE_FORMAT_LC1')) ?>
     </small>
