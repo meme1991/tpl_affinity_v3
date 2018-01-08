@@ -3,9 +3,9 @@
 Affinity 3.0 è un template per Joomla! 3.x creato da [SPEDI srl](https://www.spedi.it).
 
 Contiene
-* 15 override di Moduli
+* 16 override di Moduli
 * 10 override di componenti
-* 4 ovveride di componenti esterni (...)
+* di cui 3 ovveride di componenti esterni (Phocadownload, Phocagallery, Acymailing)
 * 6 plugin creati ad hoc
 * 26 layout
 * Navside e megamenù option
@@ -20,6 +20,8 @@ E' conforme
 * ### com_acymailing
   - default (layout)
   - footer (layout)
+* ### mod_articles_archive
+  - default (layout)
 * ### mod_articles_categories
   - list (layout)
   - navside (layout)
