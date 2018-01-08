@@ -134,11 +134,11 @@ jQuery(document).ready(function($) {
 
   // se clicco nascondo la lente e metto la close
   $('#searchBarCollapse').on('hide.bs.collapse', function () {
-    $('.search-bar-icon > a').html('<i class="fa fa-search" aria-hidden="true"></i>');
+    $('.search-bar-icon > a').html('<i class="far fa-search"></i>');
   })
 
   $('#searchBarCollapse').on('show.bs.collapse', function () {
-    $('.search-bar-icon > a').html('<i class="fa fa-times" aria-hidden="true"></i>');
+    $('.search-bar-icon > a').html('<i class="far fa-times"></i>');
   })
   /************ END NASCONDO LA SEARCH BAR SE SONO SOTTO I 768PX ************/
 

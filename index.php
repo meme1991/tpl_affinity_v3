@@ -40,16 +40,25 @@
 			    <div class="header-top">
 			      <div class="container">
 			        <div class="row">
-								<?php if ($this->countModules('htop-left')) : ?>
-									<div class="col-6 htop-left d-flex justify-content-start">
-			              <jdoc:include type="modules" name="htop-left" />
-									</div>
-								 <?php endif; ?>
-								<?php if ($this->countModules('htop-right')) : ?>
-									<div class="col-6 htop-right d-flex justify-content-end">
-			              <jdoc:include type="modules" name="htop-right" />
-									</div>
-								<?php endif; ?>
+								<nav class="top-nav navbar-expand-lg w-100">
+									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-nav" aria-controls="top-nav" aria-expanded="false" aria-label="Toggle navigation">
+										<i class="fal fa-bars"></i>
+								  </button>
+
+				          <div class="collapse navbar-collapse" id="top-nav">
+										<?php if ($this->countModules('htop-left')) : ?>
+											<div class="col-12 col-lg-9 htop-left d-flex justify-content-start">
+					              <jdoc:include type="modules" name="htop-left" />
+											</div>
+										<?php endif; ?>
+
+										<?php if ($this->countModules('htop-right')) : ?>
+											<div class="col-12 col-lg-3 htop-right d-flex justify-content-end">
+												<jdoc:include type="modules" name="htop-right" />
+											</div>
+										<?php endif; ?>
+				          </div>
+				        </nav>
 			        </div>
 			      </div>
 			    </div><!-- end .header-banner -->
@@ -78,7 +87,7 @@
 								<?php if ($this->countModules('search')) : ?>
 								<div class="col-2 search-bar-icon">
 									<a data-toggle="collapse" href="#searchBarCollapse" aria-expanded="false" aria-controls="searchBarCollapse">
-										<i class="fa fa-search" aria-hidden="true"></i>
+										<i class="far fa-search"></i>
 									</a>
 								</div>
 								<?php endif; ?>
@@ -105,7 +114,7 @@
 							<nav class="navbar navbar-expand-md navbar-light bg-faded">
 
 								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#meganav" aria-controls="meganav" aria-expanded="false" aria-label="Toggle navigation">
-									<i class="fa fa-bars" aria-hidden="true"></i>
+									<i class="fal fa-bars"></i>
 									<span class="navbar-toggler-text">MENU</span>
 							  </button>
 
