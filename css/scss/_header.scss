@@ -31,19 +31,26 @@ header{
       > div{
         margin-left: 10px;
       }
-      @media #{$media_md}{
+      @include media-breakpoint-down(md){
         justify-content: flex-start !important;
       }
     }
 
     .htop-right,
     .htop-left{
-      @media #{$media_md}{
-        .list-inline{
-          .list-inline-item{
-            display: block !important;
-            &::after{
-              display: none !important;
+      @include media-breakpoint-down(md){
+        display: block !important;
+        .inline-menu, .social-topbar{
+          width: 100% !important;
+          // display: block !important;
+        }
+        .inline-menu{
+          .list-inline{
+            .list-inline-item{
+              display: block !important;
+              &::after{
+                display: none !important;
+              }
             }
           }
         }
@@ -113,8 +120,19 @@ header{
         border-left: 1px $light solid;
         text-align: center;
         @include link-hover($headerTop_color, $headerTop_color);
+        &:first-child{
+          display: none;
+        }
         &:last-child{
           border-right: 1px $light solid;
+        }
+        @include media-breakpoint-down(md){
+          border: 0 !important;
+          display: inline-block;
+          &:first-child{
+            display: inline-block;
+            width: 100px;
+          }
         }
       }
     }
@@ -354,7 +372,7 @@ header{
     background-color: $primary;
     padding: 0;
     @include transition(all, 0.3s, ease-in-out);
-    @media #{$media_md}{
+    @include media-breakpoint-down(md){
       > .container{
         max-width: 100% !important;
       }

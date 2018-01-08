@@ -37,7 +37,7 @@ if ($accesskey)
 // costruisco il titolo del links se ci sono delle icone
 $title = $item->title;
 ?>
-<div class="col-12 col-sm-12 col-md-4 col-lg-4 mt-3 entrypoint-default">
+<div class="col-12 col-sm-12 col-md-6 col-lg-4 mt-3 entrypoint-default">
   <div class="top d-flex align-items-center clearfix">
     <div class="icon float-left d-flex justify-content-center align-items-center">
       <i class="svg-icon <?php echo $icon ?> fa-2x"></i>

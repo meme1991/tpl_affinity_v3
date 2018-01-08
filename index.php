@@ -47,13 +47,13 @@
 
 				          <div class="collapse navbar-collapse" id="top-nav">
 										<?php if ($this->countModules('htop-left')) : ?>
-											<div class="col-12 col-lg-9 htop-left d-flex justify-content-start">
+											<div class="col-12 col-lg-6 htop-left d-flex justify-content-start">
 					              <jdoc:include type="modules" name="htop-left" />
 											</div>
 										<?php endif; ?>
 
 										<?php if ($this->countModules('htop-right')) : ?>
-											<div class="col-12 col-lg-3 htop-right d-flex justify-content-end">
+											<div class="col-12 col-lg-6 htop-right d-flex justify-content-end">
 												<jdoc:include type="modules" name="htop-right" />
 											</div>
 										<?php endif; ?>
@@ -216,7 +216,7 @@
 										<jdoc:include type="modules" name="footer-links" />
 									</div>
 								<?php endif; ?>
-								<div class="col-12 col-sm-12 col-md-12 col-lg text-right">
+								<div class="col-12 col-sm-12 col-md-12 col-lg footer-copy">
 									<?php echo JLayoutHelper::render('joomla.content.spedisrl'); ?>
 								</div>
 							</div>

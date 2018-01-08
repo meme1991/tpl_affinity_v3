@@ -102,5 +102,14 @@
     }
   }
 
+  .footer-links{
+    .footer-copy{
+      text-align: right;
+      @include media-breakpoint-down(md){
+        text-align: left;
+      }
+    }
+  }
+
 
 }
