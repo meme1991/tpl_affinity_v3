@@ -37,10 +37,17 @@ switch ($item->browserNav) {
 	case   2: $target = 'target=_parent'; break;
 	default : $target = ''; break;
 }
+
+// costruisco il titolo del links se ci sono delle icone
+$title = $item->title;
+if($iconYN AND $pos == 1)
+	$title = '<i class="'.$icon.' mr-1"></i>'.$item->title;
+elseif($iconYN AND $pos == 0)
+	$title = $item->title.'<i class="'.$icon.' ml-1"></i>';
 ?>
 <a class="<?php echo $class ?>"
 	href="<?php echo $item->flink ?>"
 	<?php echo $dropdownAttr ?>
 	<?php echo $target ?>>
-	<?php echo $item->title; ?>
+	<?php echo $title; ?>
 </a>

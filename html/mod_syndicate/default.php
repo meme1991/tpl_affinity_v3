@@ -14,11 +14,10 @@ defined('_JEXEC') or die;
 		<li class="list-inline-item">
 			<a href="<?php echo $link; ?>" title="<?php echo JText::_('TPL_COMUNI_DEFAULT_FEED_ENTRIES'); ?>" target="_blank">
 				<?php if (str_replace(' ', '', $text) !== '') : ?>
-					<?php echo $text; ?>
+					<?php echo $text; ?><i class="fas fa-rss ml-1"></i>
 				<?php else : ?>
-					<?php echo JText::_('TPL_COMUNI_DEFAULT_FEED_ENTRIES'); ?>
+					<?php echo JText::_('TPL_COMUNI_DEFAULT_FEED_ENTRIES'); ?><i class="fas fa-rss ml-1"></i>
 				<?php endif; ?>
-				<i class="fas fa-rss"></i>
 			</a>
 		</li>
 	</ul>

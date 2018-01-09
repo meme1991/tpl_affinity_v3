@@ -29,6 +29,12 @@ foreach ($list as $i => &$item)
 	// $megaLarge      = $item->params->get('megamenu-width-large');
 	// $megaContainer  = $item->params->get('megamenu-container');
 
+	/* icone */
+	$iconYN = $item->params->get('menu-icon-yn');
+	if($iconYN){
+		$icon = $item->params->get('menu-icon');
+		$pos  = $item->params->get('menu-icon-pos');
+	}
 
 	$class = 'nav-item item-' . $item->id;
 	/* corrente */

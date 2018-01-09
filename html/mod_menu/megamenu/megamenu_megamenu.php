@@ -9,10 +9,16 @@
 
 defined('_JEXEC') or die;
 
-$class = $item->anchor_css;
-$title = ($item->anchor_title) ? $item->anchor_title : $item->title;
+$class = ($item->anchor_css != '') ? ' '.$item->anchor_css : '';
+
+// costruisco il titolo del links se ci sono delle icone
+$title = $item->title;
+if($iconYN AND $pos == 1)
+	$title = '<i class="'.$icon.' mr-1"></i>'.$item->title;
+elseif($iconYN AND $pos == 0)
+	$title = $item->title.'<i class="'.$icon.' ml-1"></i>';
 ?>
-<a class="nav-link dropdown-toggle <?php echo $class ?>"
+<a class="nav-link dropdown-toggle<?php echo $class ?>"
   title="<?php echo $title ?>"
   href="<?php echo $item->flink ?>"
   id="navbarDropdownMenuLink-<?php echo $item->id ?>"
