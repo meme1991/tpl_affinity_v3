@@ -232,5 +232,10 @@
 		<script src="<?php echo TPATH ?>/dist/offcanvas/main.js"></script>
 	<?php endif; ?>
 
+	<?php if($aos) : ?>
+		<script src="<?php echo TPATH ?>/dist/aos/aos.js"></script>
+		<script> AOS.init(); </script>
+	<?php endif; ?>
+
 </body>
 </html>

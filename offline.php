@@ -3,13 +3,13 @@
 
 	// variables
 	$app            = JFactory::getApplication();
-	$doc            = JFactory::getDocument();
-	$menu           = $app->getMenu();
-	$active         = $app->getMenu()->getActive();
-	$params         = $app->getParams();
-	$pageclass      = $params->get('pageclass_sfx');
-	$tpath          = $this->baseurl.'/templates/'.$this->template;
-	$templateparams	= $app->getTemplate(true)->params;
+	// $doc            = JFactory::getDocument();
+	// $menu           = $app->getMenu();
+	// $active         = $app->getMenu()->getActive();
+	// $params         = $app->getParams();
+	// $pageclass      = $params->get('pageclass_sfx');
+	// $tpath          = $this->baseurl.'/templates/'.$this->template;
+	// $templateparams	= $app->getTemplate(true)->params;
 
 	// template params
 	$siteName      = $app->get('sitename');

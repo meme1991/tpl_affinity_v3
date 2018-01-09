@@ -18,6 +18,7 @@
   $siteName      = $app->get('sitename');
   $logo_s        = $templateparams->get('logo-s');
   $subtitle      = $templateparams->get('subtitle');
+  $aos           = $templateparams->get('aos');
 
   // generator tag
   $this->setGenerator(null);
@@ -50,8 +51,9 @@
   //$doc->addScript($tpath.'/dist/easing-page/jquery.easing.min.js', 'text/javascript');
   $doc->addScript($tpath.'/dist/modernizr/modernizr-objectfit.js');
   // $doc->addScript($tpath.'/dist/font5/js/fontawesome-all.min.js');
-  $doc->addScript($tpath.'/js/logic.js?ver=2.0.0');
+  $doc->addScript($tpath.'/js/logic.js?ver=3.0.0');
 
   $doc->addStyleSheet($tpath.'/dist/font5/css/fontawesome-all.min.css');
   //$doc->addStyleSheet($tpath.'/dist/animation/animate.min.css');
-  $doc->addStyleSheet($tpath.'/css/template.min.css?ver=2.0.0');
+  if($aos) $doc->addStyleSheet($tpath.'/dist/aos/aos.css');
+  $doc->addStyleSheet($tpath.'/css/template.min.css?ver=3.0.0');

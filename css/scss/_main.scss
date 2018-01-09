@@ -11,7 +11,7 @@
       padding-bottom: 10px;
       font-weight: bold;
       color: $dark;
-      @media #{$media_sm}{
+      @include media-breakpoint-down(sm){
         font-size: 1.5em;
       }
     }

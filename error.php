@@ -62,26 +62,35 @@
 					<?php $htopLeft  = JModuleHelper::getModules('htop-left'); ?>
 					<?php $htopRight = JModuleHelper::getModules('htop-right'); ?>
 					<?php if ($htopLeft OR $htopRight) : ?>
-			    <div class="header-top">
-			      <div class="container">
-			        <div class="row">
-								<?php if ($htopLeft) : ?>
-									<div class="col-6 htop-left d-flex justify-content-start">
-										<?php foreach ($htopLeft AS $module ) : ?>
-											<?php echo JModuleHelper::renderModule($module); ?>
-										<?php endforeach; ?>
-									</div>
-								 <?php endif; ?>
-								<?php if ($htopRight) : ?>
-									<div class="col-6 htop-right d-flex justify-content-end">
-										<?php foreach ($htopRight AS $module ) : ?>
-											<?php echo JModuleHelper::renderModule($module); ?>
-										<?php endforeach; ?>
-									</div>
-								<?php endif; ?>
-			        </div>
-			      </div>
-			    </div><!-- end .header-banner -->
+						<div class="header-top">
+				      <div class="container">
+				        <div class="row">
+									<nav class="top-nav navbar-expand-lg w-100">
+										<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-nav" aria-controls="top-nav" aria-expanded="false" aria-label="Toggle navigation">
+											<i class="fal fa-bars"></i>
+									  </button>
+
+					          <div class="collapse navbar-collapse" id="top-nav">
+											<?php if ($htopLeft) : ?>
+												<div class="col-12 col-lg-6 htop-left d-flex justify-content-start">
+													<?php foreach ($htopLeft AS $module ) : ?>
+														<?php echo JModuleHelper::renderModule($module); ?>
+													<?php endforeach; ?>
+												</div>
+											<?php endif; ?>
+
+											<?php if ($htopRight) : ?>
+												<div class="col-12 col-lg-6 htop-right d-flex justify-content-end">
+													<?php foreach ($htopRight AS $module ) : ?>
+														<?php echo JModuleHelper::renderModule($module); ?>
+													<?php endforeach; ?>
+												</div>
+											<?php endif; ?>
+					          </div>
+					        </nav>
+				        </div>
+				      </div>
+				    </div><!-- end .header-banner -->
 					<?php endif; ?>
 
 			    <div class="header-banner">

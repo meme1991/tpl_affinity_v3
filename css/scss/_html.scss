@@ -52,7 +52,7 @@ body{
   border-bottom: $sidebar_border_width $light solid;
   padding-top: 30px;
   padding-bottom: 14px;
-  @media #{$media_md}{
+  @include media-breakpoint-down(md){
     margin-top: 16px;
   }
 }

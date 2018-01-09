@@ -1,11 +1,11 @@
 // main: template.scss
 
 .entrypoint{
-  > .container{
-    @media #{$media_md}{
-      width: auto;
-    }
-  }
+  // > .container{
+  //   @include media-breakpoint-down(md){
+  //     width: auto;
+  //   }
+  // }
   .entrypoint-default{
     .icon{
       position: relative;
