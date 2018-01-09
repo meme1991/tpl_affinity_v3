@@ -1,5 +1,11 @@
 jQuery(document).ready(function($) {
 
+  /************ Non chiudo i dropdown se clicco sul container ***************/
+  $(document).on('click', '.dropdown-menu', function (e) {
+      e.stopPropagation();
+  });
+  /************ Non chiudo i dropdown se clicco sul container ***************/
+
   /************ ELIMINO chronoforms6_credits ***************/
   if($('.chronoforms6_credits').length){
     $('.chronoforms6_credits').remove();
