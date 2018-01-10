@@ -264,6 +264,12 @@ button{
   box-shadow: 0 2px 4px 0 #bdbdbd;
 }
 
+.no-shadow{
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 /********************************
             ICONES
 ********************************/
