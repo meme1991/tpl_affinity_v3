@@ -57,6 +57,18 @@ body{
   }
 }
 
+.sidebar-alt{
+  @extend .align-self-start;
+  border-top: $sidebar_border_width $light solid;
+  border-right: $sidebar_border_width $light solid;
+  border-bottom: $sidebar_border_width $light solid;
+  padding-top: 30px;
+  padding-bottom: 14px;
+  @include media-breakpoint-down(md){
+    margin-top: 16px;
+  }
+}
+
 /*********************************
     TUTTE LE LISTE DI SPALLA
 *********************************/
