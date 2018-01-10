@@ -37,9 +37,14 @@
 // @import "bootstrapv4/tooltip";
 // @import "bootstrapv4/popover";
 // @import "bootstrapv4/carousel";
-@import "bootstrapv4/utilities";
+// @import "bootstrapv4/utilities";
 
 body{
   background-color: $light;
   color: $dark;
+}
+@include media-breakpoint-down(sm){
+  h1.display-4{
+    font-size: 30px;
+  }
 }
