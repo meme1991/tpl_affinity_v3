@@ -21,8 +21,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="<?php echo $tpath; ?>/fonts/dist/font-awesome.min.css" rel="stylesheet" type="text/css" />
-	<link href="<?php echo $tpath; ?>/css/error.min.css?ver=2.0.0" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $tpath; ?>/dist/font5/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" />
+	<link href="<?php echo $tpath; ?>/css/error.min.css?ver=3.0.0" rel="stylesheet" type="text/css" />
 	<script src="<?php echo $this->baseurl; ?>/media/jui/js/jquery.min.js?f25045bd9c368c5026602df705ce0673" type="text/javascript"></script>
 	<script src="<?php echo $this->baseurl; ?>/media/jui/js/jquery-migrate.min.js?f25045bd9c368c5026602df705ce0673" type="text/javascript"></script>
 	<script src="<?php echo $tpath; ?>/js/bootstrapv4/popper.min.js" type="text/javascript"></script>
@@ -99,8 +99,8 @@
 								<!-- site name -->
 								<div class="col-10 col-sm-10 col-md-6 col-lg-6 site-name d-flex align-items-center">
 									<a href="<?php echo JURI::base() ?>" class="d-flex align-items-center" title="<?php echo $siteName ?>">
-			              <?php if(isset($logo_s) AND $logo_s != '') : ?>
-			                <img src="<?php echo $logo_s ?>" class="rounded img-fluid float-left mr-4" alt="<?php echo $siteName ?>">
+										<?php if(isset($logo_s) AND $logo_s != '') : ?>
+			                <img src="<?php echo JURI::base().$logo_s ?>" class="rounded img-fluid float-left mr-4" alt="<?php echo $siteName ?>">
 			              <?php else : ?>
 											<img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="80" height="80" class="rounded img-fluid float-left mr-4" alt="<?php echo $siteName ?>">
 			              <?php endif; ?>
@@ -207,7 +207,7 @@
 			      <div class="row footer-sitename">
 			        <div class="col-12 d-flex align-items-center">
 			          <?php if(isset($logo_s) AND $logo_s != '') : ?>
-			            <img src="<?php echo $logo_s ?>" class="rounded img-fluid float-left mr-3" alt="<?php echo $siteName ?>">
+			            <img src="<?php echo JURI::base().$logo_s ?>" class="rounded img-fluid float-left mr-3" alt="<?php echo $siteName ?>">
 			          <?php else : ?>
 			            <img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="80" height="80" class="rounded img-fluid float-left mr-3" alt="<?php echo $siteName ?>">
 			          <?php endif; ?>
