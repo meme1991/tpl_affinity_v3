@@ -13,7 +13,7 @@
 				<?php echo $this->loadTemplate("body"); ?>
 			</div>
 			<div class="col-12">
-				<?php $this->_viewNavAdminPanel(); ?>
+				<?php //$this->_viewNavAdminPanel(); ?>
 				<?php //$this->_footer(); ?>
 			</div>
 		</div>

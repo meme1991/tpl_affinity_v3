@@ -42,16 +42,16 @@ $primary: #007bff;
     padding-bottom:20px;
     background-color:#CCC;
 }
-#cal_title {
-    margin:0.5em auto;
-
-    font-size: 14px;
-    font-style: normal;
-    font-weight: bold;
-    color: #000000;
-    text-decoration: none;
-    text-align:center;
-}
+// #cal_title {
+//     margin:0.5em auto;
+//
+//     font-size: 14px;
+//     font-style: normal;
+//     font-weight: bold;
+//     color: #000000;
+//     text-decoration: none;
+//     text-align:center;
+// }
 #jevents_body .cal_daysnames {
     width:14px;
     background-color:#fff;
@@ -790,12 +790,30 @@ span.hasjevtip {
 }
 
 /* ICAL Export style */
+div.ical_form_button.export_public{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 div.ical_form_button.export_public a{
-    float:left;
-    margin-bottom:5px;
-    margin-right: 2%;
-    width:45%;
-    clear:both;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+   // float:left;
+    // margin-bottom:5px;
+    // margin-right: 2%;
+    // width:45%;
+    // clear:both;
 }
 div.ical_form_button.export_private a {
     float:right;
@@ -804,17 +822,17 @@ div.ical_form_button.export_private a {
     width:45%;
     text-align:right;
 }
-div.ical_form_button a{
-    border: 1px solid rgb(202, 202, 202);
-    padding: 6px;
-    border-radius: 4px;
-    background-color: rgb(247, 247, 247);
-    color: rgb(107, 121, 107);
-    line-height:2.6;
-}
-div.ical_form_button a:hover {
-
-}
+// div.ical_form_button a{
+//     border: 1px solid rgb(202, 202, 202);
+//     padding: 6px;
+//     border-radius: 4px;
+//     background-color: rgb(247, 247, 247);
+//     color: rgb(107, 121, 107);
+//     line-height:2.6;
+// }
+// div.ical_form_button a:hover {
+//
+// }
 .ical_submit {
     padding:5px;
 }
@@ -835,11 +853,11 @@ div.ical_form_button a:hover {
     float:right;
     margin:5px;
 }
-h3.export_pub {
-    float:left;
-    width:50%;
-    text-align:left;
-}
+// h3.export_pub {
+//     float:left;
+//     width:50%;
+//     text-align:left;
+// }
 h3.export_priv {
     float:right;
     width:50%;
@@ -851,22 +869,22 @@ h3.export_priv {
 h2.ical_generated {
     text-align:center;
 }
-input.ical_submit {
-    margin:10px 0 10px 0;
-    display:block;
-}
+// input.ical_submit {
+//     margin:10px 0 10px 0;
+//     display:block;
+// }
 .icalformat label {
     display:inline-block;
 }
-div.export_form {
-    background-color:#cfcfcf;
-    display:inline-block;
-    width:97%;
-    border-radius:5px;
-    background-color: #f5f5f5;
-    border: 1px solid #e3e3e3;
-    padding:10px;
-}
+// div.export_form {
+//     background-color:#cfcfcf;
+//     display:inline-block;
+//     width:97%;
+//     border-radius:5px;
+//     background-color: #f5f5f5;
+//     border: 1px solid #e3e3e3;
+//     padding:10px;
+// }
 
 /* flat design enhancments */
 // div.new-navigation {margin:auto auto;margin-bottom:20px;display:inline-block; width:100%;}
