@@ -1,6 +1,6 @@
 <?php defined('_JEXEC') or die('Restricted access'); ?>
 
-<div class="wrapper jevent-wapper jevent-yearview">
+<div class="wrapper jevent-catview">
 	<div class="container">
 		<div class="row">
 
@@ -11,12 +11,7 @@
 				<?php $this->_showNavTableBar(); ?>
 			</div>
 			<div class="col-12 col-sm-12 col-md-12 col-lg-9" id="jevents_body">
-				<?php $params = JComponentHelper::getParams(JEV_COM_COMPONENT); ?>
-				<?php if ($params->get("row","")!=""){ ?>
-					<?php echo $this->loadTemplate("body"); ?>
-				<?php }else { ?>
-					<?php echo $this->loadTemplate("body"); ?>
-				<?php } ?>
+				<?php echo $this->loadTemplate("body"); ?>
 			</div>
 			<div class="col-12">
 				<?php $this->_viewNavAdminPanel(); ?>
