@@ -136,6 +136,21 @@
 			    <jdoc:include type="modules" name="breadcrumbs" />
 			  <?php endif; ?>
 
+				<?php if($this->countModules('nav-component')) : ?>
+					<div class="nav-component bg-light">
+						<div class="container">
+							<nav class="navbar-expand-lg">
+							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navComponent" aria-controls="navComponent" aria-expanded="false" aria-label="Toggle navigation">
+									<i class="fal fa-bars"></i>
+							  </button>
+								<div class="collapse navbar-collapse" id="navComponent">
+									<jdoc:include type="modules" name="nav-component" />
+								</div>
+							</nav>
+						</div>
+					</div>
+			  <?php endif; ?>
+
 			  <!-- posizione di supporto - before component -->
 			  <?php if($this->countModules('position-1')) : ?>
 			    <jdoc:include type="modules" name="position-1" />

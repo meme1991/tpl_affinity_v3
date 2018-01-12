@@ -57,6 +57,7 @@ header{
           .list-inline{
             .list-inline-item{
               display: block !important;
+              padding-left: 8px !important;
               &::after{
                 display: none !important;
               }

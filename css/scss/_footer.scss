@@ -63,7 +63,7 @@
       li{
         position: relative;
         margin: 0;
-        // padding: 16px 0;
+        padding: 5px 0;
         @include link-hover($featured, $featured);
         &.delimiter{
           &::after{
@@ -74,7 +74,7 @@
             margin-bottom: -9px;
             width: 1px;
             height: 18px;
-            background-color: $headerTop_color;
+            background-color: $featured;
           }
         }
         &:not(:last-child){

@@ -50,6 +50,7 @@
 		<position>entrypoint</position>
 		<position>utilita</position>
 		<position>breadcrumbs</position>
+		<position>nav-component</position>
 		<position>banners</position>
 		<position>pos_photogallery</position>
 		<position>ratingsite</position>

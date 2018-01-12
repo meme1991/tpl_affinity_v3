@@ -122,6 +122,41 @@ body{
 }
 
 /*********************************
+INLINE MENU
+**********************************/
+// inline menu
+.inline-menu{
+  ul{
+    margin-bottom: 0;
+    li{
+      position: relative;
+      margin: 0;
+      padding: 10px 0;
+      @include link-hover($dark, $dark);
+      &.delimiter{
+        &::after{
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: 50%;
+          margin-bottom: -9px;
+          width: 1px;
+          height: 18px;
+          background-color: $dark;
+        }
+      }
+      &:not(:last-child){
+        padding-right: 8px;
+      }
+      &:not(:first-child){
+        padding-left: 8px;
+      }
+    }
+  }
+}
+
+
+/*********************************
             COVER IMAGE
 immagine di testata nelle categorie
 o negli articoli
