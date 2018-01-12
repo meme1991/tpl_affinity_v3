@@ -9,6 +9,9 @@ Contiene
 * 6 plugin creati ad hoc
 * 26 layout
 * Navside e megamenù option
+* Error e Offile page
+* Masonry, Lazyload, Magnific popup, Lity, swiper, aos, css animation, modernizr libreries extends.
+* Font Awesome 5 - Bootstrap v4
 
 E' conforme
 * alla W3C per l'HTML
