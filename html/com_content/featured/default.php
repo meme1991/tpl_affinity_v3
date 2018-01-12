@@ -14,8 +14,8 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 $doc  = JFactory::getDocument();
 $tmpl = JFactory::getApplication()->getTemplate();
 JHtml::_('jquery.framework');
-$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/masonry/masonry.min.js');
-$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/masonry/lazyload.min.js');
+$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/masonry/masonry.min.js', 'text/javascript', true, false);
+$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/masonry/lazyload.min.js', 'text/javascript', true, false);
 $doc->addScriptDeclaration("
 	jQuery(document).ready(function($){
 		if($('.featured-view .grid').length){

@@ -46,12 +46,12 @@
   unset($doc->_styleSheets[JURI::root(true).'/media/com_phocadownload/css/main/rating.css']);
   unset($doc->_styleSheets[JURI::root(true).'/media/com_phocadownload/css/custom/default.css']);
 
-  $doc->addScript($tpath.'/js/bootstrapv4/popper.min.js');
-  $doc->addScript($tpath.'/js/bootstrapv4/bootstrap.min.js?v=1.0.0');
+  $doc->addScript($tpath.'/js/bootstrapv4/popper.min.js', 'text/javascript', true, false);
+  $doc->addScript($tpath.'/js/bootstrapv4/bootstrap.min.js?v=1.0.0', 'text/javascript', true, false);
   //$doc->addScript($tpath.'/dist/easing-page/jquery.easing.min.js', 'text/javascript');
-  $doc->addScript($tpath.'/dist/modernizr/modernizr-objectfit.js');
+  $doc->addScript($tpath.'/dist/modernizr/modernizr-objectfit.js', 'text/javascript', true, false);
   // $doc->addScript($tpath.'/dist/font5/js/fontawesome-all.min.js');
-  $doc->addScript($tpath.'/js/logic.js?ver=3.0.0');
+  $doc->addScript($tpath.'/js/logic.js?ver=3.0.0', 'text/javascript', true, false);
 
   $doc->addStyleSheet($tpath.'/dist/font5/css/fontawesome-all.min.css');
   //$doc->addStyleSheet($tpath.'/dist/animation/animate.min.css');
