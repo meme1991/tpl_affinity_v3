@@ -1,23 +1,21 @@
 # tpl_affinity_v3
 
-Affinity 3.0 è un template per Joomla! 3.x creato da [SPEDI srl](https://www.spedi.it).
+Affinity 3.0 is a theme for Joomla! 3.x. Created by [SPEDI srl](https://www.spedi.it).
 
-Contiene
-* 16 override di Moduli
-* 10 override di componenti
-* di cui 3 ovveride di componenti esterni (Phocadownload, Phocagallery, Acymailing, Jevents)
-* 6 plugin creati ad hoc
+What contain?
+* 16 MODULES override
+* 10 COMPONENTS override
+* 3 ovveride extern components (Phocadownload, Phocagallery, Acymailing, Jevents)
+* 6 plugin
 * 26 layout
 * Navside e megamenù option
 * Error e Offile page
 * Masonry, Lazyload, Magnific popup, Lity, swiper, aos, css animation, modernizr libreries extends.
 * Font Awesome 5 - Bootstrap v4
 
-E' conforme
-* alla W3C per l'HTML
-* ai requisiti di accessibilità
-
-# Cosa contiene
+Is according to
+* W3C for HTML5
+* to accessibility requirements
 
 ## Moduli
 * ### com_acymailing
@@ -94,7 +92,7 @@ E' conforme
 * jevents
 
 ## Posizioni
-Nelle due immagini qui elencate si possono vedere tutte le posizioni disponibili per Affinity 3.0
+In the two images listed here you can see all the available positions for Affinity 3.0
 * ### Index position
 ![Index position](https://github.com/meme1991/tpl_affinity_v3/blob/master/images/template/index.png)
 * ### Content position
