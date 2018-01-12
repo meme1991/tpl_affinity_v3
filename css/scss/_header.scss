@@ -90,8 +90,7 @@ header{
           margin: 0;
           padding: 10px 0;
           @include link-hover($headerTop_color, $headerTop_color);
-          &:not(:last-child){
-            padding-right: 8px;
+          &.delimiter{
             &::after{
               content: '';
               position: absolute;
@@ -102,6 +101,9 @@ header{
               height: 18px;
               background-color: $headerTop_color;
             }
+          }
+          &:not(:last-child){
+            padding-right: 8px;
           }
           &:not(:first-child){
             padding-left: 8px;

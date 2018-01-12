@@ -65,8 +65,7 @@
         margin: 0;
         // padding: 16px 0;
         @include link-hover($featured, $featured);
-        &:not(:last-child){
-          padding-right: 8px;
+        &.delimiter{
           &::after{
             content: '';
             position: absolute;
@@ -75,8 +74,11 @@
             margin-bottom: -9px;
             width: 1px;
             height: 18px;
-            background-color: $featured;
+            background-color: $headerTop_color;
           }
+        }
+        &:not(:last-child){
+          padding-right: 8px;
         }
         &:not(:first-child){
           padding-left: 8px;

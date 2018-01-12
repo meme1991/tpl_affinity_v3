@@ -39,7 +39,11 @@ defined('_JEXEC') or die;
 			$pos  = $item->params->get('menu-icon-pos');
 		}
 
-		$class = 'list-inline-item item-' . $item->id;
+		// delimiter
+		$delimiter = $item->params->get('delimiter');
+		$delimiter = ($delimiter) ? ' delimiter' : '';
+
+		$class = 'list-inline-item'.$delimiter.' item-' . $item->id;
 
 		// link featured
 		$linkfeatured = $item->params->get('linkfeatured-set');
