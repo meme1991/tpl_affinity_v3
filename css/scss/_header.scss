@@ -407,6 +407,26 @@ header{
       }
 
       .navbar-nav{
+        // .nav-item{
+        //   > a{
+        //     padding: 15px 0;
+        //   }
+        //   &:not(:last-child){
+        //     > a{
+        //       padding-right: 20px;
+        //     }
+        //   }
+        //   &:not(:first-child){
+        //     > a{
+        //       padding-left: 20px;
+        //     }
+        //   }
+        //   // @include media-breakpoint-down(sm){
+        //   //   padding: 15px 20px;
+        //   // }
+        // }
+
+
         > .nav-item{
           @include media-breakpoint-down(sm){
             border-top: 1px $primary solid;
@@ -464,8 +484,7 @@ header{
         padding: 4px 10px;
         border-bottom: 1px $light solid;
         @include media-breakpoint-down(sm){
-          padding-top: 15px !important;
-          padding-bottom: 15px !important;
+          padding: 15px 20px !important;
           &:hover{
             background-color: rgba($primary, .3);
           }
