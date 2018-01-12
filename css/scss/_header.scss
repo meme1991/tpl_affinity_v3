@@ -407,26 +407,6 @@ header{
       }
 
       .navbar-nav{
-        // .nav-item{
-        //   > a{
-        //     padding: 15px 0;
-        //   }
-        //   &:not(:last-child){
-        //     > a{
-        //       padding-right: 20px;
-        //     }
-        //   }
-        //   &:not(:first-child){
-        //     > a{
-        //       padding-left: 20px;
-        //     }
-        //   }
-        //   // @include media-breakpoint-down(sm){
-        //   //   padding: 15px 20px;
-        //   // }
-        // }
-
-
         > .nav-item{
           @include media-breakpoint-down(sm){
             border-top: 1px $primary solid;
