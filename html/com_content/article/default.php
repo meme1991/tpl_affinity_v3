@@ -156,7 +156,7 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 				<!-- pagination -->
 			</article>
 		</div>
-		<div class="col-12 col-sm-12 col-md-12 col-lg-4 mt-3 sidebar hidden-print">
+		<div class="col-12 col-sm-12 col-md-12 col-lg-4 mt-3 sidebar d-print-none">
 			<aside class="row">
 				<!-- render module -->
 				<?php $modules = JModuleHelper::getModules('article-aside'); ?>

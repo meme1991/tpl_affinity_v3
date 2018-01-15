@@ -8,7 +8,7 @@ $tpath = $this->baseurl.'/templates/'.$this->template;
 $this->setGenerator(null);
 
 // load sheets and scripts
-$doc->addStyleSheet($tpath.'/css/print.min.css?v=1.1.0');
+$doc->addStyleSheet($tpath.'/css/print.min.css?v=4.0.0');
 
 ?><!doctype html>
 

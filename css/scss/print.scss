@@ -38,7 +38,7 @@
 // @import "bootstrapv4/tooltip";
 // @import "bootstrapv4/popover";
 // @import "bootstrapv4/carousel";
-// @import "bootstrapv4/utilities";
+@import "bootstrapv4/utilities";
 
 /*************************
         TEMPLATE
@@ -78,3 +78,7 @@
 // @import "mod_search-overlay.scss";
 // @import "offcanvas.scss";
 // @import "entrypoint.scss";
+
+.sidebar{
+  @extend .d-print-none;
+}
