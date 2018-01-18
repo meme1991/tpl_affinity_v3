@@ -35,10 +35,8 @@ if ($item->anchor_rel)
 	$attributes['rel'] = $item->anchor_rel;
 
 switch ($item->browserNav) {
-	case   0: $attributes['target'] = ''; break;
 	case   1: $attributes['target'] = '_blank'; break;
 	case   2: $attributes['target'] = '_parent'; break;
-	default : $attributes['target'] = ''; break;
 }
 
 if ($accesskey)
