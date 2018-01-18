@@ -75,7 +75,8 @@ defined('_JEXEC') or die;
 		}
 
 		if ($item->deeper){
-			$class .= ' deeper dropdown';
+			$class     .= ' deeper dropdown';
+			// $item->type = 'collapse';
 		}
 
 		if ($item->parent){
@@ -96,6 +97,7 @@ defined('_JEXEC') or die;
 			case 'url':
 			case 'component':
 			case 'heading':
+			// case 'collapse':
 				require JModuleHelper::getLayoutPath('mod_menu', '/inline/inline_' . $item->type);
 				break;
 
@@ -104,21 +106,40 @@ defined('_JEXEC') or die;
 				break;
 		endswitch;
 
-		/*if ($item->deeper){
-			// la prossima voce è più profonda.
-			echo '<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink-'.$item->id.'">';
-		} else{
-			if ($item->shallower){
-				// La prossima voce è meno profonda.
-				echo str_repeat('</div></li>', $item->level_diff);
-			} else{
-				// La prossima voce è allo stesso livello di profondità.
-				// ma al primo livello
-				if($item->level == 1)
-					echo '</li>';
-			}
-		}*/
 		echo '</li>';
+
+		// if ($item->deeper){
+		// 	// la prossima voce è più profonda.
+		// 	echo '<div class="collapse inline-menu-collapse" id="navbarCollapseMenuLink-'.$item->id.'">';
+		// 	echo '<div class="inline-menu">';
+		// 	echo '<ul class="list-inline">';
+		// } elseif ($item->shallower){
+		// 	// La prossima voce è meno profonda.
+		// 	echo str_repeat('</ul></div></div>', $item->level_diff);
+		// }
+		// else{
+		// 	// La prossima voce è allo stesso livello di profondità.
+		// 	echo '</li>';
+		// }
+
+
+		// if ($item->deeper){
+		// 	// la prossima voce è più profonda.
+		// 	// echo '<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink-'.$item->id.'">';
+		// 	echo '<div class="collapse" id="navbarCollapseMenuLink-'.$item->id.'">';
+		// } else{
+		// 	if ($item->shallower){
+		// 		// La prossima voce è meno profonda.
+		// 		echo str_repeat('</div>', $item->level_diff);
+		// 	} else{
+		// 		// La prossima voce è allo stesso livello di profondità.
+		// 		// ma al primo livello
+		// 		if($item->level == 1)
+		// 			echo '</li>';
+		// 	}
+		// }
+
+
 	}
 	?>
 	</ul>
