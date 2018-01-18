@@ -9,6 +9,8 @@
 
 defined('_JEXEC') or die;
 
+$attributes = array();
+
 // $class  = $item->anchor_css ? trim($item->anchor_css) : '';
 // $title  = $item->anchor_title ? $item->anchor_title : $item->title;
 $flink  = JFilterOutput::ampReplace(htmlspecialchars($item->flink));

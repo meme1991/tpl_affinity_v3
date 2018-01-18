@@ -76,7 +76,7 @@ defined('_JEXEC') or die;
 
 		if ($item->deeper){
 			$class     .= ' deeper dropdown';
-			// $item->type = 'collapse';
+			// $item->type = 'dropdown';
 		}
 
 		if ($item->parent){
@@ -90,14 +90,13 @@ defined('_JEXEC') or die;
 
 		echo '<li' . $class.$linkfeatured_color . '>';
 
-
 		// Render the menu item.
 		switch ($item->type) :
 			case 'separator':
 			case 'url':
 			case 'component':
 			case 'heading':
-			// case 'collapse':
+			// case 'dropdown':
 				require JModuleHelper::getLayoutPath('mod_menu', '/inline/inline_' . $item->type);
 				break;
 
@@ -106,11 +105,10 @@ defined('_JEXEC') or die;
 				break;
 		endswitch;
 
-		echo '</li>';
 
 		// if ($item->deeper){
 		// 	// la prossima voce è più profonda.
-		// 	echo '<div class="collapse inline-menu-collapse" id="navbarCollapseMenuLink-'.$item->id.'">';
+		// 	echo '<div class="dropdown-menu inline-menu-dropdown" aria-labelledby="navbarCollapseMenuLink-'.$item->id.'">';
 		// 	echo '<div class="inline-menu">';
 		// 	echo '<ul class="list-inline">';
 		// } elseif ($item->shallower){
@@ -121,7 +119,7 @@ defined('_JEXEC') or die;
 		// 	// La prossima voce è allo stesso livello di profondità.
 		// 	echo '</li>';
 		// }
-
+		echo '</li>';
 
 		// if ($item->deeper){
 		// 	// la prossima voce è più profonda.

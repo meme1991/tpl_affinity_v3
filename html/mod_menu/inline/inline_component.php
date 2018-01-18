@@ -9,6 +9,7 @@
 
 defined('_JEXEC') or die;
 
+$attributes = array();
 // $class  = $item->anchor_css ? trim($item->anchor_css) : '';
 // $title  = $item->anchor_title ? $item->anchor_title : $item->title;
 $flink  = JFilterOutput::ampReplace(htmlspecialchars($item->flink));
@@ -30,10 +31,8 @@ if ($item->anchor_rel)
 	$attributes['rel'] = $item->anchor_rel;
 
 switch ($item->browserNav) {
-	case   0: $attributes['target'] = ''; break;
 	case   1: $attributes['target'] = '_blank'; break;
 	case   2: $attributes['target'] = '_parent'; break;
-	default : $attributes['target'] = ''; break;
 }
 
 if ($accesskey)

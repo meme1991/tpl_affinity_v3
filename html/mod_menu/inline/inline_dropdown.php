@@ -9,6 +9,8 @@
 
 defined('_JEXEC') or die;
 
+$attributes = array();
+
 // $class  = $item->anchor_css ? trim($item->anchor_css) : '';
 // $title  = $item->anchor_title ? $item->anchor_title : $item->title;
 $flink  = JFilterOutput::ampReplace(htmlspecialchars($item->flink));
@@ -23,13 +25,15 @@ else
 // 	$item->anchor_css .= ' featured-htop ';
 // }
 
-$attributes['data-toggle'] = 'collapse';
+$attributes['id'] = 'navbarCollapseMenuLink-'.$item->id;
 $attributes['role'] = 'button';
+$attributes['data-toggle'] = 'dropdown';
+$attributes['aria-haspopup'] = 'true';
 $attributes['aria-expanded'] = 'false';
-$attributes['aria-controls'] = 'navbarCollapseMenuLink-'.$item->id;
 
+$attributes['class'] = 'dropdown-toggle';
 if ($item->anchor_css)
-	$attributes['class'] = $item->anchor_css;
+	$attributes['class'] .= ' '.$item->anchor_css;
 
 if ($item->anchor_rel)
 	$attributes['rel'] = $item->anchor_rel;
@@ -51,4 +55,4 @@ if($iconYN AND $pos == 1)
 elseif($iconYN AND $pos == 0)
 	$title = $item->title.'<i class="'.$icon.' ml-1"></i>';
 ?>
-<?php echo JHtml::_('link', '#navbarCollapseMenuLink-'.$item->id, $title, $attributes); ?>
+<?php echo JHtml::_('link', '#', $title, $attributes); ?>
