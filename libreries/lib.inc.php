@@ -13,6 +13,7 @@ echo JHtml::_('string.truncate', strip_tags($article->introtext), 200);
 // layout messaggio info
 echo JLayoutHelper::render('joomla.content.message.message_info', JText::_('COM_CONTENT_NO_ARTICLES'));
 
+<?php echo JLayoutHelper::render('joomla.content.message.message_info', JText::_('COM_TAGS_NO_ITEMS')); ?>
 
 
 
