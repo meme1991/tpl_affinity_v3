@@ -28,7 +28,6 @@
 		<filename>template_thumbnail.png</filename>
 		<filename>favicon.ico</filename>
 		<filename>templateDetails.xml</filename>
-		<filename>leggimi.txt</filename>
 	</files>
 	<languages folder="language">
 		<language tag="it-IT">it-IT/it-IT.tpl_affinty.ini</language>
