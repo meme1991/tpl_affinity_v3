@@ -1,5 +1,14 @@
 jQuery(document).ready(function($) {
 
+  // $('[data-toggle="offcanvas"]').on('click', function () {
+  //   $('.offcanvas-collapse').toggleClass('open')
+  // })
+  //
+  // $('[data-toggle="top-nav"]').on('click', function () {
+  //   $('#top-nav').toggleClass('open')
+  // })
+
+
   /************ Non chiudo i dropdown se clicco sul container ***************/
   $(document).on('click', '.dropdown-menu', function (e) {
       e.stopPropagation();

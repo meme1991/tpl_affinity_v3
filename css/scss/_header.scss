@@ -29,13 +29,17 @@ header{
     // }
 
     .htop-left{
-      > div{
-        margin-right: 10px;
+      @include media-breakpoint-up(lg){
+        > div{
+          margin-right: 10px;
+        }
       }
     }
     .htop-right{
-      > div{
-        margin-left: 10px;
+      @include media-breakpoint-up(lg){
+        > div{
+          margin-left: 10px;
+        }
       }
       // per top-nav collapse
       @include media-breakpoint-down(md){
