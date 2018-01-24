@@ -44,7 +44,7 @@ LISTA FILE NEL PLUGINS
 .article-list{
   border: 1px $light solid;
   span{
-    background-color: $primary;
+    // background-color: $primary;
     color: $white;
     padding: 8px 16px;
   }
@@ -54,6 +54,50 @@ LISTA FILE NEL PLUGINS
   small{
     display: inline-block !important;
   }
+
+  // image - picture
+  &.light-blue{
+    span{
+      color: #0078d7;
+      background-color: $light;
+    }
+  }
+  // zip
+  &.yellow{
+    span{
+      color: #fdda74;
+      background-color: $light;
+    }
+  }
+  // pdf
+  &.red{
+    span{
+      color: #ff0000;
+      background-color: $light;
+    }
+  }
+  // word
+  &.blue{
+    span{
+      color: #2c579b;
+      background-color: $light;
+    }
+  }
+  // excel
+  &.green{
+    span{
+      color: #217345;
+      background-color: $light;
+    }
+  }
+  // ppt
+  &.orange{
+    span{
+      color: #d24726;
+      background-color: $light;
+    }
+  }
+
 }
 
 .phocadownloadfilelist{
