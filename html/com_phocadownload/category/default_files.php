@@ -70,7 +70,10 @@
 				  <li class="list-group-item flex-column align-items-start">
 						<div class="d-flex justify-content-between">
 				      <h5 class="mb-1">
-								<i class="<?php echo extHelper($v->filename) ?>"></i>
+								<span class="fa-stack fa-lg <?= extensionHelper::getClassIcon($v->filename) ?>">
+								  <i class="fas fa-square fa-stack-2x"></i>
+									<i class="<?php echo extensionHelper::getIcon($v->filename) ?> fa-stack-1x"></i>
+								</span>
 								<?php echo $v->title ?>
 								<small class="font-italic size-xs">[<?php echo $l->getFilesize($v->filename) ?>]</small>
 							</h5>

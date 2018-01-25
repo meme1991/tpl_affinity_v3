@@ -26,9 +26,9 @@
 					<div class="col-12 col-sm-12 col-md-12 col-lg left">
 
 						<div class="pd-file-icon text-center">
-							<span class="fa-stack fa-5x">
-							  <i class="fal fa-circle fa-stack-2x"></i>
-								<i class="<?php echo extHelper($v->filename) ?>"></i>
+							<span class="fa-stack fa-5x <?= extensionHelper::getClassIcon($v->filename) ?>">
+								<i class="fas fa-square fa-stack-2x"></i>
+								<i class="<?php echo extensionHelper::getIcon($v->filename) ?> fa-stack-1x"></i>
 							</span>
 							<h3 class="pd-ctitle mt-3">
 								<?php echo $l->getName($v->title, $v->filename, 1) ?>
