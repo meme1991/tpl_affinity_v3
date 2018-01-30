@@ -107,6 +107,7 @@ LISTA FILE NEL PLUGINS
     padding: 8px 16px;
     border-right-width: 2px;
     border-right-style: solid;
+    border-right-color: $primary;
   }
   a{
     padding: 8px;
@@ -130,7 +131,7 @@ LISTA FILE NEL PLUGINS
     span{
       color: #e6b938;
       background-color: rgba(#e6b938, .2);
-      // border-color: #e6b938;
+      border-color: #e6b938;
     }
   }
   // pdf
@@ -139,7 +140,7 @@ LISTA FILE NEL PLUGINS
     span{
       color: #e31e00;
       background-color: rgba(#e31e00, .2);
-      // border-color: #e31e00;
+      border-color: #e31e00;
     }
   }
   // word
@@ -147,6 +148,7 @@ LISTA FILE NEL PLUGINS
     span{
       color: #2c579b;
       background-color: rgba(#2c579b, .2);
+      border-color: #2c579b;
     }
   }
   // excel
@@ -154,6 +156,7 @@ LISTA FILE NEL PLUGINS
     span{
       color: #217345;
       background-color: rgba(#217345, .2);
+      border-color: #217345;
     }
   }
   // ppt
@@ -161,6 +164,7 @@ LISTA FILE NEL PLUGINS
     span{
       color: #d24726;
       background-color: rgba(#d24726, .2);
+      border-color: #d24726;
     }
   }
 
@@ -175,8 +179,8 @@ LISTA FILE NEL PLUGINS
   &--open{
     i{
       @include transition(all, 0.3s, ease-in-out);
-      -webkit-transform: rotate(45deg);
-              transform: rotate(45deg);
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
     }
   }
 }
