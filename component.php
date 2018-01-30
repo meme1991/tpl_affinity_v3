@@ -1,17 +1,13 @@
 <?php defined( '_JEXEC' ) or die;
-
 // variables
 $doc = JFactory::getDocument();
 $tpath = $this->baseurl.'/templates/'.$this->template;
-
 // generator tag
 $this->setGenerator(null);
-
 // load sheets and scripts
 $doc->addStyleSheet($tpath.'/css/print.min.css?v=4.0.0');
-
-?><!doctype html>
-
+?>
+<!doctype html>
 <html lang="<?php echo $this->language; ?>">
   <head>
     <jdoc:include type="head" />
