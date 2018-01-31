@@ -85,7 +85,7 @@
  				 />
 			</fieldset>
 
-			<fieldset name="plugin" addfieldpath="/administrator/components/com_menus/models/fields">
+			<fieldset name="plugin" label="Plugins">
 
 				<field
 					name="aos"
