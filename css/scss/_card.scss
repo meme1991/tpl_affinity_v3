@@ -29,6 +29,14 @@ CARD
       @include boh-shadow_default();
       @include transition(all, 0.3s, ease-in-out);
     }
+
+    iframe{
+      width: 100% !important;
+      margin: 15px 0 !important;
+      border: 0 !important;
+      border-width: 0 !important;
+    }
+
   }
 
   &.card-block{
