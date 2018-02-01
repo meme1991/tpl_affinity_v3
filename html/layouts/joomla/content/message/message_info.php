@@ -13,6 +13,6 @@ $message = $displayData;
 ?>
 <div class="alert alert-info" role="alert">
   <i class="icon far fa-info-circle"></i>
-  <h6><?php echo JText::_("TPL_AFFINITY_MESSAGE_HEADER_DANGER") ?></h6>
+  <h6><?php echo JText::_("TPL_AFFINITY_MESSAGE_HEADER_INFO") ?></h6>
   <p><?php echo $message ?></p>
 </div>
