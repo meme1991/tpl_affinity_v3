@@ -8,6 +8,13 @@ jQuery(document).ready(function($) {
   //   $('#top-nav').toggleClass('open')
   // })
 
+  $('[data-toggle="offcanvas"]').on('click', function () {
+    // alert('qui');
+    $('.offcanvas-menu').toggleClass('open');
+    $('.site-wrap').toggleClass('slide');
+    $(this).toggleClass('menu-active');
+  })
+
 
   /************ Non chiudo i dropdown se clicco sul container ***************/
   $(document).on('click', '.dropdown-menu', function (e) {
@@ -164,13 +171,14 @@ jQuery(document).ready(function($) {
   //   $('.st-container').toggleClass('st-menu-open');
   // })
 
-  $('body').click(function(){
-    if($(this).hasClass('show-menu')){
-      $('#open-button').addClass('menu-active');
-    } else{
-      $('#open-button').removeClass('menu-active');
-    }
-  })
+
+  // $('body').click(function(){
+  //   if($(this).hasClass('show-menu')){
+  //     $('#open-button').addClass('menu-active');
+  //   } else{
+  //     $('#open-button').removeClass('menu-active');
+  //   }
+  // })
   /************ END SIDE NAV ACTIVE ***************/
 
   /************ SKIP LINK ***************/
