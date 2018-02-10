@@ -27,7 +27,9 @@ JHtml::_('behavior.formvalidator');
 				<?php if (count($fields)) : ?>
 					<fieldset>
 						<?php foreach ($fields as $field) : ?>
-							<?php echo $field->renderField(); ?>
+							<?php echo $field->label; ?>
+            	<?php echo $field->input; ?>
+							<?php //echo $field->renderField(); ?>
 						<?php endforeach; ?>
 					</fieldset>
 				<?php endif; ?>

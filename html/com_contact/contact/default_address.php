@@ -46,7 +46,7 @@ defined('_JEXEC') or die;
 
 <?php if ($this->contact->email_to && $this->params->get('show_email')) : ?>
 	<div class="field">
-		<h4 class="fw-600" itemprop="email" content="<?php echo $this->contact->email_to; ?>"><i class="fas fa-envelope"></i> <?php echo JText::_('TPL_AFFINITY_CONTACTPAGE_EMAIL'); ?></h4>
+		<h4 class="fw-600" itemprop="email" content="<?php //echo $this->contact->email_to; ?>"><i class="fas fa-envelope"></i> <?php echo JText::_('TPL_AFFINITY_CONTACTPAGE_EMAIL'); ?></h4>
 		<?php echo $this->contact->email_to; ?>
 	</div>
 <?php endif; ?>
