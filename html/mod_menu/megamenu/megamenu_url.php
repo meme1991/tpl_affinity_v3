@@ -48,6 +48,7 @@ elseif($iconYN AND $pos == 0)
 <a class="<?php echo $class ?>"
 	href="<?php echo $item->flink ?>"
 	<?php echo $dropdownAttr ?>
+	title="<?php echo $title ?>"
 	<?php echo $target ?>>
 	<?php echo $title; ?>
 </a>
