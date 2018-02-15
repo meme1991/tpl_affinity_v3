@@ -35,7 +35,7 @@ body{
   padding: 5px;
   margin-bottom: 8px;
   select, #filter-search{
-    @extend .form-control;
+    // @extend .form-control;
     display: inline;
     width: auto;
   }
