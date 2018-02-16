@@ -9,10 +9,16 @@
 
 defined('JPATH_BASE') or die;
 
-$message = $displayData;
+if(is_array($displayData)){
+  $title = $displayData['title'];
+  $msg   = $displayData['msg'];
+}else{
+  $title = "TPL_AFFINITY_MESSAGE_HEADER_SUCCESS";
+  $msg   = $displayData;
+}
 ?>
 <div class="alert alert-success" role="alert">
   <i class="icon far fa-check-circle"></i>
-  <h6><?php echo JText::_("TPL_AFFINITY_MESSAGE_HEADER_SUCCESS") ?></h6>
-  <p><?php echo $message ?></p>
+  <h6><?= JText::_($title) ?></h6>
+  <p><?= $msg ?></p>
 </div>

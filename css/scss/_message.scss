@@ -10,7 +10,7 @@
     font-size: 40px;
   }
   h6,p{
-    padding-left: 50px;
+    padding-left: 70px;
   }
   h6{
     font-size: 25px;
@@ -25,22 +25,42 @@
 .alert-info{
   border-color: $primary;
   border-left: 10px $primary solid;
+  p{
+    span{
+      color: $primary;
+    }
+  }
 }
 
 //warning
 .alert-warning{
   border-color: $warning;
   border-left: 10px $warning solid;
+  p{
+    span{
+      color: $warning;
+    }
+  }
 }
 
 //danger
 .alert-danger{
   border-color: $danger;
   border-left: 10px $danger solid;
+  p{
+    span{
+      color: $danger;
+    }
+  }
 }
 
 //success
 .alert-success{
   border-color: $success;
   border-left: 10px $success solid;
+  p{
+    span{
+      color: $success;
+    }
+  }
 }
