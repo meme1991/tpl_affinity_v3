@@ -36,5 +36,5 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers/html');
 			<?php endforeach; ?>
 			</dl>
 		</fieldset>
-		<?php endif; ?>
 	</div>
+<?php endif; ?>
