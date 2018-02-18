@@ -18,7 +18,6 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 <div class="row mt-3">
 	<div class="col-12">
 		<form id="searchForm" action="<?php echo JRoute::_('index.php?option=com_search'); ?>" method="post">
-
 			<div class="toolbar">
 				<div class="form-group row">
 					<div class="col-12 col-sm-12 col-md-8 col-lg-10">
@@ -38,13 +37,13 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 					<?php endif; ?>
 				</div>
 				<div class="col-12 col-sm-6 text-right">
-				  <a class="btn btn-link link-default" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+				  <a class="btn btn-link link-default" data-toggle="collapse" href="#advanceSearchCollapse" aria-expanded="false" aria-controls="advanceSearchCollapse">
 				    <i class="fas fa-caret-square-down pr-1" aria-hidden="true"></i> Ricerca avanzata
 				  </a>
 				</div>
 			</div>
 
-			<div class="collapse" id="collapseExample">
+			<div class="collapse" id="advanceSearchCollapse">
 				<div class="row">
 					<div class="col-12">
 						<?php if ($this->params->get('search_phrases', 1)) : ?>
