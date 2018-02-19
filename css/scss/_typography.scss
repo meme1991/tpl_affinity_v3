@@ -160,6 +160,37 @@ p{
   }
 }
 
+.card{
+  .card-text{
+    h1{
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    h2{
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    h3{
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    h4{
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    h5{
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    h6{
+      font-size: 16px;
+      line-height: 1.55;
+    }
+  }
+}
+
 /*******************************
           TITLE STYLE
 *******************************/
