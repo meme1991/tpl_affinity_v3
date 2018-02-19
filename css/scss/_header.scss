@@ -197,6 +197,12 @@ header{
     //   }
     // }
 
+    // header-top-ghost
+    .header-top-ghost{
+      background-color: rgba($white, .1);
+      color: $headerTop_color;
+    }
+
     // multilingua
     .mod-languages{
       .btn-group{

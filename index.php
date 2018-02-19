@@ -58,6 +58,19 @@
 		        </nav>
 	        </div>
 	      </div>
+
+				<?php if ($this->countModules('htop-ghost')) : ?>
+				<div class="header-top-ghost collapse" id="htop-ghost">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 d-flex justify-content-end">
+								<jdoc:include type="modules" name="htop-ghost" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php endif; ?>
+
 	    </div><!-- end .header-banner -->
 			<?php endif; ?>
 
