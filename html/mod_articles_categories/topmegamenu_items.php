@@ -11,6 +11,6 @@ defined('_JEXEC') or die;
 ?>
 <?php foreach ($list as $item) : ?>
 	<li>
-		<a href="<?= $item->link; ?>" title="<?= $item->title; ?>" class="dropdown-item"><?= $item->title; ?></a>
+		<a href="<?php echo JRoute::_(ContentHelperRoute::getCategoryRoute($item->id)); ?>" title="<?= $item->title; ?>" class="dropdown-item"><?= $item->title; ?></a>
 	</li>
 <?php endforeach; ?>
