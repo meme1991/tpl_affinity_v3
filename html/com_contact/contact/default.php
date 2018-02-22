@@ -26,7 +26,7 @@ $tparams = $this->params;
 			<div class="row mt-3">
 				<!-- IMMAGINE/MAPPA -->
 				<?php if(($tparams->get('show_image') AND $this->contact->image) OR ($this->contact->address != '' && $this->contact->suburb != '')) : ?>
-				<div class="col-12 col-sm-5 col-md-5 col-lg-3 figure">
+				<div class="col-12 col-sm-5 col-md-5 col-lg-5 figure">
 					<?php if($this->contact->image && $tparams->get('show_image')) : ?>
 					<figure>
 						<img src="<?php echo $this->contact->image ?>" alt="<?php echo $this->contact->name; ?>" class="figure-img img-fluid rounded" itemprop="image">

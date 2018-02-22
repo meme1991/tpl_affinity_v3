@@ -42,16 +42,7 @@ preg_match('/class=\"([^\"]+)\"/i', $input, $match);
 
 $required      = (strpos($input, 'aria-required="true"') !== false || (!empty($match[1]) && strpos($match[1], 'required') !== false));
 $typeOfSpacer  = (strpos($label, 'spacer-lbl') !== false);
-
 ?>
 <div class="control-group<?php echo $class; ?>"<?php echo $rel; ?>>
-	<?php if (empty($options['hiddenLabel'])) : ?>
-		<div class="control-label">
-			<?php echo $label; ?>
-			<?php if (!$required && !$typeOfSpacer) : ?>
-				<span class="optional"><?php echo JText::_('COM_CONTACT_OPTIONAL'); ?></span>
-			<?php endif; ?>
-		</div>
-	<?php endif; ?>
 	<div class="controls"><?php echo $input; ?></div>
 </div>
