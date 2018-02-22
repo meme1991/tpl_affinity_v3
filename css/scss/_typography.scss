@@ -295,10 +295,26 @@ button{
   box-shadow: 0 2px 4px 0 #bdbdbd;
 }
 
+.btn-outline-primary{
+  border-width: 2px;
+}
+.btn-outline-featured{
+  border-width: 2px;
+}
+.btn-outline-dark{
+  border-width: 2px;
+}
+
 .no-shadow{
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
+}
+
+.btn-shadow{
+  -webkit-box-shadow: 0 2px 4px 0 #bdbdbd;
+  -moz-box-shadow: 0 2px 4px 0 #bdbdbd;
+  box-shadow: 0 2px 4px 0 #bdbdbd;
 }
 
 /********************************

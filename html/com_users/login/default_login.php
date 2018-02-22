@@ -14,25 +14,21 @@ JHtml::_('behavior.formvalidator');
 ?>
 <div class="wrapper container com_users login <?php echo $this->pageclass_sfx; ?>">
 	<div class="row justify-content-center">
-		<div class="col-12 col-sm-8 col-md-6">
+		<?php $usersConfig = JComponentHelper::getParams('com_users'); ?>
+		<?php if ($usersConfig->get('allowUserRegistration')) : ?>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-5 py-3 py-md-0 d-flex justify-content-center align-items-center bg-light">
+			<div class="text-center">
+				<?php echo JLayoutHelper::render('joomla.content.title.title_page', 'Registrati') ?>
+					<p class="lead my-3"><?php echo JText::_('Non possiedi ancora un accout? <br>Registrane subito uno.'); ?></p>
+					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>" class="btn btn-outline-primary btn-block text-uppercase">
+						Registrati
+					</a>
+			</div>
+		</div>
+		<?php endif; ?>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-5">
 			<?php if ($this->params->get('show_page_heading')) : ?>
 				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->escape($this->params->get('page_heading'))) ?>
-			<?php endif; ?>
-
-			<?php if (($this->params->get('logindescription_show') == 1 && str_replace(' ', '', $this->params->get('login_description')) != '') || $this->params->get('login_image') != '') : ?>
-			<div class="login-description mt-3">
-			<?php endif; ?>
-
-				<?php if ($this->params->get('logindescription_show') == 1) : ?>
-					<?php echo $this->params->get('login_description'); ?>
-				<?php endif; ?>
-
-				<?php if ($this->params->get('login_image') != '') : ?>
-					<img src="<?php echo $this->escape($this->params->get('login_image')); ?>" class="login-image img-fluid" alt="<?php echo JText::_('COM_USERS_LOGIN_IMAGE_ALT'); ?>"/>
-				<?php endif; ?>
-
-			<?php if (($this->params->get('logindescription_show') == 1 && str_replace(' ', '', $this->params->get('login_description')) != '') || $this->params->get('login_image') != '') : ?>
-			</div>
 			<?php endif; ?>
 
 			<form action="<?php echo JRoute::_('index.php?option=com_users&task=user.login'); ?>" method="post" class="form-validate form-horizontal well">
@@ -82,24 +78,17 @@ JHtml::_('behavior.formvalidator');
 					<?php echo JHtml::_('form.token'); ?>
 				</fieldset>
 			</form>
-
 			<ul class="list-unstyled mt-3">
 				<li>
-					<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset'); ?>">
-					<?php echo JText::_('COM_USERS_LOGIN_RESET'); ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_users&view=reset'); ?>" class="size-xs">
+						<?php echo JText::_('COM_USERS_LOGIN_RESET'); ?>
+					</a>
 				</li>
 				<li>
-					<a href="<?php echo JRoute::_('index.php?option=com_users&view=remind'); ?>">
-					<?php echo JText::_('COM_USERS_LOGIN_REMIND'); ?></a>
+					<a href="<?php echo JRoute::_('index.php?option=com_users&view=remind'); ?>" class="size-xs">
+						<?php echo JText::_('COM_USERS_LOGIN_REMIND'); ?>
+					</a>
 				</li>
-				<?php
-				$usersConfig = JComponentHelper::getParams('com_users');
-				if ($usersConfig->get('allowUserRegistration')) : ?>
-				<li>
-					<a href="<?php echo JRoute::_('index.php?option=com_users&view=registration'); ?>">
-						<?php echo JText::_('COM_USERS_LOGIN_REGISTER'); ?></a>
-				</li>
-				<?php endif; ?>
 			</ul>
 		</div>
 	</div>

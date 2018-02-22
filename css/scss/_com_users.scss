@@ -4,10 +4,18 @@
   .page-title{
     padding: 0;
     h1{
-      @extend .display-4;
+      font-weight: 600;
     }
   }
   p{
     margin: 0;
+  }
+
+  &.profile{
+    .action-block{
+      > a{
+        text-decoration: none;
+      }
+    }
   }
 }

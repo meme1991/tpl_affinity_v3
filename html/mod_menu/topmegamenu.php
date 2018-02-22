@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 // Note. It is important to remove spaces between elements.
 ?>
 <?php $bootstrap_size = ($params->get('bootstrap_size') == 0) ? '' : '-'.$params->get('bootstrap_size'); ?>
-<div class="col-12 col-sm-12 col-md-6 col-lg<?php echo $bootstrap_size ?> mega-block mb-3">
+<div class="col-12 col-sm-12 col-md-6 col-lg<?php echo $bootstrap_size ?> mega-block mb-3 <?php echo $class_sfx ?>">
 	<?php if($module->showtitle) : ?>
 		<h5 class="mega-block-header d-none d-md-block"><?php echo $module->title ?></h5>
 		<h5 class="mega-block-header d-block d-md-none d-flex justify-content-between" data-toggle="collapse" href="#megablockCollapse<?php echo $module->id ?>" aria-expanded="false" aria-controls="megablockCollapse<?php echo $module->id ?>"><?php echo $module->title ?> <i class="fa fa-chevron-down fa-lg" aria-hidden="true"></i></h5>
