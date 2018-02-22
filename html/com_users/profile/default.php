@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
 			<?php endif; ?>
 
 			<div class="col-12 col-sm-12 col-md d-flex align-items-center action-block">
-				<a href="<?= $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'] ?>&viewprofile=1" class="no-underline">
+				<a href="<?php echo JRoute::_("index.php?".$_SERVER['QUERY_STRING']."&viewprofile=1"); ?>" class="no-underline">
 					<span class="fa-stack fa-2x">
 					  <i class="fas fa-circle fa-stack-2x text-light"></i>
 					  <i class="fas fa-user fa-stack-1x text-primary"></i>
