@@ -24,7 +24,7 @@ defined('_JEXEC') or die;
 					  <i class="fas fa-circle fa-stack-2x text-light"></i>
 					  <i class="fas fa-user fa-stack-1x text-primary"></i>
 					</span>
-					<span class="ml-3">Profilo</span>
+					<span class="ml-3"><?= JText::_("TPL_AFFINITY_PROFILE") ?></span>
 				</a>
 			</div>
 			<?php if (JFactory::getUser()->id == $this->data->id) : ?>
@@ -34,7 +34,7 @@ defined('_JEXEC') or die;
 						  <i class="fas fa-circle fa-stack-2x text-light"></i>
 						  <i class="fas fa-edit fa-stack-1x text-primary"></i>
 						</span>
-						<span class="ml-3">Modifica profilo</span>
+						<span class="ml-3"><?= JText::_("TPL_AFFINITY_EDIT_PROFILE") ?></span>
 					</a>
 				</div>
 			<?php endif; ?>
@@ -45,7 +45,7 @@ defined('_JEXEC') or die;
 					  <i class="fas fa-circle fa-stack-2x text-light"></i>
 					  <i class="fas fa-cog fa-stack-1x text-primary"></i>
 					</span>
-					<span class="ml-3">Impostazioni</span>
+					<span class="ml-3"><?= JText::_("TPL_AFFINITY_SETTINGS") ?></span>
 				</a>
 			</div>
 
