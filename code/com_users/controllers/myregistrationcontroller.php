@@ -7,8 +7,6 @@
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
-// https://forum.joomla.org/viewtopic.php?t=658692
-
 defined('_JEXEC') or die;
 
 JLoader::register('UsersController', JPATH_COMPONENT . '/controller.php');
@@ -18,7 +16,7 @@ JLoader::register('UsersController', JPATH_COMPONENT . '/controller.php');
  *
  * @since  1.6
  */
-class UsersControllerRegistration extends UsersControllerDefault
+class UsersControllerMyRegistrationController extends UsersControllerRegistration
 {
 	/**
 	 * Method to activate a user.

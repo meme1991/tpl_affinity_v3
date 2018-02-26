@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
 $doc  = JFactory::getDocument();
 $tmpl = JFactory::getApplication()->getTemplate();
 JHtml::_('jquery.framework');
-$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registrationValidation.js');
+$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registrationValidation.js?v=1.8.0');
 ?>
 <div class="wrapper container com_users registration <?php echo $this->pageclass_sfx; ?>">
 	<div class="row justify-content-center">
@@ -28,34 +28,45 @@ $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registra
 					<div class="form-group col-12 col-sm-12 col-md-6">
 						<label for="jform_name"><?= JText::_('TPL_AFFINITY_REGISTRATION_NAME') ?></label>
 						<input type="text" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_NAME_PLACEHOLDER') ?>" name="jform[name]" id="jform_name" class="form-control required invalid" size="30" required="required" aria-required="true" aria-invalid="true">
+						<div class="valid-feedback">Ok <i class="fas fa-check-circle"></i></div>
 					</div>
 					<div class="form-group col-12 col-sm-12 col-md-6">
 						<label for="jform_username"><?= JText::_('TPL_AFFINITY_REGISTRATION_USERNAME') ?></label>
-						<input type="text" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_USERNAME_PLACEHOLDER') ?>" pattern="([A-Za-z-_0-9]+)" minlength="4" maxlength="6" name="jform[username]" id="jform_username" class="form-control validate-username required invalid" size="30" required="required" aria-required="true" aria-invalid="true" oninput="validUsername()">
-						<div class="valid-feedback">
-			        Ok <i class="fas fa-check-circle"></i>
+						<input type="text" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_USERNAME_PLACEHOLDER') ?>" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_-]).{6,20})" minlength="6" maxlength="20" name="jform[username]" id="jform_username" class="form-control validate-username required invalid" size="30" required="required" aria-required="true" aria-invalid="true" onchange="validUsername()">
+						<div class="valid-feedback">Ok <i class="fas fa-check-circle"></i></div>
+						<div class="invalid-feedback">
+			        Lo username deve contenere almeno <strong>un numero</strong>, un carattere <strong>maiuscolo</strong>, uno <strong>minuscolo</strong> ed un carattere tra i seguenti <strong>[_-]</strong> <i class="fas fa-times-circle"></i>
 			      </div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-12 col-sm-12 col-md-6">
 						<label for="jform_password1"><?= JText::_('TPL_AFFINITY_REGISTRATION_PASSWORD') ?></label>
-						<input type="password" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_PASSWORD_PLACEHOLDER') ?>" name="jform[password1]" id="jform_password1" autocomplete="off" class="form-control validate-password required invalid" size="30" maxlength="99" required="required" aria-required="true" aria-invalid="true">
-						<small id="jform_passwordHelp" class="form-text text-muted">Minimo 8 caratteri</small>
+						<input type="password" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_PASSWORD_PLACEHOLDER') ?>" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_-]).{6,20})" minlength="6" maxlength="20" name="jform[password1]" id="jform_password1" autocomplete="off" class="form-control validate-password required invalid" size="30" maxlength="99" required="required" aria-required="true" aria-invalid="true" onchange="validPassword()">
+						<div class="valid-feedback">Ok <i class="fas fa-check-circle"></i></div>
+						<div class="invalid-feedback">
+			        Una lettera maiuscola, una minuscola, un numero e minimo 8 caratteri <i class="fas fa-times-circle"></i>
+			      </div>
 					</div>
 					<div class="form-group col-12 col-sm-12 col-md-6">
 						<label for="jform_password2"><?= JText::_('TPL_AFFINITY_REGISTRATION_PASSWORD1') ?></label>
-						<input type="password" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_PASSWORD1_PLACEHOLDER') ?>" name="jform[password2]" id="jform_password2" autocomplete="off" class="form-control validate-password required invalid" size="30" maxlength="99" required="required" aria-required="true" aria-invalid="true">
+						<input type="password" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_PASSWORD1_PLACEHOLDER') ?>" name="jform[password2]" id="jform_password2" autocomplete="off" class="form-control validate-password required invalid" size="30" maxlength="99" required="required" aria-required="true" aria-invalid="true" onchange="validPasswordConfirm()">
+						<div class="valid-feedback">Ok <i class="fas fa-check-circle"></i></div>
+						<div class="invalid-feedback">
+			        Le password non coincidono <i class="fas fa-times-circle"></i>
+			      </div>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="form-group col-12 col-sm-12 col-md-6">
 						<label for="jform_email1"><?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL') ?></label>
-						<input type="email" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL_PLACEHOLDER') ?>" name="jform[email1]" class="form-control validate-email required invalid" id="jform_email1" value="" size="30" autocomplete="email" required="required" aria-required="true" aria-invalid="true">
+						<input type="email" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL_PLACEHOLDER') ?>" name="jform[email1]" class="form-control validate-email required invalid" id="jform_email1" value="" size="30" autocomplete="email" required="required" aria-required="true" aria-invalid="true" onchange="validEmail()">
+						<div class="valid-feedback">Ok <i class="fas fa-check-circle"></i></div>
 					</div>
 					<div class="form-group col-12 col-sm-12 col-md-6">
 						<label for="jform_email2"><?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL1') ?></label>
 						<input type="email" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL1_PLACEHOLDER') ?>" name="jform[email2]" class="form-control validate-email required invalid" id="jform_email2" size="30" required="required" aria-required="true" aria-invalid="true">
+						<div class="valid-feedback">Ok <i class="fas fa-check-circle"></i></div>
 					</div>
 				</div>
 				<div class="form-row">
