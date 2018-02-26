@@ -20,15 +20,15 @@ try {
 }
 
 $sql = 'SELECT id, email
-        FROM jug34__users
-        WHERE email < :email ';
+        FROM jug34__users';
 $sth = $dbh->prepare($sql);
-$sth->execute(array(':email' => $email));
+$sth->execute();
 $red = $sth->fetchAll();
+var_dump($red);
 
-$count = $sth->rowCount();
+// $count = $sth->rowCount();
 
-echo $count;
+// echo $count;
 
 // $sth->execute(array(':calories' => 175, ':colour' => 'yellow'));
 // $yellow = $sth->fetchAll();
