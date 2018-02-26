@@ -13,8 +13,16 @@ defined('_JEXEC') or die;
 //JHtml::_('behavior.formvalidator');
 $doc  = JFactory::getDocument();
 $tmpl = JFactory::getApplication()->getTemplate();
+
+$messages = JFactory::getApplication()->getMessageQueue();
+
+foreach ($messages as $message) {
+	// var_dump($message);
+	echo JLayoutHelper::render('joomla.content.message.message_'.$message['type'], $message['message']);
+}
+
 JHtml::_('jquery.framework');
-$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registrationValidation.js?v=1.8.0');
+$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registrationValidation.js?v=1.4.0');
 ?>
 <div class="wrapper container com_users registration <?php echo $this->pageclass_sfx; ?>">
 	<div class="row justify-content-center">
@@ -23,7 +31,7 @@ $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registra
 				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->escape($this->params->get('page_heading'))) ?>
 			<?php endif; ?>
 
-			<form id="member-registration" novalidate action="<?php echo JRoute::_('index.php?option=com_users&task=registration.register'); ?>" method="post" class="form-validate mt-3" enctype="multipart/form-data">
+			<form id="member-registration" novalidate action="<?php echo JRoute::_('index.php?option=com_users&task=myregistration.register'); ?>" method="post" class="form-validate mt-3" enctype="multipart/form-data">
 				<div class="form-row">
 					<div class="form-group col-12 col-sm-12 col-md-6">
 						<label for="jform_name"><?= JText::_('TPL_AFFINITY_REGISTRATION_NAME') ?></label>
@@ -62,11 +70,17 @@ $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registra
 						<label for="jform_email1"><?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL') ?></label>
 						<input type="email" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL_PLACEHOLDER') ?>" name="jform[email1]" class="form-control validate-email required invalid" id="jform_email1" value="" size="30" autocomplete="email" required="required" aria-required="true" aria-invalid="true" onchange="validEmail()">
 						<div class="valid-feedback">Ok <i class="fas fa-check-circle"></i></div>
+						<div class="invalid-feedback">
+			        Inserisci un indirizzo email valido <i class="fas fa-times-circle"></i>
+			      </div>
 					</div>
 					<div class="form-group col-12 col-sm-12 col-md-6">
 						<label for="jform_email2"><?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL1') ?></label>
-						<input type="email" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL1_PLACEHOLDER') ?>" name="jform[email2]" class="form-control validate-email required invalid" id="jform_email2" size="30" required="required" aria-required="true" aria-invalid="true">
+						<input type="email" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_EMAIL1_PLACEHOLDER') ?>" name="jform[email2]" class="form-control validate-email required invalid" id="jform_email2" size="30" required="required" aria-required="true" aria-invalid="true" onchange="validEmailConfirm()">
 						<div class="valid-feedback">Ok <i class="fas fa-check-circle"></i></div>
+						<div class="invalid-feedback">
+							Le email non coincidono <i class="fas fa-times-circle"></i>
+			      </div>
 					</div>
 				</div>
 				<div class="form-row">
@@ -75,7 +89,7 @@ $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registra
 							<i class="fas fa-check-circle"></i> <?php echo JText::_('Continua'); ?>
 						</button>
 						<input type="hidden" name="option" value="com_users" />
-						<input type="hidden" name="task" value="registration.register" />
+						<input type="hidden" name="task" value="myregistration.register" />
 					</div>
 				</div>
 

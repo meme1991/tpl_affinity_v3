@@ -167,6 +167,8 @@
 	  <?php endif; ?>
 	  <!-- posizione di supporto - before component -->
 
+		<!-- <jdoc:include type="message" /> -->
+
 	  <main id="main-content">
 	    <jdoc:include type="component" />
 	  </main>

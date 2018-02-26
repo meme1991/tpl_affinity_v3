@@ -61,28 +61,34 @@
  }
 
  function validEmail(){
-   var email = $('#jform_email1').val();
-
-  $.post( "jtest/templates/affinity/html/com_users/registration/emailVerify.php", { email: email}, function( data ) {
-    alert(data);
-  });
-   // //var num   = new RegExp('[a-zA-Z-_]+[0-9]+', 'i');
-   // //var exp = new RegExp("((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[_-]).{6,20})");
-   // //var upper = new RegExp('[A-Z]');
-   // var password1 = $('#jform_password1').val();
-   // var password2 = $('#jform_password2').val();
-   // if(password1 == password2){
-   //   $('#jform_password2').removeClass('is-invalid');
-   //   $('#jform_password2').addClass('is-valid');
-   //   //return true;
-   // }
-   // else{
-   //   $('#jform_password2').removeClass('is-valid');
-   //   $('#jform_password2').addClass('is-invalid');
-   //   //return false;
-   // }
+   var exp = new RegExp("^([a-z0-9_.-]+)@([0-9a-z.-]+)\.([a-z.]{2,6})$");
+   var email1 = $('#jform_email1').val();
+   if(exp.test(email1)){
+     $('#jform_email1').removeClass('is-invalid');
+     $('#jform_email1').addClass('is-valid');
+     //return true;
+   }
+   else{
+     $('#jform_email1').removeClass('is-valid');
+     $('#jform_email1').addClass('is-invalid');
+     //return false;
+   }
  }
 
+ function validEmailConfirm(){
+   var email1 = $('#jform_email1').val();
+   var email2 = $('#jform_email2').val();
+   if(email1 == email2){
+     $('#jform_email2').removeClass('is-invalid');
+     $('#jform_email2').addClass('is-valid');
+     //return true;
+   }
+   else{
+     $('#jform_email2').removeClass('is-valid');
+     $('#jform_email2').addClass('is-invalid');
+     //return false;
+   }
+ }
 
 
 
@@ -91,21 +97,13 @@
      var forms = $('#member-registration');
      // Loop over them and prevent submission
      var validation = Array.prototype.filter.call(forms, function(form) {
-
        form.addEventListener('submit', function(event) {
          if (form.checkValidity() === false) {
            event.preventDefault();
            event.stopPropagation();
          }
-
          form.classList.add('was-validated');
-         // if(!validUsername()){
-         //   event.preventDefault();
-         //   event.stopPropagation();
-         // }
-
        }, false);
-
      });
 
  })
