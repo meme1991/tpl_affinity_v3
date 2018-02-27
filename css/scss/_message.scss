@@ -21,10 +21,23 @@
   }
 }
 
+//message
+.alert-message, .alert-notice{
+  border-color: $primary;
+  border-left: 10px $primary solid;
+  background-color: rgba($primary, .1);
+  p{
+    span{
+      color: $primary;
+    }
+  }
+}
+
 //info
 .alert-info{
   border-color: $primary;
   border-left: 10px $primary solid;
+  background-color: rgba($primary, .1);
   p{
     span{
       color: $primary;
@@ -36,6 +49,7 @@
 .alert-warning{
   border-color: $warning;
   border-left: 10px $warning solid;
+  background-color: rgba($warning, .1);
   p{
     span{
       color: $warning;
@@ -47,6 +61,7 @@
 .alert-danger{
   border-color: $danger;
   border-left: 10px $danger solid;
+  background-color: rgba($danger, .1);
   p{
     span{
       color: $danger;
@@ -58,6 +73,7 @@
 .alert-success{
   border-color: $success;
   border-left: 10px $success solid;
+  background-color: rgba($success, .1);
   p{
     span{
       color: $success;

@@ -24,15 +24,11 @@ $tparams = $this->params;
 		<div class="col-12">
 
 			<div class="row mt-3">
-				<!-- IMMAGINE/MAPPA -->
-				<?php if(($tparams->get('show_image') AND $this->contact->image) OR ($this->contact->address != '' && $this->contact->suburb != '')) : ?>
-				<div class="col-12 col-sm-5 col-md-5 col-lg-5 figure">
-					<?php if($this->contact->image && $tparams->get('show_image')) : ?>
-					<figure>
-						<img src="<?php echo $this->contact->image ?>" alt="<?php echo $this->contact->name; ?>" class="figure-img img-fluid rounded" itemprop="image">
-					</figure>
-					<?php endif; ?>
-					<?php if($this->contact->address != '' && $this->contact->suburb != '') : ?>
+				<!-- MAPPA -->
+				<?php // se indirizzo e città sono settati ?>
+				<?php if($this->contact->address != '' && $this->contact->suburb != ''): ?>
+					<?php $col = ($tparams->get('show_email_form')) ? 'col-12' : 'col-12 col-sm-12 col-md-6'; ?>
+					<div class="<?= $col ?>">
 						<?php $addressMap  = str_replace(' ', '+', $this->contact->address); ?>
 						<?php $addressMap .= '+'.str_replace(' ', '+', $this->contact->suburb); ?>
 						<iframe
@@ -42,13 +38,24 @@ $tparams = $this->params;
 						  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD_VIM-UpU5tWPOfngBCBqrTaTSq6qCbiM&q=<?php echo $addressMap ?>"
 							allowfullscreen>
 						</iframe>
+					</div>
+				<?php endif; ?>
+				<!-- MAPPA -->
+
+				<!-- IMMAGINE -->
+				<?php if(($tparams->get('show_image') AND $this->contact->image)) : ?>
+				<div class="col-12 col-sm-12 col-md-6 col-lg-3 mt-3 mt-lg-0 figure">
+					<?php if($this->contact->image && $tparams->get('show_image')) : ?>
+					<figure>
+						<img src="<?php echo $this->contact->image ?>" alt="<?php echo $this->contact->name; ?>" class="figure-img img-fluid rounded" itemprop="image">
+					</figure>
 					<?php endif; ?>
 				</div>
 				<?php endif; ?>
-				<!-- IMMAGINE/MAPPA -->
+				<!-- IMMAGINE -->
 
 				<!-- DATI, EMAIL, RUOLO, TELEFONO, ...  -->
-				<div class="col">
+				<div class="col-12 col-sm-12 col-md-6 col-lg">
 					<?php if ($this->contact->con_position && $tparams->get('show_position')) : ?>
 					<div class="field">
 						<h4 class="fw-600"><i class="fas fa-user-circle"></i> <?php echo JText::_('TPL_AFFINITY_CONTACTPAGE_POSITION'); ?></h4>
@@ -62,9 +69,9 @@ $tparams = $this->params;
 						<?php echo $this->loadTemplate('links'); ?>
 					<?php endif; ?>
 
-					<?php //if ($tparams->get('show_user_custom_fields') && $this->contactUser) : ?>
+					<?php if ($tparams->get('show_user_custom_fields') && $this->contactUser) : ?>
 						<?php echo $this->loadTemplate('user_custom_fields'); ?>
-					<?php //endif; ?>
+					<?php endif; ?>
 
 					<?php if ($this->contact->misc && $tparams->get('show_misc')) : ?>
 						<div class="field">

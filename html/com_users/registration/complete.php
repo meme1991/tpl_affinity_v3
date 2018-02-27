@@ -9,7 +9,7 @@
 
 defined('_JEXEC') or die;
 ?>
-<div class="wrapper container com_users registration-complete <?php echo $this->pageclass_sfx; ?>">
+<!-- <div class="wrapper container com_users registration-complete <?php echo $this->pageclass_sfx; ?>">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-8 col-md-8">
 			<?php if ($this->params->get('show_page_heading')) : ?>
@@ -21,4 +21,4 @@ defined('_JEXEC') or die;
 			</p>
 		</div>
 	</div>
-</div>
+</div> -->

@@ -13,16 +13,8 @@ defined('_JEXEC') or die;
 //JHtml::_('behavior.formvalidator');
 $doc  = JFactory::getDocument();
 $tmpl = JFactory::getApplication()->getTemplate();
-
-$messages = JFactory::getApplication()->getMessageQueue();
-
-foreach ($messages as $message) {
-	// var_dump($message);
-	echo JLayoutHelper::render('joomla.content.message.message_'.$message['type'], $message['message']);
-}
-
 JHtml::_('jquery.framework');
-$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registrationValidation.js?v=1.4.0');
+$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registrationValidation.js?v=1.6.0');
 ?>
 <div class="wrapper container com_users registration <?php echo $this->pageclass_sfx; ?>">
 	<div class="row justify-content-center">
@@ -31,7 +23,7 @@ $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registra
 				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->escape($this->params->get('page_heading'))) ?>
 			<?php endif; ?>
 
-			<form id="member-registration" novalidate action="<?php echo JRoute::_('index.php?option=com_users&task=myregistration.register'); ?>" method="post" class="form-validate mt-3" enctype="multipart/form-data">
+			<form id="member-registration" novalidate action="<?php echo JRoute::_('index.php?option=com_users&task=registration.register'); ?>" method="post" class="form-validate mt-3" enctype="multipart/form-data">
 				<div class="form-row">
 					<div class="form-group col-12 col-sm-12 col-md-6">
 						<label for="jform_name"><?= JText::_('TPL_AFFINITY_REGISTRATION_NAME') ?></label>
@@ -85,15 +77,29 @@ $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registra
 				</div>
 				<div class="form-row">
 					<div class="form-group col-12">
+						<?php foreach ($this->form->getFieldsets() as $fieldset) : ?>
+							<?php $fields = $this->form->getFieldset($fieldset->name); ?>
+							<?php if (count($fields)) : ?>
+								<?php // Iterate through the fields in the set and display them. ?>
+								<?php foreach ($fields as $field) : ?>
+									<?php if($field->type == 'Captcha'): ?>
+										<?php echo $field->input ?>
+									<?php endif; ?>
+								<?php endforeach; ?>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group col-12">
 						<button type="submit" class="btn btn-primary btn-block validate mb-3">
 							<i class="fas fa-check-circle"></i> <?php echo JText::_('Continua'); ?>
 						</button>
 						<input type="hidden" name="option" value="com_users" />
-						<input type="hidden" name="task" value="myregistration.register" />
+						<input type="hidden" name="task" value="registration.register" />
 					</div>
 				</div>
-
-
 				<?php echo JHtml::_('form.token'); ?>
 			</form>
 		</div>

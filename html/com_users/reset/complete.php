@@ -36,7 +36,7 @@ JHtml::_('behavior.formvalidator');
 					</fieldset>
 				<?php endforeach; ?>
 
-				<div class="control-group mt-2">
+				<div class="control-group mt-3">
 					<div class="controls">
 						<button type="submit" class="btn btn-primary btn-block validate"><i class="fas fa-check-circle pr-2"></i> <?php echo JText::_('JSUBMIT'); ?></button>
 					</div>

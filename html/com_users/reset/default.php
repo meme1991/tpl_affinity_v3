@@ -11,10 +11,12 @@ defined('_JEXEC') or die;
 
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidator');
+$this->form->setFieldAttribute('email', 'hint', 'Inserisci il tuo indirizzo email');
+
 ?>
 <div class="wrapper container com_users remind<?php echo $this->pageclass_sfx; ?>">
 	<div class="row justify-content-center">
-		<div class="col-12 col-sm-8 col-md-6">
+		<div class="col-12 col-md-6">
 			<?php if ($this->params->get('show_page_heading')) : ?>
 				<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->escape($this->params->get('page_heading'))) ?>
 			<?php endif; ?>
