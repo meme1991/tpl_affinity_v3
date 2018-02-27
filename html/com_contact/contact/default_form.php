@@ -11,25 +11,17 @@ defined('_JEXEC') or die;
 
 JHtml::_('behavior.keepalive');
 JHtml::_('behavior.formvalidator');
-
-
 $doc  = JFactory::getDocument();
 $tmpl = JFactory::getApplication()->getTemplate();
 $doc->addScriptDeclaration("
 	jQuery(document).ready(function($){
-
 		$('#contact-form').submit(function(event){
-
-			if(!$('#acceptForm').is(':checked')){
+			if(!$('#jform_acceptForm').is(':checked')){
 				event.preventDefault();
 				event.stopPropagation();
 			}
-
-		})
-
-	})
+		});})
 ");
-
 
 $this->form->setFieldAttribute('contact_name', 'hint', 'es. Mario Rossi');
 $this->form->setFieldAttribute('contact_email', 'hint', 'es. mario.rossi@email.it');
@@ -37,33 +29,33 @@ $this->form->setFieldAttribute('contact_subject', 'hint', "Inserisci l'oggetto d
 $this->form->setFieldAttribute('contact_message', 'hint', 'Inserisci il tuo messaggio');
 ?>
 
-<div class="col-12 col-lg-4 mt-3 mt-lg-0 form-module bg-light">
+<div class="col-12 col-lg-4 mt-3 mt-lg-0 py-3 form-module bg-light">
 	<div class="aside-title">
 		<h4><?php echo JText::_('TPL_AFFINITY_FORM_CONTACT_LABEL') ?></h4>
 	</div>
 	<div class="contact-form">
 		<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate form-horizontal well">
-				<?php foreach ($this->form->getFieldsets() as $fieldset) : ?>
-					<?php if ($fieldset->name === 'captcha' && !$this->captchaEnabled) : ?>
-						<?php continue; ?>
-					<?php endif; ?>
-					<?php $fields = $this->form->getFieldset($fieldset->name); ?>
-					<?php if (count($fields)) : ?>
-						<?php foreach ($fields as $k => $field) : ?>
-						<div class="form-group mb-3">
-							<?php echo $field->label; ?>
-            	<?php echo $field->input; ?>
-						</div>
-							<?php //echo $field->renderField(); ?>
-						<?php endforeach; ?>
-					<?php endif; ?>
-				<?php endforeach; ?>
-				<div class="form-group mb-3">
-					<input type="checkbox" name="acceptForm" value="1" id="acceptForm">
-			    <label class="form-check-label" for="exampleCheck1">
-			    	<a href="#">Accetto termini e condizioni</a>
-			    </label>
-				</div>
+			<?php foreach ($this->form->getFieldsets() as $fieldset) : ?>
+				<?php if ($fieldset->name === 'captcha' && !$this->captchaEnabled) : ?>
+					<?php continue; ?>
+				<?php endif; ?>
+				<?php $fields = $this->form->getFieldset($fieldset->name); ?>
+				<?php if (count($fields)) : ?>
+					<?php foreach ($fields as $k => $field) : ?>
+					<div class="form-group mb-3">
+						<?php echo $field->label; ?>
+          	<?php echo $field->input; ?>
+					</div>
+						<?php //echo $field->renderField(); ?>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			<?php endforeach; ?>
+			<div class="form-group mb-3">
+				<input type="checkbox" name="jform[acceptForm]" value="1" id="jform_acceptForm">
+		    <label class="form-check-label" for="exampleCheck1">
+		    	<a href="#">Accetto termini e condizioni</a>
+		    </label>
+			</div>
 			<div class="control-group mt-2">
 				<div class="controls">
 					<button class="btn btn-primary btn-block validate" type="submit"><?php echo JText::_('TPL_AFFINITY_FORM_SEND_LABEL'); ?> <i class="fas fa-paper-plane pl-2"></i></button>
