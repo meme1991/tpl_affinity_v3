@@ -57,7 +57,7 @@ $bootstrap_size = ($params->get('bootstrap_size') == 0) ? '' : '-'.$params->get(
     			<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
     			<div class="form-group row" id="form-login-remember">
     				<div class="col-12">
-              <label for="modlgn-remember text-dark"  class="checkbox" aria-invalid="false">
+              <label for="modlgn-remember"  class="checkbox" aria-invalid="false">
               	<input type="checkbox" name="remember" value="yes" id="modlgn-remember">
                 <?php echo JText::_('MOD_LOGIN_REMEMBER_ME'); ?>
               </label>

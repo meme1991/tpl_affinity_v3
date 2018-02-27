@@ -10,6 +10,7 @@
 defined('_JEXEC') or die;
 
 JHtml::_('behavior.keepalive');
+$user = JFactory::getUser();
 $class_sfx = $params->get('moduleclass_sfx');
 $bootstrap_size = ($params->get('bootstrap_size') == 0) ? '' : '-'.$params->get('bootstrap_size');
 ?>
@@ -26,17 +27,32 @@ $bootstrap_size = ($params->get('bootstrap_size') == 0) ? '' : '-'.$params->get(
 		<form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form">
 			<?php if ($params->get('profilelink')) : ?>
 				<ul class="list-unstyled">
-					<li>
-						<a href="<?php echo JRoute::_('index.php?option=com_users&view=profile'); ?>">
-						<?php echo JText::_('MOD_LOGIN_PROFILE'); ?></a>
+          <li class="nav-item">
+            <h6 class="dropdown-header">Il mio profilo</h6>
+					</li>
+					<li class="nav-item">
+						<a class="dropdown-item" href="<?php echo JRoute::_('index.php?option=com_users&view=profile'); ?>">
+  						<i class="far fa-user mr-2"></i><?php echo JText::_('MOD_LOGIN_PROFILE'); ?>
+            </a>
+					</li>
+          <li class="nav-item">
+						<a class="dropdown-item" href="<?php echo JRoute::_('index.php?option=com_users&task=profile.edit&user_id='.(int)$user->id) ?>">
+  						<i class="far fa-edit mr-2"></i><?php echo JText::_('TPL_AFFINITY_EDIT_PROFILE'); ?>
+            </a>
+					</li>
+          <li class="nav-item">
+						<a class="dropdown-item" href="<?php echo JRoute::_("index.php?".$_SERVER['QUERY_STRING']."&layout=default_params"); ?>">
+  						<i class="far fa-cog mr-2"></i><?php echo JText::_('TPL_AFFINITY_SETTINGS'); ?>
+            </a>
+					</li>
+          <div class="dropdown-divider"></div>
+          <li class="nav-item">
+            <button type="submit" name="Submit" class="text-dark dropdown-item logout-button"><i class='far fa-sign-out mr-2'></i><?php echo JText::_('JLOGOUT'); ?></button>
 					</li>
 				</ul>
 			<?php endif; ?>
 
 			<div class="form-group mb-0 row" id="form-login-submit">
-				<div class="col-12">
-					<button type="submit" name="Submit" class="btn btn-primary logout-button"><i class='far fa-sign-out mr-2'></i><?php echo JText::_('JLOGOUT'); ?></button>
-				</div>
 				<input type="hidden" name="option" value="com_users" />
 				<input type="hidden" name="task" value="user.logout" />
 				<input type="hidden" name="return" value="<?php echo $return; ?>" />

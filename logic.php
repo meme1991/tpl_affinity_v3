@@ -46,7 +46,7 @@
   unset($doc->_styleSheets[JURI::root(true).'/media/com_phocadownload/css/main/rating.css']);
   unset($doc->_styleSheets[JURI::root(true).'/media/com_phocadownload/css/custom/default.css']);
 
-  $doc->addScript($tpath.'/js/bootstrapv4/popper.min.js', 'text/javascript', true, false);
+  $doc->addScript($tpath.'/js/bootstrapv4/popper.min.js?v=1.0.0', 'text/javascript', true, false);
   $doc->addScript($tpath.'/js/bootstrapv4/bootstrap.min.js?v=1.0.0', 'text/javascript', true, false);
   //$doc->addScript($tpath.'/dist/easing-page/jquery.easing.min.js', 'text/javascript');
   $doc->addScript($tpath.'/dist/modernizr/modernizr-objectfit.js', 'text/javascript', true, false);
