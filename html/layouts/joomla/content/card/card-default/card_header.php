@@ -79,7 +79,26 @@ $logo_s         = $templateparams->get('logo-s');
   <!-- titolo -->
 
   <!-- date -->
+<<<<<<< HEAD
   <meta itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
+=======
+  <?php if($params->get('show_create_date')) : ?>
+    <small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_CREATED_DATE') ?>">
+      <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_CREATED_DATE') ?></span>
+      <?php echo JHtml::_('date', $displayData->created, JText::_('DATE_FORMAT_LC1')) ?>
+    </small>
+  <?php endif; ?>
+
+  <!-- <?php if($params->get('show_modify_date')) : ?>
+    <small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_MODIFIED_DATE') ?>" itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
+      <i class="fa fa-pencil-square-o"></i>
+      <span class="sr-only"><?php echo JText::_('TPL_AFFINITY_MODIFIED_DATE') ?></span>
+      <?php echo JHtml::_('date', $displayData->modified, JText::_('DATE_FORMAT_LC1')) ?>
+    </small>
+  <?php else : ?> -->
+    <meta itemprop="dateModified" content="<?php echo JHtml::_('date', $displayData->modified, JText::_('Y-m-d')) ?>">
+  <!-- <?php endif; ?> -->
+>>>>>>> f2d548662cefc93492d82b55a5b6c07799781fd7
 
   <?php if($params->get('show_publish_date')) : ?>
     <small class="icon-clock d-inline-block" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>" itemprop="datePublished" content="<?php echo JHtml::_('date', $displayData->publish_up, JText::_('Y-m-d')) ?>">
