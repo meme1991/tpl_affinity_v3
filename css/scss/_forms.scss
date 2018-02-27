@@ -140,10 +140,9 @@ input[type=radio]{
   }
 }
 
-body label {
-  line-height: 40px;
-}
-
+// body label {
+//   line-height: 40px;
+// }
 
 .chzn-container .chzn-single{
   background: #fff;
@@ -166,4 +165,19 @@ input[type=select],
 textarea,
 input[readonly=readonly]{
   @extend .form-control;
+}
+
+.form-group{
+  position: relative;
+}
+label{
+  // position: absolute;
+  font-size: 14px;
+  margin-bottom: 0;
+  line-height: 20px !important;
+  // background-color: #fff;
+  // left: 10px;
+  // top: -9px;
+  // padding-left: 5px;
+  // padding-right: 5px;
 }

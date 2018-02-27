@@ -41,7 +41,7 @@ $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registra
 				</div>
 				<div class="form-row">
 					<div class="form-group col-12 col-sm-12 col-md-6">
-						<label for="jform_password1"><?= JText::_('TPL_AFFINITY_REGISTRATION_PASSWORD') ?></label>
+						<label for="jform_password1"><?= JText::_('TPL_AFFINITY_REGISTRATION_PASSWORD') ?> <i class="fas fa-question-circle help" data-toggle="tooltip" data-placement="top" title="Una lettera maiuscola, una minuscola, un numero e minimo 8 caratteri"></i> </label>
 						<input type="password" placeholder="<?= JText::_('TPL_AFFINITY_REGISTRATION_PASSWORD_PLACEHOLDER') ?>" pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[_-]).{6,20})" minlength="6" maxlength="20" name="jform[password1]" id="jform_password1" autocomplete="off" class="form-control validate-password required invalid" size="30" maxlength="99" required="required" aria-required="true" aria-invalid="true" onchange="validPassword()">
 						<div class="valid-feedback">Ok <i class="fas fa-check-circle"></i></div>
 						<div class="invalid-feedback">

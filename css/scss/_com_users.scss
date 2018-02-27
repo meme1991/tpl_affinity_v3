@@ -18,19 +18,13 @@
       }
     }
   }
-}
 
-.form-group{
-  position: relative;
-}
-label{
-  // position: absolute;
-  font-size: 14px;
-  margin-bottom: 0;
-  line-height: 20px !important;
-  // background-color: #fff;
-  // left: 10px;
-  // top: -9px;
-  // padding-left: 5px;
-  // padding-right: 5px;
+  .help{
+    color: $gray-500;
+    &:hover{
+      color: $gray-600;
+    }
+  }
+
+
 }
