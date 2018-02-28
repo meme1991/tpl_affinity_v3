@@ -53,10 +53,10 @@ defined('_JEXEC') or die;
 
 				// Render the menu item.
 				switch ($item->type) :
-					case 'separator':
+					// case 'separator':
 					case 'url':
 					case 'component':
-					case 'heading':
+					// case 'heading':
 						require JModuleHelper::getLayoutPath('mod_menu', '/entrypoint/entrypoint_' . $item->type);
 						break;
 

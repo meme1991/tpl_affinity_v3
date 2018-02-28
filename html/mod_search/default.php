@@ -14,8 +14,8 @@ JHtml::_('jquery.framework');
 JHtml::_('script', 'system/html5fallback.js', array('version' => 'auto', 'relative' => true));
 ?>
 <div class="search d-flex justify-content-end my-2 my-lg-0 <?php echo $moduleclass_sfx; ?>">
-	<form class="form-inline" action="<?php echo JRoute::_('index.php'); ?>" method="post">
-		<label class="sr-only" for="mod-search-searchword<?php echo $module->id ?>">Search</label>
+	<form class="form-inline form-search" action="<?php echo JRoute::_('index.php'); ?>" method="post">
+		<label class="sr-only" for="mod-search-searchword<?php echo $module->id ?>">Ricerca</label>
 		<div class="input-group">
 	    <input type="search" name="searchword" class="form-control" id="mod-search-searchword<?php echo $module->id ?>" placeholder="<?php echo $text ?>" aria-describedby="btnGroupAddon">
 			<button type="submit" class="input-group-addon" id="btnGroupAddon" onclick="this.form.searchword.focus();"><i class="far fa-search"></i></button>

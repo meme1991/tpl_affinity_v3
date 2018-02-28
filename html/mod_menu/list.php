@@ -57,10 +57,10 @@ foreach ($list as $i => &$item)
 
 	// Render the menu item.
 	switch ($item->type) :
-		case 'separator':
+		// case 'separator':
 		case 'url':
 		case 'component':
-		case 'heading':
+		// case 'heading':
 			require JModuleHelper::getLayoutPath('mod_menu', '/list/list_' . $item->type);
 			break;
 

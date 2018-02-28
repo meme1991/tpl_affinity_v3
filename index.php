@@ -37,25 +37,21 @@
 	    <div class="header-top">
 	      <div class="container">
 	        <div class="row">
-						<nav class="top-nav navbar-expand-lg w-100">
-							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#top-nav" aria-controls="top-nav" aria-expanded="false" aria-label="Toggle navigation">
+						<?php if ($this->countModules('htop-left')) : ?>
+						<nav class="col-2 col-sm-2 col-lg-6 htop-left d-flex justify-content-start top-nav navbar-expand-lg">
+							<button class="navbar-toggler" type="button" data-toggle="offcanvas-collapse">
 								<i class="fal fa-bars"></i>
 						  </button>
-
-		          <div class="collapse navbar-collapse" id="top-nav">
-								<?php if ($this->countModules('htop-left')) : ?>
-									<div class="col-12 col-lg-6 htop-left d-flex justify-content-start">
-			              <jdoc:include type="modules" name="htop-left" />
-									</div>
-								<?php endif; ?>
-
-								<?php if ($this->countModules('htop-right')) : ?>
-									<div class="col-12 col-lg-6 htop-right d-flex justify-content-end">
-										<jdoc:include type="modules" name="htop-right" />
-									</div>
-								<?php endif; ?>
-		          </div>
-		        </nav>
+							<div class="navbar-collapse offcanvas-collapse" id="top-nav">
+	              <jdoc:include type="modules" name="htop-left" />
+							</div>
+						</nav>
+						<?php endif; ?>
+						<?php if ($this->countModules('htop-right')) : ?>
+						<div class="col-10 col-sm-10 col-lg-6 htop-right d-flex justify-content-end">
+							<jdoc:include type="modules" name="htop-right" />
+						</div>
+						<?php endif; ?>
 	        </div>
 	      </div>
 

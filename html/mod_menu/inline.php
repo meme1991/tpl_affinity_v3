@@ -92,11 +92,10 @@ defined('_JEXEC') or die;
 
 		// Render the menu item.
 		switch ($item->type) :
-			case 'separator':
+			//case 'separator':
 			case 'url':
 			case 'component':
 			case 'heading':
-			// case 'dropdown':
 				require JModuleHelper::getLayoutPath('mod_menu', '/inline/inline_' . $item->type);
 				break;
 

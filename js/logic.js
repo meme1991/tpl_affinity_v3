@@ -8,6 +8,10 @@ jQuery(document).ready(function($) {
   //   $('#top-nav').toggleClass('open')
   // })
 
+  $('[data-toggle="offcanvas-collapse"]').on('click', function () {
+    $('.offcanvas-collapse').toggleClass('open')
+  })
+
   $('[data-toggle="offcanvas"]').on('click', function () {
     // alert('qui');
     $('.offcanvas-menu').toggleClass('open');
