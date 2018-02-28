@@ -130,7 +130,7 @@ INLINE MENU
     margin-bottom: 0;
     li{
       position: relative;
-      margin: 0;
+      margin: 0 !important;
       padding: 10px 0;
       @include link-hover($dark, $dark);
       &.delimiter{
