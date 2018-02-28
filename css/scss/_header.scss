@@ -126,29 +126,12 @@ header{
     // inline menu
     .inline-menu{
       ul{
-        margin-bottom: 0;
         li{
-          position: relative;
-          margin: 0;
-          padding: 10px 0;
           @include link-hover($headerTop_color, $headerTop_color);
           &.delimiter{
             &::after{
-              content: '';
-              position: absolute;
-              right: 0;
-              bottom: 50%;
-              margin-bottom: -9px;
-              width: 1px;
-              height: 18px;
               background-color: $headerTop_color;
             }
-          }
-          &:not(:last-child){
-            padding-right: 8px;
-          }
-          &:not(:first-child){
-            padding-left: 8px;
           }
         }
       }
@@ -224,10 +207,10 @@ header{
     }
 
     // header-top-ghost
-    .header-top-ghost{
-      background-color: rgba($white, .1);
-      color: $headerTop_color;
-    }
+    // .header-top-ghost{
+    //   background-color: rgba($white, .1);
+    //   color: $headerTop_color;
+    // }
 
     // multilingua
     .mod-languages{

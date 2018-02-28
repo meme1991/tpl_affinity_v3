@@ -37,7 +37,6 @@
 		<!-- header position -->
 		<position>htop-left</position>
 		<position>htop-right</position>
-		<position>htop-ghost</position>
 		<position>social</position>
 		<position>search</position>
 		<position>overlay</position>

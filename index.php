@@ -38,7 +38,7 @@
 	      <div class="container">
 	        <div class="row">
 						<?php if ($this->countModules('htop-left')) : ?>
-						<nav class="col-2 col-sm-2 col-lg-6 htop-left d-flex justify-content-start top-nav navbar-expand-lg">
+						<nav class="col-2 col-lg-7 htop-left d-flex justify-content-start top-nav navbar-expand-lg">
 							<button class="navbar-toggler" type="button" data-toggle="offcanvas-collapse">
 								<i class="fal fa-bars"></i>
 						  </button>
@@ -48,26 +48,13 @@
 						</nav>
 						<?php endif; ?>
 						<?php if ($this->countModules('htop-right')) : ?>
-						<div class="col-10 col-sm-10 col-lg-6 htop-right d-flex justify-content-end">
+						<div class="col-10 col-lg-5 htop-right d-flex justify-content-end">
 							<jdoc:include type="modules" name="htop-right" />
 						</div>
 						<?php endif; ?>
 	        </div>
 	      </div>
-
-				<?php if ($this->countModules('htop-ghost')) : ?>
-				<div class="header-top-ghost collapse" id="htop-ghost">
-					<div class="container">
-						<div class="row">
-							<div class="col-12 d-flex justify-content-end">
-								<jdoc:include type="modules" name="htop-ghost" />
-							</div>
-						</div>
-					</div>
-				</div>
-				<?php endif; ?>
-
-	    </div><!-- end .header-banner -->
+	    </div><!-- end .header-top -->
 			<?php endif; ?>
 
 	    <div class="header-banner">
