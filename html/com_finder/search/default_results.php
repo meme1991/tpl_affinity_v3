@@ -51,7 +51,7 @@ defined('_JEXEC') or die;
 
 <?php // Display a list of results ?>
 <br id="highlighter-start" />
-<ul class="list-group list-striped list-hover <?php echo $this->pageclass_sfx; ?>">
+<ul class="list-group list-small <?php echo $this->pageclass_sfx; ?>">
 	<?php $this->baseUrl = JUri::getInstance()->toString(array('scheme', 'host', 'port')); ?>
 
 	<?php foreach ($this->results as $result) : ?>

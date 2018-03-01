@@ -48,15 +48,28 @@ if (!empty($this->query->highlight)
 }
 
 ?>
-
-<li class="list-group-item list-group-item-action flex-column align-items-start">
-	<h4 class="result-title <?php echo $mime; ?>">
-		<a href="<?php echo JRoute::_($route); ?>"><?php echo $this->result->title; ?></a>
+<li class="list-group-item">
+	<div class="d-flex justify-content-between">
+		<?php if($this->result->publish_start_date) : ?>
+			<small class="icon-clock" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>">
+				<?php echo JHtml::_('date', $this->result->publish_start_date, JText::_('DATE_FORMAT_LC1')) ?>
+			</small>
+		<?php endif; ?>
+		<?php if ($this->result->category) : ?>
+			<small data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_RESULT_TYPE') ?>">
+				<?php echo $this->result->category; ?>
+			</small>
+		<?php endif; ?>
+	</div>
+	<!-- titolo -->
+	<h4 class="<?php echo $mime; ?>">
+		<a href="<?php echo JRoute::_($route); ?>">
+			<?php echo $this->result->title; ?>
+		</a>
 	</h4>
+	<!-- titolo -->
 	<?php if ($show_description && $description !== '') : ?>
-		<p class="result-text<?php echo $this->pageclass_sfx; ?>">
-			<?php echo $description; ?>
-		</p>
+		<p class="card-text"><?php echo $description; ?></p>
 	<?php endif; ?>
 	<?php if ($this->params->get('show_url', 1)) : ?>
 		<div class="small result-url<?php echo $this->pageclass_sfx; ?>">

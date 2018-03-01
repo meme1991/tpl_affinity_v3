@@ -78,7 +78,7 @@ JFactory::getDocument()->addScriptDeclaration("
 						  <figure class="mb-0 default">
 						    <img src="<?php echo htmlspecialchars($images->image_intro); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($images->image_intro_alt, ENT_COMPAT, 'UTF-8'); ?>" />
 						    <figcaption class="d-flex justify-content-center align-items-center">
-						      <i class="fa fa-external-link fa-3x" aria-hidden="true"></i>
+						      <i class="far fa-external-link fa-3x" aria-hidden="true"></i>
 						    </figcaption>
 						    <a href="<?php echo JRoute::_(TagsHelperRoute::getItemRoute($item->content_item_id, $item->core_alias, $item->core_catid, $item->core_language, $item->type_alias, $item->router)); ?>" title="<?php echo $item->core_title ?>"></a>
 						  </figure>

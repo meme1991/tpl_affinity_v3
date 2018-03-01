@@ -86,7 +86,7 @@ jQuery(function() {";
 			</div>
 			<?php if ($this->params->get('show_advanced', 1)) : ?>
 				<a class="btn btn-link link-default" data-toggle="collapse" href="#advancedSearch" aria-expanded="false" aria-controls="advancedSearch">
-			    <i class="fa fa-caret-square-o-right pr-1" aria-hidden="true"></i> <?php echo JText::_('COM_FINDER_ADVANCED_SEARCH_TOGGLE'); ?>
+			    <i class="far fa-caret-square-down pr-1" aria-hidden="true"></i> <?php echo JText::_('COM_FINDER_ADVANCED_SEARCH_TOGGLE'); ?>
 			  </a>
 			<?php endif; ?>
 
