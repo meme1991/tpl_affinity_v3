@@ -122,7 +122,10 @@ a{
 
 }
 
-// link dentro un paragrafo
+/*******************************
+           PARAGRAFO
+*******************************/
+
 p{
   line-height: 1.55;
   a{
@@ -132,6 +135,10 @@ p{
     font-size: 15px;
   }
 }
+
+/*******************************
+        TITOLI ARTICOLI
+*******************************/
 
 .article-view{
   h1{
@@ -270,6 +277,9 @@ button{
   &:hover{
     background-color: transparent;
   }
+  &:focus{
+    text-decoration: none;
+  }
 }
 
 .btn-link{
@@ -279,30 +289,11 @@ button{
   }
 }
 
-// button default
-.btn-primary{
-  text-transform: uppercase;
-  text-decoration: none;
+// shadow
+.btn-shadow{
   -webkit-box-shadow: 0 2px 4px 0 #bdbdbd;
   -moz-box-shadow: 0 2px 4px 0 #bdbdbd;
   box-shadow: 0 2px 4px 0 #bdbdbd;
-}
-.btn-secondary{
-  text-transform: uppercase;
-  text-decoration: none;
-  -webkit-box-shadow: 0 2px 4px 0 #bdbdbd;
-  -moz-box-shadow: 0 2px 4px 0 #bdbdbd;
-  box-shadow: 0 2px 4px 0 #bdbdbd;
-}
-
-.btn-outline-primary{
-  border-width: 2px;
-}
-.btn-outline-featured{
-  border-width: 2px;
-}
-.btn-outline-dark{
-  border-width: 2px;
 }
 
 .no-shadow{
@@ -311,11 +302,27 @@ button{
   box-shadow: none !important;
 }
 
-.btn-shadow{
-  -webkit-box-shadow: 0 2px 4px 0 #bdbdbd;
-  -moz-box-shadow: 0 2px 4px 0 #bdbdbd;
-  box-shadow: 0 2px 4px 0 #bdbdbd;
+// button default
+.btn-primary{
+  text-transform: uppercase;
+  // text-decoration: none;
+  @extend .btn-shadow;
 }
+.btn-secondary{
+  text-transform: uppercase;
+  // text-decoration: none;
+  @extend .btn-shadow;
+}
+
+.btn-outline-primary{
+  border-width: 2px;
+}
+// .btn-outline-featured{
+//   border-width: 2px;
+// }
+// .btn-outline-dark{
+//   border-width: 2px;
+// }
 
 /********************************
             ICONES

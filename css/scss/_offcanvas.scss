@@ -39,6 +39,11 @@
           transform: translateX(-500px);
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
+  @include media-breakpoint-down(xs){
+		width: 300px;
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+	}
 	&.open{
     position: fixed;
 		overflow-y: auto;
@@ -163,6 +168,11 @@
     &::after{
       color: $white;
     }
+    @include media-breakpoint-down(xs){
+  		width: 300px;
+      -webkit-transform: translateX(300px) !important;
+  						transform: translateX(300px) !important;
+  	}
 	}
 
 	&.menu-scroll{

@@ -4,36 +4,24 @@
       NAV COMPONENT
 **************************/
 .nav-component{
-  .navbar-toggler{
-    color: $dark;
-    //border-color: $light;
-    border-width: 0;
-    margin-left: 0;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    i{
-      display: block;
-      font-size: 30px;
-    }
-  }
-
   @include media-breakpoint-down(md){
-    .inline-menu{
-      width: 100% !important;
-    }
-    .inline-menu{
-      .list-inline{
-        .list-inline-item{
-          display: block !important;
-          padding-left: 8px !important;
-          &::after{
-            display: none !important;
-          }
-        }
+    > .container{
+      max-width: 100% !important;
+      height: 47px;
+      overflow-y: hidden;
+      .inline-menu{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
       }
     }
   }
-
 }
 
 /**************************
@@ -62,15 +50,6 @@
         background-color: $light;
       }
     }
-
-    // ul{
-    //   a{
-    //     border-right: 0;
-    //     border-left: 0;
-    //     border-bottom: 0;
-    //     padding-left: 0;
-    //   }
-    // }
   }
 }
 

@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
 				<?php echo JLayoutHelper::render('joomla.content.categories.card-block',  array('item' => $item, 'params' => $this->params)); ?>
 			</div>
 
-			<!-- EVENTUALI LIVELLI DI SOTTOCATEGORIE -->
+			<?php // EVENTUALI LIVELLI DI SOTTOCATEGORIE ?>
 			<?php if (count($item->getChildren()) > 0 && $this->maxLevelcat > 1) : ?>
 				<?php $this->items[$item->id] = $item->getChildren(); ?>
 				<?php $this->parent = $item; ?>
@@ -25,7 +25,7 @@ defined('_JEXEC') or die;
 				<?php $this->parent = $item->getParent(); ?>
 				<?php $this->maxLevelcat++; ?>
 			<?php endif; ?>
-			<!-- EVENTUALI LIVELLI DI SOTTOCATEGORIE -->
+			<?php // EVENTUALI LIVELLI DI SOTTOCATEGORIE ?>
 
 		<?php endif; ?>
 	<?php endforeach; ?>

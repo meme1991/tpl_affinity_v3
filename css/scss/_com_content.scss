@@ -44,32 +44,32 @@ CUSTOMIZZAZIONE ARTICOLO - singolo articolo
       margin-top: 32px;
     }
 
-    figure.default{
-      position: relative;
-      figcaption{
-        background-color: $featured;
-        color: #fff;
-        opacity: 0;
-        -webkit-transform: scale(0.5);
-                transform: scale(0.5);
-        @include transition(all, 0.3s, ease-in-out);
-      }
-      a, figcaption{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-      &:hover{
-        figcaption{
-          opacity: 0.7;
-          -webkit-transform: scale(1);
-                  transform: scale(1);
-          @include transition(all, 0.3s, ease-in-out);
-        }
-      }
-    }
+    // figure.default{
+    //   position: relative;
+    //   figcaption{
+    //     background-color: $featured;
+    //     color: #fff;
+    //     opacity: 0;
+    //     -webkit-transform: scale(0.5);
+    //             transform: scale(0.5);
+    //     @include transition(all, 0.3s, ease-in-out);
+    //   }
+    //   a, figcaption{
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    //   &:hover{
+    //     figcaption{
+    //       opacity: 0.7;
+    //       -webkit-transform: scale(1);
+    //               transform: scale(1);
+    //       @include transition(all, 0.3s, ease-in-out);
+    //     }
+    //   }
+    // }
 
 
   }
@@ -77,24 +77,44 @@ CUSTOMIZZAZIONE ARTICOLO - singolo articolo
 
 
 .icons-share{
+  > ul{
+    margin-top: 2px;
+  }
   .fa-circle{
-    color: $white;
+    color: $light;
     @include transition(all, .3s, ease-in-out);
   }
   .fa-inverse{
-    color: $gray-500;
+    color: $dark;
     @include transition(all, .3s, ease-in-out);
   }
-  // .fa-stack{
-  //   &:hover{
-  //     .fa-circle{
-  //       color: #007bff;
-  //       @include transition(all, .3s, ease-in-out);
-  //     }
-  //     .fa-inverse{
-  //       color: #fff;
-  //       @include transition(all, .3s, ease-in-out);
-  //     }
-  //   }
-  // }
+
+  .social-share{
+    .fa-inverse{
+      color: $light;
+      @include transition(all, .3s, ease-in-out);
+    }
+
+    .facebook{
+      .fa-circle{
+        color: #4267b2;
+      }
+    }
+    .twitter{
+      .fa-circle{
+        color: #1da1f2;
+      }
+    }
+    .google-plus{
+      .fa-circle{
+        color: #db4437;
+      }
+    }
+    .whatsapp{
+      .fa-circle{
+        color: #1EBEA5;
+      }
+    }
+  }
+
 }

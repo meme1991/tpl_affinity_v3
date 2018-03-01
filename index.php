@@ -106,17 +106,14 @@
 	    <div class="header-nav">
 	      <div class="container p-0">
 					<nav class="navbar navbar-expand-md navbar-light bg-faded">
-
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#meganav" aria-controls="meganav" aria-expanded="false" aria-label="Toggle navigation">
 							<i class="fal fa-bars"></i>
-							<span class="navbar-toggler-text">MENU</span>
+							<span class="navbar-toggler-text"><?= JText::_('TPL_AFFINITY_NAVIGATION') ?></span>
 					  </button>
-
 	          <div class="collapse navbar-collapse" id="meganav">
 	            <jdoc:include type="modules" name="navbar" />
 	          </div>
-
-	        </nav><!-- end .navbar-nav -->
+	        </nav>
 	      </div>
 	    </div>
 			<?php endif; ?>
@@ -133,14 +130,7 @@
 		<?php if($this->countModules('nav-component')) : ?>
 			<div class="nav-component bg-light">
 				<div class="container">
-					<nav class="navbar-expand-lg">
-					  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navComponent" aria-controls="navComponent" aria-expanded="false" aria-label="Toggle navigation">
-							<i class="fal fa-bars"></i>
-					  </button>
-						<div class="collapse navbar-collapse" id="navComponent">
-							<jdoc:include type="modules" name="nav-component" />
-						</div>
-					</nav>
+					<jdoc:include type="modules" name="nav-component" />
 				</div>
 			</div>
 	  <?php endif; ?>

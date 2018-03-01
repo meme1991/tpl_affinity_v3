@@ -22,7 +22,6 @@ $tparams = $this->params;
 			<?php echo JLayoutHelper::render('joomla.content.title.title_page', $this->contact->name); ?>
 		<?php endif; ?>
 		<div class="col-12">
-
 			<div class="row mt-3">
 				<!-- MAPPA -->
 				<?php // se indirizzo e città sono settati ?>
@@ -58,7 +57,7 @@ $tparams = $this->params;
 				<div class="col-12 col-sm-12 col-md-6 col-lg">
 					<?php if ($this->contact->con_position && $tparams->get('show_position')) : ?>
 					<div class="field">
-						<h4 class="fw-600"><i class="fas fa-user-circle"></i> <?php echo JText::_('TPL_AFFINITY_CONTACTPAGE_POSITION'); ?></h4>
+						<h4 class="fw-600"><i class="fas fa-user-circle mr-2"></i><?php echo JText::_('TPL_AFFINITY_CONTACTPAGE_POSITION'); ?></h4>
 						<?php echo $this->contact->con_position; ?>
 					</div>
 					<?php endif; ?>
@@ -76,7 +75,11 @@ $tparams = $this->params;
 					<?php if ($this->contact->misc && $tparams->get('show_misc')) : ?>
 						<div class="field">
 							<h4 class="fw-600"><?php echo JText::_('TPL_AFFINITY_CONTACTPAGE_INFO'); ?></h4>
-							<p><?php echo $this->contact->misc; ?></p>
+							<div class="article-view">
+								<article>
+									<?php echo $this->contact->misc; ?>
+								</article>
+							</div>
 						</div>
 					<?php endif; ?>
 				</div>
@@ -91,5 +94,4 @@ $tparams = $this->params;
 			</div>
 		</div>
 	</div>
-
 </div>

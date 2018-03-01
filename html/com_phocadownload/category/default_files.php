@@ -84,8 +84,7 @@
 						<div class="button-box d-block d-sm-none my-2">
 							<?php echo str_replace('class=""', 'class="btn-block '.$cBtnSuccess.'"', $linkDownloadB) .$linkDownloadE; ?>
 						</div>
-						<small>
-							<!-- <i class="fa fa-clock-o" aria-hidden="true"></i> -->
+						<small class="icon-clock" data-toggle="tooltip" data-placement="top" title="<?php echo JText::_('TPL_AFFINITY_PUBLISH_DATE') ?>">
 							<?php echo JHtml::_('date', $v->publish_up, JText::_('DATE_FORMAT_LC3')) ?>
 						</small>
 					</li>

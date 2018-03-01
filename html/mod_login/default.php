@@ -39,23 +39,16 @@ $bootstrap_size = ($params->get('bootstrap_size') == 0) ? '' : '-'.$params->get(
 			<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
 			<div class="form-group row" id="form-login-remember">
 				<div class="col-12">
-
-          <label for="modlgn-remember"  class="checkbox" aria-invalid="false">
+          <label for="modlgn-remember" class="checkbox" aria-invalid="false">
           	<input type="checkbox" name="remember" value="yes" id="modlgn-remember">
             <?php echo JText::_('MOD_LOGIN_REMEMBER_ME'); ?>
           </label>
-
-					<!-- <label for="modlgn-remember" class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
-				    <input type="checkbox" name="remember" id="modlgn-remember" value="yes" class="custom-control-input">
-				    <span class="custom-control-indicator"></span>
-				    <span class="custom-control-description"><?php echo JText::_('MOD_LOGIN_REMEMBER_ME'); ?></span>
-				  </label> -->
 				</div>
 			</div>
 			<?php endif; ?>
 			<div class="form-group row" id="form-login-submit">
 				<div class="col-12">
-					<button type="submit" name="Submit" tabindex="0" class="btn btn-primary login-button"><i class="far fa-sign-in mr-2"></i><?php echo JText::_('JLOGIN'); ?></button>
+					<button type="submit" name="Submit" tabindex="0" class="btn btn-primary btn-block login-button"><i class="far fa-sign-in mr-2"></i><?php echo JText::_('JLOGIN'); ?></button>
 				</div>
 			</div>
 

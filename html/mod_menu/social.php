@@ -10,7 +10,6 @@
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
-//$bootstrap_size = ($params->get('bootstrap_size') == 0) ? '' : 'col-12 col-sm-12 col-md-6 col-lg-'.$params->get('bootstrap_size');
 ?>
 <div class="social-bar mb-3 <?php echo $class_sfx ?>">
 	<ul class="list-inline mb-0" <?php
@@ -44,11 +43,5 @@ defined('_JEXEC') or die;
 		echo '</li>';
 	}
 	?>
-
-	<?php //$modules = JModuleHelper::getModules('pos-syndicate'); ?>
-	<?php //foreach ($modules AS $module ) : ?>
-		<?php //echo JModuleHelper::renderModule($module); ?>
-	<?php //endforeach; ?>
-
 	</ul>
 </div>

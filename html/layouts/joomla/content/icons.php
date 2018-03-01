@@ -26,7 +26,7 @@ defined('JPATH_BASE') or die;
 		</ul>
 	<?php endif; ?>
 
-		<ul class="list-inline mb-0">
-			<?php echo JLayoutHelper::render('joomla.content.social', $displayData); ?>
-		</ul>
+	<ul class="list-inline mb-0 social-share">
+		<?php echo JLayoutHelper::render('joomla.content.social', $displayData); ?>
+	</ul>
 </div>

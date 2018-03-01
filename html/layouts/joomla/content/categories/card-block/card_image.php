@@ -18,7 +18,7 @@ $alt    = ($item->getParams()->get('image_alt') != '') ? $item->getParams()->get
   <figure class="default">
     <img src="<?php echo $item->getParams()->get('image'); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($alt, ENT_COMPAT, 'UTF-8'); ?>" />
     <figcaption class="d-flex justify-content-center align-items-center">
-      <i class="fa fa-external-link fa-3x" aria-hidden="true"></i>
+      <i class="far fa-external-link fa-3x" aria-hidden="true"></i>
     </figcaption>
     <a href="<?php echo $link ?>" title="<?php echo $item->title ?>"></a>
   </figure>

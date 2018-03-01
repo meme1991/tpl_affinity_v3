@@ -18,7 +18,7 @@ $legacy = $displayData['legacy'];
 		<?php // Checks template image directory for image, if none found default are loaded ?>
 		<?php echo JHtml::_('image', 'system/printButton.png', JText::_('JGLOBAL_PRINT'), null, true); ?>
 	<?php else : ?>
-		<span class="fa-stack fa-lg">
+		<span class="fa-stack fa-sm">
 		  <i class="fas fa-circle fa-stack-2x"></i>
 		  <i class="fal fa-print fa-stack-1x fa-inverse"></i>
 		</span>

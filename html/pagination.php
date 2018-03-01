@@ -152,25 +152,25 @@ function pagination_item_active(&$item)
 	// Check for "Start" item
 	if ($item->text == JText::_('JLIB_HTML_START'))
 	{
-		$display = '<i class="fa fa-angle-double-left" aria-hidden="true"></i>';
+		$display = '<i class="far fa-angle-double-left" aria-hidden="true"></i>';
 	}
 
 	// Check for "Prev" item
 	if ($item->text == JText::_('JPREV'))
 	{
-		$display = '<i class="fa fa-angle-left" aria-hidden="true"></i>';
+		$display = '<i class="far fa-angle-left" aria-hidden="true"></i>';
 	}
 
 	// Check for "Next" item
 	if ($item->text == JText::_('JNEXT'))
 	{
-		$display = '<i class="fa fa-angle-right" aria-hidden="true"></i>';
+		$display = '<i class="far fa-angle-right" aria-hidden="true"></i>';
 	}
 
 	// Check for "End" item
 	if ($item->text == JText::_('JLIB_HTML_END'))
 	{
-		$display = '<i class="fa fa-angle-double-right" aria-hidden="true"></i>';
+		$display = '<i class="far fa-angle-double-right" aria-hidden="true"></i>';
 	}
 
 	// If the display object isn't set already, just render the item with its text
@@ -196,25 +196,25 @@ function pagination_item_inactive(&$item)
 	// Check for "Start" item
 	if ($item->text == JText::_('JLIB_HTML_START'))
 	{
-		return '<li class="page-item disabled"><a class="page-link"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>';
+		return '<li class="page-item disabled"><a class="page-link"><i class="far fa-angle-double-left" aria-hidden="true"></i></a></li>';
 	}
 
 	// Check for "Prev" item
 	if ($item->text == JText::_('JPREV'))
 	{
-		return '<li class="page-item disabled"><a class="page-link"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>';
+		return '<li class="page-item disabled"><a class="page-link"><i class="far fa-angle-left" aria-hidden="true"></i></a></li>';
 	}
 
 	// Check for "Next" item
 	if ($item->text == JText::_('JNEXT'))
 	{
-		return '<li class="page-item disabled"><a class="page-link"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>';
+		return '<li class="page-item disabled"><a class="page-link"><i class="far fa-angle-right" aria-hidden="true"></i></a></li>';
 	}
 
 	// Check for "End" item
 	if ($item->text == JText::_('JLIB_HTML_END'))
 	{
-		return '<li class="page-item disabled"><a class="page-link"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>';
+		return '<li class="page-item disabled"><a class="page-link"><i class="far fa-angle-double-right" aria-hidden="true"></i></a></li>';
 	}
 
 	// Check if the item is the active page

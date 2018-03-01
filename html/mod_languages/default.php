@@ -14,7 +14,7 @@ defined('_JEXEC') or die;
 	<div class="btn-group" role="group" aria-label="Lingue del sito web">
 		<?php foreach ($list as $language) : ?>
 			<?php if ($language->active) : ?>
-		  <button type="button" class="btn btn-secondary btn-sm">
+		  <button type="button" class="btn btn-secondary no-shadow btn-sm">
 				<?php if ($params->get('dropdownimage', 1) AND $language->image) : ?>
 					<?php echo JHtml::_('image', 'mod_languages/' . $language->image . '.gif', $language->title_native, array('title' => $language->title_native), true); ?>
 				<?php endif; ?>
@@ -24,7 +24,7 @@ defined('_JEXEC') or die;
 			<?php endif; ?>
 		<?php endforeach; ?>
 
-    <button id="languageDropdown" type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <button id="languageDropdown" type="button" class="btn btn-secondary no-shadow btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     	<span class="sr-only">Toggle Dropdown</span>
     </button>
 		<div class="dropdown-menu dropdown-menu-right" aria-labelledby="languageDropdown">
