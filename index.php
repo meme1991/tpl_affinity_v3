@@ -10,7 +10,6 @@
 </head>
 <body>
 	<!-- Google Tag Manager -->
-
 	<?php if ($this->countModules('overlay')) : ?>
 		<jdoc:include type="modules" name="overlay" />
 	<?php endif; ?>
@@ -85,6 +84,7 @@
 						</div>
 						<?php endif; ?>
 						<!-- social e search bar -->
+						<?php if ($this->countModules('social') OR $this->countModules('search')) : ?>
 						<div class="col-12 col-sm-12 col-md-6 col-lg-6 d-flex align-self-center align-items-end flex-column">
 							<?php if ($this->countModules('social')) : ?>
 								<div class="social-bar-wrapper">
@@ -97,6 +97,7 @@
 								</div>
 	            <?php endif; ?>
 						</div>
+						<?php endif; ?>
 					</div>
 	      </div>
 	    </div>

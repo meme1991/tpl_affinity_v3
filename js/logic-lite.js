@@ -1,5 +1,31 @@
 jQuery(document).ready(function($) {
 
+  // $('[data-toggle="offcanvas"]').on('click', function () {
+  //   $('.offcanvas-collapse').toggleClass('open')
+  // })
+  //
+  // $('[data-toggle="top-nav"]').on('click', function () {
+  //   $('#top-nav').toggleClass('open')
+  // })
+
+  $('[data-toggle="offcanvas-collapse"]').on('click', function () {
+    $('.offcanvas-collapse').toggleClass('open')
+  })
+
+  $('[data-toggle="offcanvas"]').on('click', function () {
+    // alert('qui');
+    $('.offcanvas-menu').toggleClass('open');
+    $('.site-wrap').toggleClass('slide');
+    $(this).toggleClass('menu-active');
+  })
+
+
+  /************ Non chiudo i dropdown se clicco sul container ***************/
+  $(document).on('click', '.dropdown-menu', function (e) {
+      e.stopPropagation();
+  });
+  /************ Non chiudo i dropdown se clicco sul container ***************/
+
   /************ ELIMINO chronoforms6_credits ***************/
   if($('.chronoforms6_credits').length){
     $('.chronoforms6_credits').remove();
@@ -48,11 +74,11 @@ jQuery(document).ready(function($) {
   /************ END NAVBAR FIXED ALLO SCROLL ************/
 
   // /************ EFFETTO DROPDOWN ************/
-  $('.dropdown').on('show.bs.dropdown', function(e){
+  $('.navbar-nav .dropdown').on('show.bs.dropdown', function(e){
     $(this).find('.dropdown-menu').first().stop(true, true).slideDown(300);
   });
 
-  $('.dropdown').on('hide.bs.dropdown', function(e){
+  $('.navbar-nav .dropdown').on('hide.bs.dropdown', function(e){
     $(this).find('.dropdown-menu').first().stop(true, true).slideUp(200);
   });
   // /************ END EFFETTO DROPDOWN ************/
@@ -69,6 +95,20 @@ jQuery(document).ready(function($) {
   $(document).ready(collapseMegaBlock);
   /************ END COLLAPSE DEI MEGA BLOCK SU SCHERMI MINORI DI 576px ************/
 
+  /************ EASING ************/
+	// jQuery for page scrolling feature - requires jQuery Easing plugin
+	// $(function() {
+	//     $('a.page-scroll').bind('click', function(event) {
+	//         var $anchor = $(this);
+	//         $('html, body').stop().animate({
+	//             // scrollTop: ($($anchor.attr('data-href')).offset().top - 70)
+  //             scrollTop: ($($anchor.attr('href')).offset().top - 120)
+	//         }, 1500, 'easeOutBack');
+	//         event.preventDefault();
+	//     });
+	// });
+	/************ END EASING ************/
+
   /************ NASCONDO LA SEARCH BAR SE SONO SOTTO I 768PX ************/
   function hideSearchBar() {
       if ($(window).width() <= 768) {
@@ -82,11 +122,11 @@ jQuery(document).ready(function($) {
 
   // se clicco nascondo la lente e metto la close
   $('#searchBarCollapse').on('hide.bs.collapse', function () {
-    $('.search-bar-icon > a').html('<i class="fa fa-search" aria-hidden="true"></i>');
+    $('.search-bar-icon > a').html('<i class="far fa-search"></i>');
   })
 
   $('#searchBarCollapse').on('show.bs.collapse', function () {
-    $('.search-bar-icon > a').html('<i class="fa fa-times" aria-hidden="true"></i>');
+    $('.search-bar-icon > a').html('<i class="far fa-times"></i>');
   })
   /************ END NASCONDO LA SEARCH BAR SE SONO SOTTO I 768PX ************/
 
@@ -97,13 +137,14 @@ jQuery(document).ready(function($) {
   //   $('.st-container').toggleClass('st-menu-open');
   // })
 
-  $('body').click(function(){
-    if($(this).hasClass('show-menu')){
-      $('#open-button').addClass('menu-active');
-    } else{
-      $('#open-button').removeClass('menu-active');
-    }
-  })
+
+  // $('body').click(function(){
+  //   if($(this).hasClass('show-menu')){
+  //     $('#open-button').addClass('menu-active');
+  //   } else{
+  //     $('#open-button').removeClass('menu-active');
+  //   }
+  // })
   /************ END SIDE NAV ACTIVE ***************/
 
   /************ SKIP LINK ***************/
@@ -129,3 +170,27 @@ jQuery(document).ready(function($) {
   })
   /************ END SKIP LINK ***************/
 });
+
+
+
+// Add missing Mootools when Bootstrap is loaded
+(function($)
+{
+    $(document).ready(function(){
+        var bootstrapLoaded = (typeof $().carousel == 'function');
+        var mootoolsLoaded = (typeof MooTools != 'undefined');
+        if (bootstrapLoaded && mootoolsLoaded) {
+            Element.implement({
+                hide: function () {
+                    return this;
+                },
+                show: function (v) {
+                    return this;
+                },
+                slide: function (v) {
+                    return this;
+                }
+            });
+        }
+    });
+})(jQuery);

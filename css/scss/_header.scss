@@ -12,30 +12,6 @@ header{
   /*******************************
            NAVBAR BANNER
   *******************************/
-
-  @include media-breakpoint-down(md) {
-  .offcanvas-collapse {
-    position: fixed;
-    top: 48px; /* Height of navbar */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    overflow-y: auto;
-    background-color: $headerTop_bgcolor;
-    transition: -webkit-transform .3s ease-in-out;
-    transition: transform .3s ease-in-out;
-    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
-  }
-  .offcanvas-collapse.open {
-    -webkit-transform: translateX(0);
-    transform: translateX(0); /* Account for horizontal padding on navbar */
-  }
-}
-
   .header-top{
     background-color: $headerTop_bgcolor;
     color: $headerTop_color;
