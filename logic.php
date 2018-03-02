@@ -12,6 +12,13 @@
   define('TPATH', $tpath);
   define('TNAME', $this->template);
 
+  // $app = JFactory::getApplication();
+  // $menu = $app->getMenu();
+  // if ($menu->getActive() == $menu->getDefault()) {
+  //   echo 'This is the front page';
+  // }
+
+
   //var_dump($app);
 
   // template params
