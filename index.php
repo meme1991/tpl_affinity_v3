@@ -3,13 +3,17 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 <head>
-	<!-- Google Tag Manager -->
+	<?php if(isset($_COOKIE['cb-enabled']) AND $_COOKIE['cb-enabled'] == 'accepted') : ?>
+		<!-- Google Tag Manager -->
+	<?php endif; ?>
 	<!-- Google Site Verification -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<jdoc:include type="head" />
 </head>
 <body>
-	<!-- Google Tag Manager -->
+	<?php if(isset($_COOKIE['cb-enabled']) AND $_COOKIE['cb-enabled'] == 'accepted') : ?>
+		<!-- Google Tag Manager -->
+	<?php endif; ?>
 	<?php if ($this->countModules('overlay')) : ?>
 		<jdoc:include type="modules" name="overlay" />
 	<?php endif; ?>
