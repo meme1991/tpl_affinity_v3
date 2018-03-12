@@ -291,7 +291,25 @@ table{
 }
 
 /*****************************
-MOUDLE TABLE DEFAULT
+      FINESTRE MODALI
+*****************************/
+.modal-header{
+  background-color: $primary;
+  h5.modal-title{
+    color: $white;
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .close{
+    color: $white;
+    border-left: 1px rgba($white, .5) solid;
+    opacity: 1;
+    line-height: normal;
+  }
+}
+
+/*****************************
+    MOUDLE TABLE DEFAULT
 *****************************/
 .moduletable{
   h3{
