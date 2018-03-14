@@ -36,7 +36,10 @@ for ($i = 1; $i < 6; $i++)
 	<span class="content_vote">
 		<!-- <label class="unseen element-invisible" for="content_vote_<?php echo (int) $row->id; ?>"><?php echo JText::_('PLG_VOTE_LABEL'); ?></label> -->
 		<?php echo JHtml::_('select.genericlist', $options, 'user_rating', 'class="form-control"', 'value', 'text', '5', 'content_vote_' . (int) $row->id); ?>
-		<input class="btn btn-primary" type="submit" name="submit_vote" value="<?php echo JText::_('PLG_VOTE_RATE'); ?>" />
+		<!-- <input class="btn btn-primary" type="submit" name="submit_vote" value="<?php echo JText::_('PLG_VOTE_RATE'); ?>" /> -->
+		<button type="submit" class="btn btn-primary" name="submit_vote">
+			ciao
+		</button>
 		<input type="hidden" name="task" value="article.vote" />
 		<input type="hidden" name="hitcount" value="0" />
 		<input type="hidden" name="url" value="<?php echo htmlspecialchars($uri->toString(), ENT_COMPAT, 'UTF-8'); ?>" />
