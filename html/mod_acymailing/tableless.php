@@ -7,7 +7,7 @@
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 defined('_JEXEC') or die('Restricted access');
-
+//http://templates.cakemail.com/
 // $doc = JFactory::getDocument();
 // unset($doc->_styleSheets[JURI::root(true).'/media/com_acymailing/css/module_default.css?v=1501405411']);
 ?>
