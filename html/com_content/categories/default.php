@@ -40,7 +40,11 @@ JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
 	<div class="container">
 		<?php echo JLayoutHelper::render('joomla.content.categories_default', $this); ?>
 		<div class="row grid mt-3">
-			<?php echo $this->loadTemplate('items'); ?>
+			<?php if($this->params->get('layout') == 2) : ?>
+				<?php echo $this->loadTemplate('list'); ?>
+			<?php else: ?>
+				<?php echo $this->loadTemplate('items'); ?>
+			<?php endif; ?>
 		</div>
 	</div>
 </section>
