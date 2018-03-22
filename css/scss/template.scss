@@ -78,8 +78,12 @@
 @import "megamenu.scss";
 @import "offcanvas.scss";
 @import "entrypoint.scss";
-@import "chronoforms.scss";
 @import "mod_acymailing.scss";
+
+//extension
+@import "chronoforms.scss";
+@import "breezingforms.scss";
+
 
 //plugin
 @import "plg_featuredcontent.scss";

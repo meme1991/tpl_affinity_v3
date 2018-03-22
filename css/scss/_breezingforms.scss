@@ -1,0 +1,199 @@
+// main: template.scss
+// @Author: SPEDI srl
+// @Date:   22-03-2018
+// @Email:  sviluppo@spedi.it
+// @Last modified by:   SPEDI srl
+// @Last modified time: 22-03-2018
+// @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
+// @Copyright: Copyright (c) SPEDI srl
+
+.bfElementGroup input[type='radio']{
+    vertical-align: top;
+}
+.bfElementGroupNoWrap input[type='radio']{
+    vertical-align: top;
+}
+.bfElementGroup input[type='checkbox']{
+    vertical-align: top;
+}
+.bfElementGroupNoWrap input[type='checkbox']{
+    vertical-align: top;
+}
+/* ##### General BreezingForms styles ##### */
+
+.bfQuickMode {
+
+}
+
+.bfQuickMode fieldset {
+
+}
+
+.bfQuickMode legend {
+
+}
+
+.bfQuickMode p.bfElemWrap {
+
+}
+
+.bfQuickMode span.bfElemWrap {
+
+}
+
+.bfElemWrap{
+  &:hover{
+    background: transparent !important;
+  }
+}
+section.bfElemWrap, .bfElementGroupNoWrap{
+  @extend .d-flex;
+  @extend .align-items-center;
+}
+section.bfElemWrap{
+  @extend .form-row;
+  label{
+    margin: 9px 10px 9px 0 !important;
+  }
+}
+.bfQuickMode section.bfLabelLeft label{
+  width: auto !important;
+  float: none !important;
+}
+.bfQuickMode section.bfLabelLeft input[type='text'],
+.bfQuickMode section.bfLabelLeft select,
+.bfQuickMode section.bfLabelLeft .bfElementGroupNoWrap{
+  float: none !important;
+  // margin: 0px;
+  width: 100% !important;
+}
+
+// sezioni griglia
+div.bfNoSection{
+  > div:first-child{
+    @extend .form-row;
+  }
+  span.bfElemWrap{
+    margin: 0;
+    @extend .col;
+    > label{
+      width: 100%;
+      float: none;
+      margin: 0;
+    }
+    > input[type=text], select{
+      width: 100%;
+    }
+  }
+}
+
+/* ##### inline ##### */
+
+.bfQuickMode fieldset fieldset legend {
+
+}
+
+.bfQuickMode fieldset.bfInline {
+
+}
+
+.bfQuickMode fieldset.bfInline p {
+
+}
+
+/* ##### Input Fields ##### */
+
+.bfQuickMode input[type=text], .bfQuickMode input[type=password], .bfQuickMode textarea, .bfQuickMode select {
+
+}
+
+.bfQuickMode textarea:hover, .bfQuickMode input[type='text']:hover, .bfQuickMode input[type='password']:hover, .bfQuickMode select:hover {
+
+}
+
+.bfQuickMode textarea:focus, .bfQuickMode input[type='text']:focus, .bfQuickMode input[type='password']:focus, .bfQuickMode select:focus {
+
+}
+
+.bfQuickMode input[type='button'], .bfQuickMode input[type='submit'], .bfQuickMode input[type='checkbox'], .bfQuickMode input[type='image'], .bfQuickMode input[type='radio'], .bfQuickMode input[type='reset'], .bfQuickMode select, .bfQuickMode button {
+
+}
+
+.bfQuickMode input[type='hidden'] { display: none; }
+
+/* ##### page intro ##### */
+
+.bfQuickMode .bfPageIntro {
+
+}
+
+/* ##### error messages #####*/
+
+.bfQuickMode .bfErrorMessage {
+
+}
+
+/* ##### max length message ##### */
+
+.bfMaxLengthCounter {
+    color: #666;
+}
+
+/* ##### tooltip ##### */
+
+.bfQuickMode span.hasTip {
+    background: transparent url('img/icon_info.png') right top no-repeat;
+}
+
+/* ##### Section Description #####*/
+
+.bfQuickMode .bfSectionDescription {
+
+}
+
+.bfQuickMode .bfSectionDescription p {
+
+}
+
+/* ##### required ##### */
+
+.bfQuickMode .bfRequired {
+
+}
+
+/* ##### buttons ##### */
+
+.bfQuickMode input[type='submit'], .bfQuickMode input[type='reset']  {
+
+}
+
+.bfQuickMode .bfNextButton, .bfQuickMode .bfSubmitButton, .bfQuickMode .bfCancelButton {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+.bfQuickMode .bfPrevButton {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+.bfQuickMode input.bfCalendar {
+
+}
+
+// .bfNoSection > .bfClearfix{
+//   @extend .form-row;
+//   .bfElemWrap{
+//     @extend .col;
+//     margin: 0 !important;
+//   }
+// }
+// .bfClearfix{
+//   width: 100%;
+// }
+
+.mod_breezingforms{
+  label{
+    font-size: 18px;
+  }
+}
