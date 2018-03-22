@@ -10,7 +10,7 @@
 defined('JPATH_BASE') or die;
 
 ?>
-<article class="card list-default p-3" itemscope="" itemtype="http://schema.org/Article">
+<article class="col-12 card list-default p-3" itemscope="" itemtype="http://schema.org/Article">
   <?php echo JLayoutHelper::render('joomla.content.card.list-default.list_header', $displayData); ?>
   <div class="list-body">
     <?php echo JLayoutHelper::render('joomla.content.card.list-default.list_image', $displayData); ?>
