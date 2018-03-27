@@ -8,6 +8,7 @@
  */
 
  // da rinominare in tableless.php
+ // popup layout
 
 defined('_JEXEC') or die('Restricted access');
 $app 			= JFactory::getApplication();
@@ -48,7 +49,7 @@ if(!isset($_COOKIE['newsletter_popup'])){
 					<?php if(!empty($introText)) : ?>
 						<div class="newsletter_introtext mb-2"><?= $introText ?></div>
 					<?php endif; ?>
-					<form id="<?php echo $formName; ?>" class="newsletter_popup" novalidate action="<?php echo acymailing_route('index.php'); ?>" onsubmit="return submitacymailingform('optin','<?php echo $formName;?>')" method="post" name="<?php echo $formName ?>" <?php if(!empty($fieldsClass->formoption)) echo $fieldsClass->formoption; ?> >
+					<form id="<?php echo $formName; ?>" class="custom-form" novalidate action="<?php echo acymailing_route('index.php'); ?>" onsubmit="return submitacymailingform('optin','<?php echo $formName;?>')" method="post" name="<?php echo $formName ?>" <?php if(!empty($fieldsClass->formoption)) echo $fieldsClass->formoption; ?> >
 
 						<div class="form-row">
 							<div class="col-12 col-sm-8">

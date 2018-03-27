@@ -41,7 +41,7 @@ $bootstrap_size = ($params->get('bootstrap_size') == 0) ? '' : '-'.$params->get(
       </div>
       <div class="modal-body">
 
-        <form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form">
+        <form action="<?php echo JRoute::_('index.php', true, $params->get('usesecure')); ?>" method="post" id="login-form" class="custom-form">
     			<div class="form-group row" id="form-login-username">
     			  <label for="modlgn-username" class="col-2 col-form-label sr-only"><?php echo JText::_('MOD_LOGIN_VALUE_USERNAME'); ?></label>
     			  <div class="col-12">

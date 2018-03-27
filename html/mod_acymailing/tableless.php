@@ -10,6 +10,7 @@ defined('_JEXEC') or die('Restricted access');
 //http://templates.cakemail.com/
 // $doc = JFactory::getDocument();
 // unset($doc->_styleSheets[JURI::root(true).'/media/com_acymailing/css/module_default.css?v=1501405411']);
+// footer layout
 ?>
 <div class="newsletter_footer mt-3">
 
@@ -17,7 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 		<?php if(!empty($introText)) : ?>
 			<div class="newsletter_introtext mb-2"><?= $introText ?></div>
 		<?php endif; ?>
-		<form id="<?php echo $formName; ?>" class="newsletter_popup" novalidate action="<?php echo acymailing_route('index.php'); ?>" onsubmit="return submitacymailingform('optin','<?php echo $formName;?>')" method="post" name="<?php echo $formName ?>" <?php if(!empty($fieldsClass->formoption)) echo $fieldsClass->formoption; ?> >
+		<form id="<?php echo $formName; ?>" class="custom-form" novalidate action="<?php echo acymailing_route('index.php'); ?>" onsubmit="return submitacymailingform('optin','<?php echo $formName;?>')" method="post" name="<?php echo $formName ?>" <?php if(!empty($fieldsClass->formoption)) echo $fieldsClass->formoption; ?> >
 
 			<div class="form-row">
 				<div class="col-12 col-sm-10">

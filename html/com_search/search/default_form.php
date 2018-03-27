@@ -17,7 +17,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 
 <div class="row mt-3">
 	<div class="col-12">
-		<form id="searchForm" action="<?php echo JRoute::_('index.php?option=com_search'); ?>" method="post">
+		<form id="searchForm" action="<?php echo JRoute::_('index.php?option=com_search'); ?>" method="post" class="custom-form">
 			<div class="toolbar">
 				<div class="form-group row">
 					<div class="col-12 col-sm-12 col-md-8 col-lg-10">
@@ -52,7 +52,7 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 								<div class="phrases-box">
 									<?php echo $this->lists['searchphrase']; ?>
 								</div>
-								<div class="ordering-box">
+								<div class="ordering-box mt-3">
 									<label for="ordering" class="ordering">
 										<?php echo JText::_('COM_SEARCH_ORDERING'); ?>
 									</label>
@@ -82,10 +82,8 @@ $upper_limit = $lang->getUpperLimitSearchWord();
 				</div>
 			</div>
 
-
-
 			<?php if ($this->total > 0) : ?>
-				<div class="form-limit">
+				<div class="form-limit mt-3">
 					<label for="limit"><?php echo JText::_('JGLOBAL_DISPLAY_NUM'); ?></label>
 					<?php echo $this->pagination->getLimitBox(); ?>
 				</div>

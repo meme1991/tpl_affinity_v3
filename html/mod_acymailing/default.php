@@ -7,6 +7,7 @@
  * @license	GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */
 defined('_JEXEC') or die('Restricted access');
+// default layout
 
 $doc = JFactory::getDocument();
 unset($doc->_styleSheets[JURI::root(true).'/media/com_acymailing/css/module_default.css?v=1501405411']);
@@ -24,7 +25,7 @@ unset($doc->_styleSheets[JURI::root(true).'/media/com_acymailing/css/module_defa
 				<?php if(!empty($introText)) : ?>
 					<div class="newsletter_introtext mb-2"><?= $introText ?></div>
 				<?php endif; ?>
-				<form id="<?php echo $formName; ?>" class="newsletter_popup" novalidate action="<?php echo acymailing_route('index.php'); ?>" onsubmit="return submitacymailingform('optin','<?php echo $formName;?>')" method="post" name="<?php echo $formName ?>" <?php if(!empty($fieldsClass->formoption)) echo $fieldsClass->formoption; ?> >
+				<form id="<?php echo $formName; ?>" class="custom-form" novalidate action="<?php echo acymailing_route('index.php'); ?>" onsubmit="return submitacymailingform('optin','<?php echo $formName;?>')" method="post" name="<?php echo $formName ?>" <?php if(!empty($fieldsClass->formoption)) echo $fieldsClass->formoption; ?> >
 
 					<div class="form-row">
 						<?php foreach($fieldsToDisplay as $oneField) : ?>
