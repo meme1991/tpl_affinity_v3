@@ -34,7 +34,7 @@ $this->form->setFieldAttribute('contact_message', 'hint', 'Inserisci il tuo mess
 		<h4><?php echo JText::_('TPL_AFFINITY_FORM_CONTACT_LABEL') ?></h4>
 	</div>
 	<div class="contact-form">
-		<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate form-horizontal well">
+		<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate form-horizontal well custom-form">
 			<?php foreach ($this->form->getFieldsets() as $fieldset) : ?>
 				<?php if ($fieldset->name === 'captcha' && !$this->captchaEnabled) : ?>
 					<?php continue; ?>

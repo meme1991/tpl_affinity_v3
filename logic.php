@@ -53,6 +53,10 @@
   unset($doc->_styleSheets[JURI::root(true).'/media/com_phocadownload/css/main/rating.css']);
   unset($doc->_styleSheets[JURI::root(true).'/media/com_phocadownload/css/custom/default.css']);
 
+  unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/component_default.css?v=1521647708']);
+  // http://localhost/comuni_alt//media/com_acymailing/css/component_default.css?v=1521647708
+
+
   $doc->addScript($tpath.'/js/bootstrapv4/popper.min.js?v=1.0.0', 'text/javascript', true, false);
   $doc->addScript($tpath.'/js/bootstrapv4/bootstrap.min.js?v=1.0.0', 'text/javascript', true, false);
   //$doc->addScript($tpath.'/dist/easing-page/jquery.easing.min.js', 'text/javascript');

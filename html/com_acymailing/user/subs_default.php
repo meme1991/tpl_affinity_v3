@@ -14,14 +14,11 @@ defined('_JEXEC') or die('Restricted access');
     <?php if(empty($row->published) OR !$row->visible) continue; ?>
     <?php $listClass = 'acy_list_status_' . str_replace('-','m',(int) @$row->status); ?>
     <div class="row">
-      <div class="col-6 col-sm-4">
+      <div class="col-12 col-sm-6 text-left text-sm-right">
         <span><?php echo $this->status->display("data[listsub][".$row->listid."][status]",@$row->status); ?></span>
       </div>
-      <div class="col-6 col-sm-4 d-flex align-items-center">
+      <div class="col-12 col-sm-6 text-left text-sm-left">
         <?php echo $row->name ?>
-      </div>
-      <div class="col-6 col-sm-4 d-flex align-items-center hidden-xs-down">
-        <small><?php echo $row->description ?></small>
       </div>
     </div>
     <?php $k = 1 - $k; ?>

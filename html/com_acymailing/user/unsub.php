@@ -11,16 +11,14 @@ defined('_JEXEC') or die('Restricted access');
 
 
 <section class="wrapper unsubscriptionNewsletter">
+	<form action="<?php echo JRoute::_('index.php'); ?>" method="post" name="adminForm" id="adminForm" class="custom-form">
 	<div class="container">
 		<div class="row" id="unsubpage">
-			<div class="col-12">
-				<div class="page-heading">
-					<h2>Cancellati dalla newsletter</h2>
-				</div>
+			<?php echo JLayoutHelper::render('joomla.content.title.title_section', 'Cancellati dalla newsletter'); ?>
+			<div class="col-12 my-3">
+				<?php echo $this->intro; ?>
 			</div>
-			<div class="col-12 col-sm-6 col-md-6">
-			<?php echo $this->intro; ?>
-			<form action="<?php echo JRoute::_('index.php'); ?>" method="post" name="adminForm" id="adminForm">
+			<div class="col-12 col-sm-6 col-md-6 custom-form bg-light py-4">
 				<?php if($this->config->get('unsub_dispoptions', 1)){ ?>
 					<div class="unsuboptions">
 						<?php if(!empty($this->mailid)){ ?>
@@ -52,7 +50,7 @@ defined('_JEXEC') or die('Restricted access');
 						<?php } ?>
 					</div>
 				</div>
-				<div class="col-12 col-sm-6 col-md-6">
+				<div class="col-12 col-sm-6 col-md-6 custom-form bg-light py-4">
 				<?php }else{
 					echo '<input type="hidden" value="1" name="unsuball" />';
 				}
@@ -72,23 +70,25 @@ defined('_JEXEC') or die('Restricted access');
 						} ?>
 						<div id="otherreasons">
 							<label for="other"><?php echo JText::_('UNSUB_SURVEY_OTHER'); ?></label><br/>
-							<textarea name="survey[]" id="other" style="width:300px;height:70px"></textarea>
+							<textarea name="survey[]" id="other" style="width:100%;height:70px"></textarea>
 						</div>
 					</div>
 				</div>
 				<?php } ?>
-				<input type="hidden" name="option" value="<?php echo ACYMAILING_COMPONENT; ?>"/>
-				<input type="hidden" name="task" value="saveunsub"/>
-				<input type="hidden" name="ctrl" value="user"/>
-				<input type="hidden" name="subid" value="<?php echo $this->subscriber->subid; ?>"/>
-				<input type="hidden" name="key" value="<?php echo $this->subscriber->key; ?>"/>
-				<input type="hidden" name="mailid" value="<?php echo $this->mailid; ?>"/>
-				<input type="hidden" name="Itemid" value="<?php echo JRequest::getInt('Itemid'); ?>"/>
-				<?php if(JRequest::getCmd('tmpl') == 'component'){ ?><input type="hidden" name="tmpl" value="component"/><?php } ?>
-				<div id="unsubbutton_div" class="unsubdiv col-12 col-sm-12 col-md-12 text-center">
-					<input class="button btn btn-up btn-primary btn-alt btn-lg" type="submit" value="<?php echo JText::_('UNSUBSCRIBE', true) ?>"/>
+				<div class="col-12 bg-light pb-3">
+					<input type="hidden" name="option" value="<?php echo ACYMAILING_COMPONENT; ?>"/>
+					<input type="hidden" name="task" value="saveunsub"/>
+					<input type="hidden" name="ctrl" value="user"/>
+					<input type="hidden" name="subid" value="<?php echo $this->subscriber->subid; ?>"/>
+					<input type="hidden" name="key" value="<?php echo $this->subscriber->key; ?>"/>
+					<input type="hidden" name="mailid" value="<?php echo $this->mailid; ?>"/>
+					<input type="hidden" name="Itemid" value="<?php echo JRequest::getInt('Itemid'); ?>"/>
+					<?php if(JRequest::getCmd('tmpl') == 'component'){ ?><input type="hidden" name="tmpl" value="component"/><?php } ?>
+					<div id="unsubbutton_div" class="unsubdiv col-12 col-sm-12 col-md-12 text-center">
+						<input class="btn btn-primary" type="submit" value="<?php echo JText::_('UNSUBSCRIBE', true) ?>"/>
+					</div>
 				</div>
-			</form>
 		</div>
 	</div>
+</form>
 </section>

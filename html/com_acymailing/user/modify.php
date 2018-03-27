@@ -13,16 +13,14 @@ defined('_JEXEC') or die('Restricted access');
 <section class="wrapper">
 	<div class="container newsletterWrapper">
 		<div class="row justify-content-center">
-			<div id="acymodifyform" class="col-12 col-sm-10 col-md-8">
-				<?php if($this->values->show_page_heading) : ?>
-				<h1 class="page-heading <?php echo $this->values->suffix; ?>">
-					<?php echo $this->values->page_heading; ?>
-				</h1>
-				<?php endif; ?>
+			<?php if($this->values->show_page_heading) : ?>
+				<?php echo JLayoutHelper::render('joomla.content.title.title_section', $this->values->page_heading); ?>
+			<?php endif; ?>
+			<div id="acymodifyform" class="col-12 col-sm-10 col-md-8 col-lg-6">
 				<?php if(!empty($this->introtext)){ echo '<span class="acymailing_introtext">'.$this->introtext.'</span>'; } ?>
-				<form action="<?php echo JRoute::_( 'index.php' );?>" method="post" name="adminForm" id="adminForm" <?php if(!empty($this->fieldsClass->formoption)) echo $this->fieldsClass->formoption; ?> >
-					<fieldset class="adminform acy_user_info">
-						<legend><span><?php echo JText::_( 'USER_INFORMATIONS' ); ?></span></legend>
+				<form action="<?php echo JRoute::_( 'index.php' );?>" method="post" class="custom-form" name="adminForm" id="adminForm" <?php if(!empty($this->fieldsClass->formoption)) echo $this->fieldsClass->formoption; ?> >
+					<fieldset class="adminform acy_user_info custom-form">
+						<legend class="bg-light px-3"><span><?php echo JText::_( 'USER_INFORMATIONS' ); ?></span></legend>
 						<div id="acyuserinfo">
 						<?php if(acymailing_level(3)){
 							if(!empty($this->subscriber->email)) $this->fieldsClass->currentUser = $this->subscriber;
@@ -65,9 +63,9 @@ defined('_JEXEC') or die('Restricted access');
 							}
 						}else{
 							if(!empty($this->fieldsToDisplay) && (strpos($this->fieldsToDisplay, 'name') !== false || strpos($this->fieldsToDisplay, 'default') !== false || strpos($this->fieldsToDisplay, 'all') !== false)){ ?>
-								<div id="trname" class="form-group row">
-								  <label for="field_name" class="col-2 col-form-label pt-0"><?php echo JText::_( 'JOOMEXT_NAME' ); ?></label>
-								  <div class="col-10">
+								<div id="trname" class="form-row mt-3">
+								  <label for="field_name" class="col-12"><?php echo JText::_( 'JOOMEXT_NAME' ); ?></label>
+								  <div class="col-12">
 										<?php if(empty($this->subscriber->userid)) : ?>
 									    <input class="form-control" name="data[subscriber][name]" type="text" value="<?php echo $this->escape(@$this->subscriber->name) ?>" id="field_name">
 										<?php else: ?>
@@ -77,9 +75,9 @@ defined('_JEXEC') or die('Restricted access');
 								</div>
 							<?php }
 							if(!empty($this->fieldsToDisplay) && (strpos($this->fieldsToDisplay, 'email') !== false || strpos($this->fieldsToDisplay, 'default') !== false || strpos($this->fieldsToDisplay, 'all') !== false)){ ?>
-								<div id="tremail" class="form-group row">
-								  <label for="field_email" class="col-2 col-form-label pt-0"><?php echo JText::_( 'JOOMEXT_EMAIL' ); ?></label>
-								  <div class="col-10">
+								<div id="tremail" class="form-row mt-3">
+								  <label for="field_email" class="col-12"><?php echo JText::_( 'JOOMEXT_EMAIL' ); ?></label>
+								  <div class="col-12">
 										<?php if(empty($this->subscriber->userid)) : ?>
 								    <input class="form-control" name="data[subscriber][email]" type="text" value="<?php echo $this->escape(@$this->subscriber->email) ?>" id="field_email">
 										<?php else : ?>
@@ -89,7 +87,7 @@ defined('_JEXEC') or die('Restricted access');
 								</div>
 							<?php }
 							if(!empty($this->fieldsToDisplay) && (strpos($this->fieldsToDisplay, 'html') !== false || strpos($this->fieldsToDisplay, 'default') !== false || strpos($this->fieldsToDisplay, 'all') !== false)){ ?>
-								<div id="trhtml" class="acy_onefield">
+								<div id="trhtml" class="acy_onefield mt-3">
 									<div class="acykey">
 										<label for="field_email"><?php echo JText::_( 'RECEIVE' ); ?></label>
 									</div>
@@ -103,8 +101,8 @@ defined('_JEXEC') or die('Restricted access');
 						</div>
 					</fieldset>
 					<?php if($this->displayLists) : ?>
-					<fieldset class="adminform acy_subscription_list">
-						<legend><span><?php echo JText::_( 'SUBSCRIPTION' ); ?></span></legend>
+					<fieldset class="adminform acy_subscription_list custom-form mt-5">
+						<legend class="bg-light px-3 mb-4"><span><?php echo JText::_( 'SUBSCRIPTION' ); ?></span></legend>
 						<?php if(empty($this->dropdown)) include('subs_default.php'); else include('subs_dropdown.php'); ?>
 					</fieldset>
 					<?php endif; ?>
