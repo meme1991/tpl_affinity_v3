@@ -8,8 +8,9 @@
  */
 defined('_JEXEC') or die('Restricted access');
 //http://templates.cakemail.com/
-// $doc = JFactory::getDocument();
-// unset($doc->_styleSheets[JURI::root(true).'/media/com_acymailing/css/module_default.css?v=1501405411']);
+$doc = JFactory::getDocument();
+unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/module_default.css?v=1520845897']);
+unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/acypopup.css?v=1520845897']);
 // footer layout
 ?>
 <div class="newsletter_footer mt-3">

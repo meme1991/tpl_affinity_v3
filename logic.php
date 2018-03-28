@@ -62,7 +62,7 @@
   //$doc->addScript($tpath.'/dist/easing-page/jquery.easing.min.js', 'text/javascript');
   $doc->addScript($tpath.'/dist/modernizr/modernizr-objectfit.js', 'text/javascript', true, false);
   // $doc->addScript($tpath.'/dist/font5/js/fontawesome-all.min.js');
-  $doc->addScript($tpath.'/js/logic.js?ver=5.0.0', 'text/javascript', true, false);
+  $doc->addScript($tpath.'/js/logic.js?ver=1.0.0', 'text/javascript', true, false);
 
   $doc->addStyleSheet($tpath.'/dist/font5/css/fontawesome-all.min.css');
   //$doc->addStyleSheet($tpath.'/dist/animation/animate.min.css');

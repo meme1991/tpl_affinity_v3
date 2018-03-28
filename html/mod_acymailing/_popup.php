@@ -11,19 +11,21 @@
  // popup layout
 
 defined('_JEXEC') or die('Restricted access');
-$app 			= JFactory::getApplication();
-$tmpl 		= $app->getTemplate();
-$document = JFactory::getDocument();
+$app  = JFactory::getApplication();
+$tmpl = $app->getTemplate();
+$doc  = JFactory::getDocument();
+unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/module_default.css?v=1520845897']);
+unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/acypopup.css?v=1520845897']);
 
 // se il cookie non esiste mostro la modale
 if(!isset($_COOKIE['newsletter_popup'])){
-	$document->addScript(JUri::base(true).'/templates/'.$tmpl.'/html/'.$module->module.'/dist/func.js', 'text/javascript', true, false);
-	$document->addScriptDeclaration("
+	$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/html/'.$module->module.'/dist/func.js', 'text/javascript', true, false);
+	$doc->addScriptDeclaration("
 		jQuery(document).ready(function($){
 			$('#newsletter_popup').modal('toggle');
 		})
 	");
-	$document->addScriptDeclaration("
+	$doc->addScriptDeclaration("
 		jQuery(document).ready(function($){
 			$('.dismiss, .subbutton').click(function(){
 				scriviCookie('newsletter_popup','denied',43200);
