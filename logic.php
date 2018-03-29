@@ -18,7 +18,6 @@
   //   echo 'This is the front page';
   // }
 
-
   //var_dump($app);
 
   // template params
