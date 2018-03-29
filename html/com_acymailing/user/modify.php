@@ -67,7 +67,7 @@ defined('_JEXEC') or die('Restricted access');
 								  <label for="field_name" class="col-12"><?php echo JText::_( 'JOOMEXT_NAME' ); ?></label>
 								  <div class="col-12">
 										<?php if(empty($this->subscriber->userid)) : ?>
-									    <input class="form-control" name="data[subscriber][name]" type="text" value="<?php echo $this->escape(@$this->subscriber->name) ?>" id="field_name">
+									    <input class="form-control" placeholder="Inserisci il tuo nome" name="data[subscriber][name]" type="text" value="<?php echo $this->escape(@$this->subscriber->name) ?>" id="field_name">
 										<?php else: ?>
 											<?php echo $this->subscriber->name; ?>
 										<?php endif; ?>
@@ -79,7 +79,7 @@ defined('_JEXEC') or die('Restricted access');
 								  <label for="field_email" class="col-12"><?php echo JText::_( 'JOOMEXT_EMAIL' ); ?></label>
 								  <div class="col-12">
 										<?php if(empty($this->subscriber->userid)) : ?>
-								    <input class="form-control" name="data[subscriber][email]" type="text" value="<?php echo $this->escape(@$this->subscriber->email) ?>" id="field_email">
+								    <input class="form-control" placeholder="Inserisci la tua email" name="data[subscriber][email]" type="text" value="<?php echo $this->escape(@$this->subscriber->email) ?>" id="field_email">
 										<?php else : ?>
 											<?php echo $this->subscriber->email; ?>
 										<?php endif; ?>
