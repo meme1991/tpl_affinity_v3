@@ -197,7 +197,7 @@
 				</div>
 
 				<?php $footer_bottom = JModuleHelper::getModules('footer-bottom'); ?>
-				<?php $attribs['style'] = 'utility'; ?>
+				<?php $attribs['style'] = 'footer'; ?>
 				<?php if ($footer_bottom) : ?>
 				<div class="row footer-bottom">
 					<?php foreach ($footer_bottom AS $module ) : ?>
@@ -212,7 +212,7 @@
 					<div class="row">
 						<?php $footer_links = JModuleHelper::getModules('footer-links'); ?>
 						<?php if ($footer_links) : ?>
-							<div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-start">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-8 d-flex justify-content-start">
 								<?php foreach ($footer_links AS $module ) : ?>
 									<?php echo JModuleHelper::renderModule($module); ?>
 								<?php endforeach; ?>
