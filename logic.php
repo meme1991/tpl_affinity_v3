@@ -66,4 +66,4 @@
   $doc->addStyleSheet($tpath.'/dist/font5/css/fontawesome-all.min.css');
   //$doc->addStyleSheet($tpath.'/dist/animation/animate.min.css');
   if($aos) $doc->addStyleSheet($tpath.'/dist/aos/aos.css');
-  $doc->addStyleSheet($tpath.'/css/template.min.css?ver=1.0.0');
+  $doc->addStyleSheet($tpath.'/css/template.min.css?ver=2.0.0');
