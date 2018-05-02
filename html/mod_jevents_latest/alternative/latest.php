@@ -13,7 +13,7 @@ defined('_JEXEC') or die();
  */
 include_once(JPATH_SITE."/modules/mod_jevents_latest/tmpl/default/latest.php");
 
-class OverrideFlatModLatestView extends DefaultModLatestView
+class OverrideAlternativeModLatestView extends DefaultModLatestView
 {
 
 	function displayLatestEvents(){
@@ -26,11 +26,11 @@ class OverrideFlatModLatestView extends DefaultModLatestView
 
 		$this->getLatestEventsData();
 
-		$content = "<div class='container'>";
+		$content = "<div class='mod_jevents_latest aside-block'>";
 
 		if(isset($this->eventsByRelDay) && count($this->eventsByRelDay)){
 
-			$content .= $this->modparams->get("modlatest_templatetop") || $this->modparams->get("modlatest_templatebottom") ? $this->modparams->get("modlatest_templatetop") : '<table class="mod_events_latest_table" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">';
+			$content .= $this->modparams->get("modlatest_templatetop") || $this->modparams->get("modlatest_templatebottom") ? $this->modparams->get("modlatest_templatetop") : '<ul class="list-group list-striped list-hover">';
 
 			// Now to display these events, we just start at the smallest index of the $this->eventsByRelDay array
 			// and work our way up.
@@ -89,9 +89,9 @@ class OverrideFlatModLatestView extends DefaultModLatestView
 						} // end of foreach
 					} // end of foreach
 
-					$dst = "border-left: 10px ".$dayEvent->bgcolor()." solid;";
-					if($firstTime) $eventrow = '<tr><td class="mod_events_latest_first" style="'.$dst.'">%s'."</td></tr>\n";
-					else $eventrow = '<tr><td class="mod_events_latest" style="'.$dst.'">%s'."</td></tr>\n";
+					$dst = "border-left: 5px ".$dayEvent->bgcolor()." solid;";
+					if($firstTime) $eventrow = '<li class="list-group-item mod_events_latest_first mb-1 px-3" style="'.$dst.'">%s'."</li>\n";
+					else $eventrow = '<li class="list-group-item mod_events_latest mb-1 px-3" style="'.$dst.'">%s'."</li>\n";
 
 					$templaterow = $this->modparams->get("modlatest_templaterow") ? $this->modparams->get("modlatest_templaterow")  : $eventrow;
 					$content .= str_replace("%s", $eventcontent , $templaterow);
@@ -99,13 +99,13 @@ class OverrideFlatModLatestView extends DefaultModLatestView
 					$firstTime=false;
 				} // end of foreach
 			} // end of foreach
-			$content .=$this->modparams->get("modlatest_templatebottom") || $this->modparams->get("modlatest_templatetop") ? $this->modparams->get("modlatest_templatebottom") : "</table>\n";
+			$content .=$this->modparams->get("modlatest_templatebottom") || $this->modparams->get("modlatest_templatetop") ? $this->modparams->get("modlatest_templatebottom") : "</ul>\n";
 		}
 		else if ($this->modparams->get("modlatest_NoEvents", 1)){
-			$content .= $this->modparams->get("modlatest_templatetop") ? $this->modparams->get("modlatest_templatetop") : '<table class="mod_events_latest_table jevbootstrap" width="100%" border="0" cellspacing="0" cellpadding="0" align="center">';
-			$templaterow = $this->modparams->get("modlatest_templaterow") ? $this->modparams->get("modlatest_templaterow")  : '<tr><td class="mod_events_latest_noevents">%s</td></tr>' . "\n";
+			$content .= $this->modparams->get("modlatest_templatetop") ? $this->modparams->get("modlatest_templatetop") : '<div class="col-12">';
+			$templaterow = $this->modparams->get("modlatest_templaterow") ? $this->modparams->get("modlatest_templaterow")  : '%s' . "\n";
 			$content .= str_replace("%s", JText::_('JEV_NO_EVENTS') , $templaterow);
-			$content .=$this->modparams->get("modlatest_templatebottom") ? $this->modparams->get("modlatest_templatebottom") : "</table>\n";
+			$content .=$this->modparams->get("modlatest_templatebottom") ? $this->modparams->get("modlatest_templatebottom") : "</div>\n";
 		}
 
 		$callink_HTML = '<div class="mod_events_latest_callink">'
@@ -115,24 +115,24 @@ class OverrideFlatModLatestView extends DefaultModLatestView
 		if ($this->linkToCal == 1) $content = $callink_HTML . $content;
 		if ($this->linkToCal == 2) $content .= $callink_HTML;
 
-		if ($this->displayRSS){
-			$rssimg = JURI::root() . "media/system/images/livemarks.png";
-			$callink_HTML = '<div class="mod_events_latest_rsslink">'
-			.'<a href="'.$this->rsslink.'" title="'.JText::_("RSS_FEED").'" target="_blank">'
-			.'<img src="'.$rssimg.'" alt="'.JText::_("RSS_FEED").'" />'
-			.JText::_("SUBSCRIBE_TO_RSS_FEED")
-			. '</a>'
-			. '</div>';
-			$content .= $callink_HTML;
-		}
-		if ($this->modparams->get("contentplugins", 0)){
-			$dispatcher = JEventDispatcher::getInstance();
-			$eventdata = new stdClass();
-			//$eventdata->text = str_replace("{/toggle","{/toggle}",$content);
-			$eventdata->text = $content;
-			$dispatcher->trigger('onContentPrepare', array('com_jevents', &$eventdata, &$this->modparams, 0));
-			 $content = $eventdata->text;
-		}
+		// if ($this->displayRSS){
+		// 	$rssimg = JURI::root() . "media/system/images/livemarks.png";
+		// 	$callink_HTML = '<div class="mod_events_latest_rsslink">'
+		// 	.'<a href="'.$this->rsslink.'" title="'.JText::_("RSS_FEED").'" target="_blank">'
+		// 	.'<img src="'.$rssimg.'" alt="'.JText::_("RSS_FEED").'" />'
+		// 	.JText::_("SUBSCRIBE_TO_RSS_FEED")
+		// 	. '</a>'
+		// 	. '</div>';
+		// 	$content .= $callink_HTML;
+		// }
+		// if ($this->modparams->get("contentplugins", 0)){
+		// 	$dispatcher = JEventDispatcher::getInstance();
+		// 	$eventdata = new stdClass();
+		// 	//$eventdata->text = str_replace("{/toggle","{/toggle}",$content);
+		// 	$eventdata->text = $content;
+		// 	$dispatcher->trigger('onContentPrepare', array('com_jevents', &$eventdata, &$this->modparams, 0));
+		// 	 $content = $eventdata->text;
+		// }
 
 		$content .= '</div>';
 

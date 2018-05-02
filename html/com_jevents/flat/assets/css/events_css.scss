@@ -23,9 +23,12 @@ $primary: #007bff;
 #jevents_header td, #jevents_header tr, div.ev_navigation tr, div.ev_navigation td{
     border:none;
 }
-#jevents_body .contentpaneopen  table,#jevents_body .contentpaneopen  td,#jevents_body .contentpaneopen tr,#jevents_body .contentpaneopen p, #jevents_body .contentpaneopen div {
+#jevents_body .contentpaneopen  table,#jevents_body .contentpaneopen  td,#jevents_body .contentpaneopen tr {
     border:none;
     line-height:1.5em;
+}
+#jevents_body .contentpaneopen p, #jevents_body .contentpaneopen div{
+  // border:none;
 }
 .jeventslight{
     color:#000000;
@@ -1123,4 +1126,12 @@ span.hasjevtip {
 
 #jev_maincal table{
   margin-bottom: 8px;
+}
+
+
+// detail view
+.jevent-detailview{
+  .jev_evdt_title{
+    font-weight: 600;
+  }
 }

@@ -118,3 +118,53 @@ CUSTOMIZZAZIONE ARTICOLO - singolo articolo
   }
 
 }
+
+.support-content{
+  .articleBody{
+    width: 100%;
+  }
+}
+
+
+// contenuti in generale
+// jevents e altro
+.article-view article,
+.jev_eventdetails_body{
+  img{
+    @extend .img-fluid;
+    position: relative;
+    &.pull-left{
+      @extend .float-left;
+      margin: 15px 15px 15px 0;
+    }
+    &.pull-right{
+      @extend .float-right;
+      margin: 15px 0 15px 15px;
+    }
+  }
+
+  figure{
+    &.float-left{
+      margin: 15px 15px 15px 0;
+      img{
+        margin: 0;
+      }
+    }
+    &.float-right{
+      margin: 15px 0 15px 15px;
+      img{
+        margin: 0;
+      }
+    }
+  }
+
+  p,
+  ul{
+    margin-bottom: 32px;
+  }
+
+  .articleBody{
+    margin-top: 32px;
+  }
+
+}
