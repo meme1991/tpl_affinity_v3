@@ -28,7 +28,7 @@ else
 // 	}
 // }
 
-if ($modal){
+if (isset($modal) AND $modal){
 	$attributes['data-toggle'] = $modal_toggle;
 	$attributes['data-target'] = $modal_target;
 }

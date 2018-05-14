@@ -35,11 +35,11 @@ foreach ($list as $i => &$item)
 		$pos  = $item->params->get('menu-icon-pos');
 	}
 
-	/* icone */
-	$iconYN = $item->params->get('menu-icon-yn');
-	if($iconYN){
-		$icon = $item->params->get('menu-icon');
-		$pos  = $item->params->get('menu-icon-pos');
+	/* modal */
+	$modal = $item->params->get('modal');
+	if($modal){
+		$modal_toggle = $item->params->get('option1');
+		$modal_target = $item->params->get('option2');
 	}
 
 	$class = 'item-' . $item->id;

@@ -25,7 +25,7 @@ if ($item->anchor_css)
 if ($item->anchor_rel)
 	$attributes['rel'] = $item->anchor_rel;
 
-if ($modal){
+if (isset($modal) AND $modal){
 	$attributes['data-toggle'] = $modal_toggle;
 	$attributes['data-target'] = $modal_target;
 }

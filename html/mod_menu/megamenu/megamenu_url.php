@@ -50,6 +50,6 @@ elseif($iconYN AND $pos == 0)
 	<?php echo $dropdownAttr ?>
 	title="<?php echo $item->title ?>"
 	<?php echo $target ?>
-	<?php if($modal): ?> data-toggle="<?= $modal_toggle; ?>" data-target="<?= $modal_target; ?>" <?php endif; ?>>
+	<?php if(isset($modal) AND $modal): ?> data-toggle="<?= $modal_toggle; ?>" data-target="<?= $modal_target; ?>" <?php endif; ?>>
 	<?php echo $title; ?>
 </a>
