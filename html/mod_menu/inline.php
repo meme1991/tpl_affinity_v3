@@ -39,6 +39,13 @@ defined('_JEXEC') or die;
 			$pos  = $item->params->get('menu-icon-pos');
 		}
 
+		/* modal */
+		$modal = $item->params->get('modal');
+		if($modal){
+			$modal_toggle = $item->params->get('option1');
+			$modal_target = $item->params->get('option2');
+		}
+
 		// delimiter
 		$delimiter = $item->params->get('delimiter');
 		$delimiter = ($delimiter) ? ' delimiter' : '';

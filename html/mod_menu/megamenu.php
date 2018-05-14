@@ -36,6 +36,13 @@ foreach ($list as $i => &$item)
 		$pos  = $item->params->get('menu-icon-pos');
 	}
 
+	/* modal */
+	$modal = $item->params->get('modal');
+	if($modal){
+		$modal_toggle = $item->params->get('option1');
+		$modal_target = $item->params->get('option2');
+	}
+
 	$class = 'nav-item item-' . $item->id;
 	/* corrente */
 	if ($item->id == $active_id){

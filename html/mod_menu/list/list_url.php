@@ -25,6 +25,11 @@ if ($item->anchor_css)
 if ($item->anchor_rel)
 	$attributes['rel'] = $item->anchor_rel;
 
+if ($modal){
+	$attributes['data-toggle'] = $modal_toggle;
+	$attributes['data-target'] = $modal_target;
+}
+
 switch ($item->browserNav) {
 	case   1: $attributes['target'] = '_blank'; break;
 	case   2: $attributes['target'] = '_parent'; break;

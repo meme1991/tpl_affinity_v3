@@ -28,6 +28,11 @@ else
 // 	}
 // }
 
+if ($modal){
+	$attributes['data-toggle'] = $modal_toggle;
+	$attributes['data-target'] = $modal_target;
+}
+
 if ($item->anchor_css)
 	$attributes['class'] = $item->anchor_css;
 

@@ -35,6 +35,13 @@ foreach ($list as $i => &$item)
 		$pos  = $item->params->get('menu-icon-pos');
 	}
 
+	/* icone */
+	$iconYN = $item->params->get('menu-icon-yn');
+	if($iconYN){
+		$icon = $item->params->get('menu-icon');
+		$pos  = $item->params->get('menu-icon-pos');
+	}
+
 	$class = 'item-' . $item->id;
 	/* corrente */
 	if ($item->id == $active_id){
