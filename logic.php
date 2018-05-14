@@ -25,6 +25,11 @@
   $logo_s        = $templateparams->get('logo-s');
   $subtitle      = $templateparams->get('subtitle');
   $aos           = $templateparams->get('aos');
+  // Google Analytics
+  $ga            = $templateparams->get('ga');
+  $tag_head      = $templateparams->get('tag-head');
+  $tag_body      = $templateparams->get('tag-body');
+  $tag_verify    = $templateparams->get('tag-verification');
 
   // generator tag
   $this->setGenerator(null);

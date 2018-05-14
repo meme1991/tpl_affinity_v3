@@ -100,6 +100,42 @@
 
 			</fieldset>
 
+			<fieldset name="Google" label="Plugins">
+
+				<field
+					name="ga"
+					type="radio"
+					default="0"
+					label="TPL_AFFINITY_GA"
+					description="TPL_AFFINITY_GA_DESC"
+					class="btn-group btn-group-yesno">
+				  <option value="1">JYES</option>
+				  <option value="0">JNO</option>
+				</field>
+
+				<field
+					name="tag-head"
+					type="textarea"
+					label="TPL_AFFINITY_GA1"
+					description="TPL_AFFINITY_GA1_DESC"
+				/>
+
+				<field
+					name="tag-body"
+					type="textarea"
+					label="TPL_AFFINITY_GA2"
+					description="TPL_AFFINITY_GA2_DESC"
+				/>
+
+				<field
+					name="tag-verification"
+					type="textarea"
+					label="TPL_AFFINITY_TAG_VERIFY"
+					description="TPL_AFFINITY_TAG_VERIFY_DESC"
+				/>
+
+			</fieldset>
+
 		</fields>
 	</config>
 

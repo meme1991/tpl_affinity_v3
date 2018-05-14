@@ -4,16 +4,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 <head>
 	<?php if(isset($_COOKIE['cb-enabled']) AND $_COOKIE['cb-enabled'] == 'accepted') : ?>
-		<!-- Google Tag Manager -->
+		<?php if(isset($ga) AND $ga) : ?>
+			<?= $tag_head ?>
+		<?php endif; ?>
 	<?php endif; ?>
 	<!-- Google Site Verification -->
+	<?php if(isset($tag_verify) AND $tag_verify) : ?>
+		<?= $tag_verify ?>
+	<?php endif; ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<jdoc:include type="head" />
 </head>
 <body>
+
 	<?php if(isset($_COOKIE['cb-enabled']) AND $_COOKIE['cb-enabled'] == 'accepted') : ?>
-		<!-- Google Tag Manager -->
+		<?php if(isset($ga) AND $ga) : ?>
+			<?= $tag_body ?>
+		<?php endif; ?>
 	<?php endif; ?>
+
 	<?php if ($this->countModules('overlay')) : ?>
 		<jdoc:include type="modules" name="overlay" />
 	<?php endif; ?>
@@ -69,7 +78,7 @@
 	              <?php if(isset($logo_s) AND $logo_s != '') : ?>
 	                <img src="<?php echo $logo_s ?>" class="rounded img-fluid float-left mr-4" alt="<?php echo $siteName ?>">
 	              <?php else : ?>
-									<img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="80" height="80" class="rounded img-fluid float-left mr-4" alt="<?php echo $siteName ?>">
+									<img src="https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png" width="80" height="80" class="rounded img-fluid float-left mr-4" alt="<?php echo $siteName ?>">
 	              <?php endif; ?>
 								<div>
 									<h1 class="mb-0"><?php echo $siteName ?></h1>
@@ -201,7 +210,7 @@
 	          <?php if(isset($logo_s) AND $logo_s != '') : ?>
 	            <img src="<?php echo $logo_s ?>" class="rounded img-fluid float-left mr-3" alt="<?php echo $siteName ?>">
 	          <?php else : ?>
-	            <img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="80" height="80" class="rounded img-fluid float-left mr-3" alt="<?php echo $siteName ?>">
+	            <img src="https://getbootstrap.com/docs/4.1/assets/img/bootstrap-stack.png" width="80" height="80" class="rounded img-fluid float-left mr-3" alt="<?php echo $siteName ?>">
 	          <?php endif; ?>
 	          <p class="mb-0"><?php echo $siteName ?></p>
 	        </div>
@@ -234,6 +243,8 @@
 		<script src="<?php echo TPATH ?>/dist/aos/aos.js"></script>
 		<script> AOS.init(); </script>
 	<?php endif; ?>
+
+
 
 </body>
 </html>
