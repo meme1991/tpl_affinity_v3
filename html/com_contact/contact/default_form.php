@@ -53,7 +53,7 @@ $this->form->setFieldAttribute('contact_message', 'hint', 'Inserisci il tuo mess
 			<div class="form-group terms mb-3 bg-light">
 				<span class="title">Termini e condizioni</span>
 				<p>Desideriamo farti sapere come conserviamo i tuoi dati, per quanto tempo e per quali finalità. Potrai in ogni momento visionarli e richiederne la cancellazione.</p>
-				<input type="checkbox" name="jform[acceptTermsForm]" value="1" id="jform_acceptTermsForm">
+				<input type="checkbox" name="jform[acceptTermsForm]" value="1" id="jform_acceptTermsForm" required="required">
 		    <label class="form-check-label" for="jform_acceptTermsForm">
 		    	Acconsento alla vostra <a href="https://www.spedi.it/privacy-policy">Informaiva sulla privacy</a>
 		    </label>
