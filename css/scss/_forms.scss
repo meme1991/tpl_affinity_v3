@@ -158,23 +158,36 @@ label{
     .title, p, label {color: $light;}
   }
   &.bg-light{
-    border-top: 3px #c8c8c8 solid;
     .title, p, label {color: $dark;}
   }
-  span.title{
+  .title{
     display: block;
     font-size: 16px;
     text-transform: uppercase;
   }
-  p{
+  p, .desc{
     font-size: 14px;
     margin-bottom: 20px;
   }
   label{
     font-size: 14px;
-    a{
+    a,a:hover,a:focus{
       color: $primary;
       text-decoration: underline;
     }
   }
+  // input[type=checkbox]{
+  //   height: 15px;
+  //   width: 15px;
+  //   color: $white;
+  //   &:checked {
+  //     background: $primary;
+  //   }
+  //   &:checked::before {
+  //     height: 15px;
+  //     width: 15px;
+  //     font-size: 10px;
+  //     line-height: 15px;
+  //   }
+  // }
 }

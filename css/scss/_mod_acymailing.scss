@@ -3,17 +3,82 @@
 // @Date:   12-03-2018
 // @Email:  sviluppo@spedi.it
 // @Last modified by:   SPEDI srl
-// @Last modified time: 29-03-2018
+// @Last modified time: 30-05-2018
 // @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
 // @Copyright: Copyright (C) SPEDI srl
 
-#newsletter_popup{
-  .newsletter_introtext, .newsletter_finaltext, .showterms{
+
+
+.newsletter_default,
+.newsletter_footer,
+.newsletter_popup{
+
+  input[type=checkbox]{
+    height: 15px;
+    width: 15px;
+    color: $white;
+    &:checked {
+      background: $primary;
+    }
+    &:checked::before {
+      height: 15px;
+      width: 15px;
+      font-size: 10px;
+      line-height: 15px;
+    }
+  }
+
+  .showlist{
+    .newsletter-list{
+      background-color: $light;
+      color: $dark;
+      padding: 10px;
+      .title{
+        font-size: 16px;
+      }
+      p{
+        font-size: 14px;
+        color: $dark;
+      }
+    }
+  }
+
+}
+
+.newsletter_default{
+  .showlist{
+    label{
+      display: block;
+    }
+  }
+
+  .openListSubscription{
     font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    > i{
+      margin-left: 10px;
+    }
   }
 }
 
-.newsletter_default, .newsletter_footer{
+.newsletter_footer{
+  .newsletter_introtext, .newsletter_finaltext{
+    font-size: 15px;
+  }
+
+  .openListSubscription{
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    > i{
+      margin-left: 10px;
+    }
+  }
+
+  .terms{
+    padding: 0;
+  }
 
   input[type=checkbox]{
     height: 15px;
@@ -29,24 +94,21 @@
       line-height: 15px;
     }
   }
-
-  .showlist{
-    .openListSubscription{
-      font-size: 14px;
-      cursor: pointer;
-    }
-  }
-
-  .showterms{
-    a{
-      font-size: 14px;
-    }
-  }
-
 }
 
-.newsletter_footer{
-  .newsletter_introtext, .newsletter_finaltext{
-    font-size: 15px;
+#newsletter_popup{
+  .newsletter_introtext, .newsletter_finaltext, .showterms{
+    font-size: 14px;
+  }
+  .showlist{
+    label{
+      display: block;
+    }
+  }
+  .sing-up-later{
+    color: $primary;
+    &:hover,&:focus{
+      color: $primary;
+    }
   }
 }

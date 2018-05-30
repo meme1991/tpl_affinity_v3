@@ -103,9 +103,20 @@ defined('_JEXEC') or die('Restricted access');
 					<?php if($this->displayLists) : ?>
 					<fieldset class="adminform acy_subscription_list custom-form mt-5">
 						<legend class="bg-light px-3 mb-4"><span><?php echo JText::_( 'SUBSCRIPTION' ); ?></span></legend>
+						<p><?php echo JText::_( 'TPL_AFFINITY_MESSAGE_DEFAULT' ); ?></p>
 						<?php if(empty($this->dropdown)) include('subs_default.php'); else include('subs_dropdown.php'); ?>
 					</fieldset>
 					<?php endif; ?>
+					<div class="form-row mt-2 showterms">
+						<div class="col-12">
+							<div class="terms bg-light">
+								<div class="title"><?= JText::_("TPL_AFFINITY_TERMS") ?></div>
+								<p class="desc"><?= JText::_("TPL_AFFINITY_INFORMATIVA_DEFAULT") ?></p>
+								<input class="" type="checkbox" name="terms" id="terms" required="required" />
+								<label for="terms">Acconsento alla vostra <a href="<?= JURI::base() ?>privacy-policy"><?= JText::_("TPL_AFFINITY_INFO_TEXT") ?></a></label>
+							</div>
+						</div>
+					</div>
 					<input type="hidden" name="option" value="<?php echo ACYMAILING_COMPONENT; ?>" />
 					<input type="hidden" name="task" value="savechanges" />
 					<input type="hidden" name="ctrl" value="user" />

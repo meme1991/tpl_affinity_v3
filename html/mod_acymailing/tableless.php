@@ -46,12 +46,6 @@ unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/acypopup.css?v=
 						onclick="try{ return submitacymailingform('optin','<?php echo $formName;?>'); }catch(err){alert('The form could not be submitted '+err);return false;}"/>
 						<i class="fas fa-check"></i>
 						</button>
-					<!-- <input
-						class="button subbutton btn btn-primary btn-block"
-						type="submit"
-						value="<?php $subtext = $params->get('subscribetextreg'); if(empty($identifiedUser->userid) OR empty($subtext)){ $subtext = $params->get('subscribetext',acymailing_translation('SUBSCRIBECAPTION')); } echo $subtext;  ?>"
-						name="Submit"
-						onclick="try{ return submitacymailingform('optin','<?php echo $formName;?>'); }catch(err){alert('The form could not be submitted '+err);return false;}"/> -->
 				</div>
 			</div>
 
@@ -60,7 +54,7 @@ unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/acypopup.css?v=
 					<div class="col-12">
 
 						<span class="openListSubscription" data-toggle="collapse" href="#collapseListSubscription" role="button" aria-expanded="false" aria-controls="collapseListSubscription">
-					    Iscriviti alle liste
+					    <?= JText::_("TPL_AFFINITY_MESSAGE_DEFAULT") ?>
 							<i class="fal fa-chevron-down float-right mt-1"></i>
 					  </span>
 						<div class="collapse" id="collapseListSubscription">
@@ -87,18 +81,14 @@ unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/acypopup.css?v=
 			<?php endif; ?>
 
 			<?php if($params->get('showterms',false)) : ?>
-			<div class="form-row mt-2 showterms">
-				<div class="col-12">
-					<input
-						id="mailingdata_terms_<?php echo $formName; ?>"
-						class="checkbox"
-						type="checkbox"
-						name="terms"
-						required
-						title="<?php echo acymailing_translation('JOOMEXT_TERMS'); ?>"/>
-						<?= $termslink ?>
+				<div class="form-row showterms">
+					<div class="col-12">
+						<div class="terms">
+							<input class="" type="checkbox" name="terms" id="terms" required="required" />
+							<label for="terms">Ho letto e acconsento alla vostra <a href="<?= JURI::base() ?>privacy-policy" class="text-featured"><?= JText::_("TPL_AFFINITY_INFO_TEXT") ?></a></label>
+						</div>
+					</div>
 				</div>
-			</div>
 			<?php endif; ?>
 
 			<?php if(empty($identifiedUser->userid) AND $config->get('captcha_enabled') AND acymailing_level(1)) : ?>
