@@ -51,6 +51,7 @@ if(!isset($_COOKIE['newsletter_popup'])){
 					<?php if(!empty($introText)) : ?>
 						<div class="newsletter_introtext mb-2"><?= $introText ?></div>
 					<?php endif; ?>
+<<<<<<< HEAD
 					<form id="<?php echo $formName; ?>" class="custom-form" novalidate action="<?php echo acymailing_route('index.php'); ?>" onsubmit="return submitacymailingform('optin','<?php echo $formName;?>')" method="post" name="<?php echo $formName ?>" <?php if(!empty($fieldsClass->formoption)) echo $fieldsClass->formoption; ?> >
 
 						<div class="form-row">
@@ -160,6 +161,68 @@ if(!isset($_COOKIE['newsletter_popup'])){
 					<?php if(!empty($postText)) : ?>
 						<div class="newsletter_finaltext mt-2"><?= $postText ?></div>
 					<?php endif; ?>
+=======
+				<?php endforeach; ?>
+				</div>
+				<div class="col-12 col-sm-2">
+					<button
+						class="button subbutton btn btn-featured no-shadow btn-block"
+						type="submit"
+						name="Submit"
+						onclick="try{ return submitacymailingform('optin','<?php echo $formName;?>'); }catch(err){alert('The form could not be submitted '+err);return false;}"/>
+						<i class="fas fa-check"></i>
+						</button>
+				</div>
+			</div>
+
+			<?php if(!empty($visibleListsArray) && $listPosition == 'before') : ?>
+				<div class="form-row mt-2 showlist">
+					<div class="col-12">
+
+						<span class="openListSubscription" data-toggle="collapse" href="#collapseListSubscription" role="button" aria-expanded="false" aria-controls="collapseListSubscription">
+					    <?= JText::_("TPL_AFFINITY_MESSAGE_DEFAULT") ?>
+							<i class="fal fa-chevron-down float-right mt-1"></i>
+					  </span>
+						<div class="collapse" id="collapseListSubscription">
+							<?php if($params->get('dropdown',0)) : ?>
+								<select name="subscription[1]" class="form-control form-control-sm">
+								<?php foreach($visibleListsArray as $myListId) : ?>
+									<option value="<?= $myListId ?>"><?= $allLists[$myListId]->name ?></option>
+								<?php endforeach; ?>
+								</select>
+							<?php else: ?>
+								<?php foreach($visibleListsArray as $myListId) : ?>
+
+									<label for="acylist_<?= $myListId ?>" class="checkbox mr-3">
+										<input type="checkbox" class="acymailing_checkbox" name="subscription[]" id="acylist_<?= $myListId ?>" value="<?= $myListId ?>" />
+										<?= $allLists[$myListId]->name ?>
+									</label>
+
+								<?php endforeach; ?>
+							<?php endif; ?>
+						</div>
+
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if($params->get('showterms',false)) : ?>
+				<div class="form-row showterms">
+					<div class="col-12">
+						<div class="terms">
+							<input class="" type="checkbox" name="terms" id="terms" required="required" />
+							<label for="terms">Ho letto e acconsento alla vostra <a href="<?= JURI::base() ?>privacy-policy" class="text-featured"><?= JText::_("TPL_AFFINITY_INFO_TEXT") ?></a></label>
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
+
+			<?php if(empty($identifiedUser->userid) AND $config->get('captcha_enabled') AND acymailing_level(1)) : ?>
+			<div class="form-row mt-2">
+				<div class="col-12">
+					<?php $captchaClass = acymailing_get('class.acycaptcha'); ?>
+					<?php $captchaClass->display($formName, true) ?>
+>>>>>>> b0a1d499fff7620c75c6c404ed4a80c6e5ab760e
 				</div>
 
 

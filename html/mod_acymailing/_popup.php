@@ -18,7 +18,7 @@ unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/module_default.
 unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/acypopup.css?v=1520845897']);
 
 // se il cookie non esiste mostro la modale
-if(!isset($_COOKIE['newsletter_popup'])){
+if(!isset($_COOKIE['newsletter_popup'])):
 	$doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/html/'.$module->module.'/dist/func.js', 'text/javascript', true, false);
 	$doc->addScriptDeclaration("
 		jQuery(document).ready(function($){
@@ -28,12 +28,15 @@ if(!isset($_COOKIE['newsletter_popup'])){
 	$doc->addScriptDeclaration("
 		jQuery(document).ready(function($){
 			$('.dismiss, .subbutton').click(function(){
-				scriviCookie('newsletter_popup','denied',43200);
+				scriviCookie('newsletter_popup','denied',518400); // 1 anno
+			})
+
+			$('.sing-up-later').click(function(){
+				$('#newsletter_popup').modal('toggle');
+				scriviCookie('newsletter_popup','denied',10080); // 1 settimana
 			})
 		})
 	");
-}
-
 ?>
 <!-- Modal -->
 <div class="modal fade" id="newsletter_popup" tabindex="-1" role="dialog" aria-labelledby="newsletter_popupLabel" aria-hidden="true">
@@ -47,49 +50,60 @@ if(!isset($_COOKIE['newsletter_popup'])){
       </div>
       <div class="modal-body">
 
-				<div class="newsletter_subscription <?php echo $params->get('moduleclass_sfx')?>" id="acymailing_module_<?php echo $formName; ?>">
+				<div class="newsletter_subscription newsletter_popup <?php echo $params->get('moduleclass_sfx')?>" id="acymailing_module_<?php echo $formName; ?>">
 					<?php if(!empty($introText)) : ?>
-						<div class="newsletter_introtext mb-2"><?= $introText ?></div>
+						<div class="newsletter_introtext text-dark mb-2"><?= $introText ?></div>
 					<?php endif; ?>
 					<form id="<?php echo $formName; ?>" class="custom-form" novalidate action="<?php echo acymailing_route('index.php'); ?>" onsubmit="return submitacymailingform('optin','<?php echo $formName;?>')" method="post" name="<?php echo $formName ?>" <?php if(!empty($fieldsClass->formoption)) echo $fieldsClass->formoption; ?> >
 
 						<div class="form-row">
-							<div class="col-12 col-sm-8">
 							<?php foreach($fieldsToDisplay as $oneField) : ?>
+								<?php if(count($fieldsToDisplay) == 1): $input = "col-md-7"; $btn = "col-md-5"; endif; ?>
+								<?php if(count($fieldsToDisplay) == 2): $input = "col-md-6 mb-2"; $btn = "col-md-12"; endif; ?>
+								<?php if($oneField == 'name' AND empty($extraFields[$oneField])) : ?>
+									<div class="col-12 <?= $input ?>">
+										<input
+											class="form-control"
+											type="text"
+											id="user_name_<?php echo $formName ?>"
+											<?php if(!empty($identifiedUser->userid)) echo 'readonly="readonly"';
+											if(!$displayOutside){ ?> onfocus="if(this.value == '<?php echo $nameCaption;?>') this.value = '';"
+											onblur="if(this.value=='') this.value='<?php echo $nameCaption?>';"<?php } ?>
+											name="user[name]"
+											value="<?php if(!empty($identifiedUser->userid)) echo $identifiedUser->name; elseif(!$displayOutside) echo $nameCaption; ?>"
+											title="<?php echo $nameCaption?>">
+									</div>
+								<?php endif; ?>
 								<?php if($oneField == 'email' AND empty($extraFields[$oneField])) : ?>
-									<input id="user_email_<?php echo $formName; ?>"
-										<?php if(!empty($identifiedUser->userid)) echo 'readonly="readonly" ';
-										if(!$displayOutside){ ?> onfocus="if(this.value == '<?php echo $emailCaption;?>') this.value = '';"
-										onblur="if(this.value=='') this.value='<?php echo $emailCaption?>';"<?php } ?>
-										class="form-control"
-										type="text"
-										name="user[email]"
-										required
-										value="<?php if(!empty($identifiedUser->userid)) echo $identifiedUser->email; elseif(!$displayOutside) echo $emailCaption; ?>"
-										title="<?php echo $emailCaption;?>"/>
+									<div class="col-12 <?= $input ?>">
+										<input id="user_email_<?php echo $formName; ?>"
+											<?php if(!empty($identifiedUser->userid)) echo 'readonly="readonly" ';
+											if(!$displayOutside){ ?> onfocus="if(this.value == '<?php echo $emailCaption;?>') this.value = '';"
+											onblur="if(this.value=='') this.value='<?php echo $emailCaption?>';"<?php } ?>
+											class="form-control"
+											type="text"
+											name="user[email]"
+											required
+											value="<?php if(!empty($identifiedUser->userid)) echo $identifiedUser->email; elseif(!$displayOutside) echo $emailCaption; ?>"
+											title="<?php echo $emailCaption;?>"/>
+									</div>
 								<?php endif; ?>
 							<?php endforeach; ?>
-							</div>
-							<div class="col-12 col-sm-4">
-								<input
-									class="button subbutton btn btn-primary btn-block"
-									type="submit"
-									value="<?php $subtext = $params->get('subscribetextreg'); if(empty($identifiedUser->userid) OR empty($subtext)){ $subtext = $params->get('subscribetext',acymailing_translation('SUBSCRIBECAPTION')); } echo $subtext;  ?>"
-									name="Submit"
-									onclick="try{ return submitacymailingform('optin','<?php echo $formName;?>'); }catch(err){alert('The form could not be submitted '+err);return false;}"/>
-							</div>
 						</div>
 
 						<?php if(!empty($visibleListsArray) && $listPosition == 'before') : ?>
 							<div class="form-row mt-2 showlist">
 								<div class="col-12">
-									<?php if($params->get('dropdown',0)) : ?>
-										<select name="subscription[1]" class="form-control form-control-sm">
+									<div class="newsletter-list">
+										<div class="title"><?= JText::_("TPL_AFFINITY_SUBSCRIBE_TITLE") ?></div>
+		          			<p class="desc"><?= JText::_("TPL_AFFINITY_MESSAGE_DEFAULT") ?></p>
 										<?php foreach($visibleListsArray as $myListId) : ?>
-											<option value="<?= $myListId ?>"><?= $allLists[$myListId]->name ?></option>
+											<label for="acylist_<?= $myListId ?>" class="checkbox">
+												<input type="checkbox" class="acymailing_checkbox" name="subscription[]" id="acylist_<?= $myListId ?>" value="<?= $myListId ?>" />
+												<?= $allLists[$myListId]->name ?>
+											</label>
 										<?php endforeach; ?>
-										</select>
-									<?php endif; ?>
+									</div>
 								</div>
 							</div>
 						<?php endif; ?>
@@ -97,17 +111,29 @@ if(!isset($_COOKIE['newsletter_popup'])){
 						<?php if($params->get('showterms',false)) : ?>
 						<div class="form-row mt-2 showterms">
 							<div class="col-12">
-	 							<input
-									id="mailingdata_terms_<?php echo $formName; ?>"
-									class="checkbox"
-									type="checkbox"
-									name="terms"
-									required
-									title="<?php echo acymailing_translation('JOOMEXT_TERMS'); ?>"/>
-									<?= $termslink ?>
+	              <div class="terms bg-light">
+	          			<div class="title"><?= JText::_("TPL_AFFINITY_TERMS") ?></div>
+	          			<p class="desc"><?= JText::_("TPL_AFFINITY_INFORMATIVA_DEFAULT") ?></p>
+	          			<input class="" type="checkbox" name="terms" id="terms" required="required" />
+	          			<label for="terms">Acconsento alla vostra <a href="<?= JURI::base() ?>privacy-policy"><?= JText::_("TPL_AFFINITY_INFO_TEXT") ?></a></label>
+	        			</div>
 							</div>
 						</div>
 						<?php endif; ?>
+
+						<div class="form-row mt-2">
+							<div class="col-12 <?= $btn ?>">
+								<input
+									class="button subbutton btn btn-primary btn-block"
+									type="submit"
+									value="<?php $subtext = $params->get('subscribetextreg'); if(empty($identifiedUser->userid) OR empty($subtext)){ $subtext = $params->get('subscribetext',acymailing_translation('SUBSCRIBECAPTION')); } echo $subtext;  ?>"
+									name="Submit"
+									onclick="try{ return submitacymailingform('optin','<?php echo $formName;?>'); }catch(err){alert('The form could not be submitted '+err);return false;}"/>
+							</div>
+							<div class="col-12 text-center mt-2">
+								<a href="#" class="sing-up-later">Non adesso</a>
+							</div>
+						</div>
 
 						<?php if(empty($identifiedUser->userid) AND $config->get('captcha_enabled') AND acymailing_level(1)) : ?>
 						<div class="form-row mt-2">
@@ -158,13 +184,12 @@ if(!isset($_COOKIE['newsletter_popup'])){
 
 					</form>
 					<?php if(!empty($postText)) : ?>
-						<div class="newsletter_finaltext mt-2"><?= $postText ?></div>
+						<div class="newsletter_finaltext text-dark mt-2"><?= $postText ?></div>
 					<?php endif; ?>
 				</div>
 
-
       </div><!-- modal body -->
-
     </div>
   </div>
 </div>
+<?php endif ?>
