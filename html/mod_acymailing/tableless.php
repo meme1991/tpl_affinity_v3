@@ -51,7 +51,6 @@ if(!isset($_COOKIE['newsletter_popup'])){
 					<?php if(!empty($introText)) : ?>
 						<div class="newsletter_introtext mb-2"><?= $introText ?></div>
 					<?php endif; ?>
-<<<<<<< HEAD
 					<form id="<?php echo $formName; ?>" class="custom-form" novalidate action="<?php echo acymailing_route('index.php'); ?>" onsubmit="return submitacymailingform('optin','<?php echo $formName;?>')" method="post" name="<?php echo $formName ?>" <?php if(!empty($fieldsClass->formoption)) echo $fieldsClass->formoption; ?> >
 
 						<div class="form-row">
@@ -161,8 +160,6 @@ if(!isset($_COOKIE['newsletter_popup'])){
 					<?php if(!empty($postText)) : ?>
 						<div class="newsletter_finaltext mt-2"><?= $postText ?></div>
 					<?php endif; ?>
-=======
-				<?php endforeach; ?>
 				</div>
 				<div class="col-12 col-sm-2">
 					<button
@@ -222,12 +219,9 @@ if(!isset($_COOKIE['newsletter_popup'])){
 				<div class="col-12">
 					<?php $captchaClass = acymailing_get('class.acycaptcha'); ?>
 					<?php $captchaClass->display($formName, true) ?>
->>>>>>> b0a1d499fff7620c75c6c404ed4a80c6e5ab760e
 				</div>
-
-
       </div><!-- modal body -->
-
+			<?php endif; ?>
     </div>
   </div>
 </div>
