@@ -81,6 +81,15 @@ $doc->addScript(JUri::base(true).'/templates/'.$tmpl.'/dist/jsvalidator/registra
 					</div>
 				</div>
 
+				<div class="form-group terms mb-3 bg-light">
+					<span class="title">Trattamento dati</span>
+					<p>Ho letto la vostra <a href="https://www.spedi.it/privacy-policy">Informaiva sulla privacy</a> e acconsento al trattamento dei dati.</p>
+					<input type="checkbox" name="jform[acceptTermsForm]" value="1" id="jform_acceptTermsForm" required="required">
+			    <label class="form-check-label" for="jform_acceptTermsForm">
+			    	Acconsento al trattamento
+			    </label>
+				</div>
+
 				<div class="form-row">
 					<div class="form-group col-12">
 						<button type="submit" class="btn btn-primary btn-block validate mb-3">
