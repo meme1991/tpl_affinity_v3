@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
 				<?php if (str_replace(' ', '', $text) !== '') : ?>
 					<?php echo $text; ?><i class="fas fa-rss ml-1"></i>
 				<?php else : ?>
-					<?php echo JText::_('TPL_COMUNI_DEFAULT_FEED_ENTRIES'); ?><i class="fas fa-rss ml-1"></i>
+					<?php echo JText::_('TPL_AFFINITY_DEFAULT_FEED_ENTRIES'); ?><i class="fas fa-rss ml-1"></i>
 				<?php endif; ?>
 			</a>
 		</li>
