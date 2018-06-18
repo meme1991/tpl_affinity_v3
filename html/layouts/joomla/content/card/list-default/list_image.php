@@ -12,7 +12,7 @@ defined('JPATH_BASE') or die;
 $params = $displayData->params;
 $images = json_decode($displayData->images);
 $link   = JRoute::_(ContentHelperRoute::getArticleRoute($displayData->slug, $displayData->catid, $displayData->language));
-$alt    = ($images->image_intro_alt != '') ? $images->image_intro_alt : $displayData->title;
+$alt    = (isset($images->image_intro_alt) AND $images->image_intro_alt != '') ? $images->image_intro_alt : $displayData->title;
 ?>
 <?php if (isset($images->image_intro) && !empty($images->image_intro)) : ?>
   <figure class="mb-0 mr-3 float-left default" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject">
