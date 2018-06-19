@@ -181,7 +181,6 @@ if(!isset($_COOKIE['newsletter_popup'])):
 							<?php } } ?>
 						<?php $myItemId = $config->get('itemid',0); if(empty($myItemId)){ global $Itemid; $myItemId = $Itemid;} if(!empty($myItemId)){ ?><input type="hidden" name="Itemid" value="<?php echo $myItemId;?>"/><?php } ?>
 
-
 					</form>
 					<?php if(!empty($postText)) : ?>
 						<div class="newsletter_finaltext text-dark mt-2"><?= $postText ?></div>

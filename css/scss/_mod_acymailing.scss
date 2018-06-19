@@ -3,7 +3,7 @@
 // @Date:   12-03-2018
 // @Email:  sviluppo@spedi.it
 // @Last modified by:   SPEDI srl
-// @Last modified time: 30-05-2018
+// @Last modified time: 19-06-2018
 // @License: GNU/GPL license: http://www.gnu.org/copyleft/gpl.html
 // @Copyright: Copyright (C) SPEDI srl
 
@@ -97,8 +97,12 @@
 }
 
 #newsletter_popup{
-  .newsletter_introtext, .newsletter_finaltext, .showterms{
+  .newsletter_introtext, .newsletter_finaltext, .showterms, .showlist, p{
     font-size: 14px;
+    color: $dark;
+  }
+  .showlist, .showterms{
+    background-color: $light;
   }
   .showlist{
     label{

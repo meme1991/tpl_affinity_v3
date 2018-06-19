@@ -72,12 +72,10 @@ unset($doc->_styleSheets[JURI::root().'/media/com_acymailing/css/acypopup.css?v=
 								</select>
 							<?php else: ?>
 								<?php foreach($visibleListsArray as $myListId) : ?>
-
 									<label for="acylist_<?= $myListId ?>" class="checkbox mr-3">
 										<input type="checkbox" class="acymailing_checkbox" name="subscription[]" id="acylist_<?= $myListId ?>" value="<?= $myListId ?>" />
 										<?= $allLists[$myListId]->name ?>
 									</label>
-
 								<?php endforeach; ?>
 							<?php endif; ?>
 						</div>
