@@ -243,8 +243,5 @@
 		<script src="<?php echo TPATH ?>/dist/aos/aos.js"></script>
 		<script> AOS.init(); </script>
 	<?php endif; ?>
-
-
-
 </body>
 </html>

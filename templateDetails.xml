@@ -100,7 +100,7 @@
 
 			</fieldset>
 
-			<fieldset name="Google" label="Plugins">
+			<fieldset name="Google" label="Google Tag">
 
 				<field
 					name="ga"
