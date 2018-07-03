@@ -54,24 +54,28 @@
 	<!-- immagini -->
 	<div class="col-12 col-sm-12 col-md-12 col-lg">
 		<div class="row grid pg-msnr-container">
-			<div class="grid-sizer col-12 col-sm-6 col-md-6 col-lg-<?php echo $col ?>"></div>
-			<?php foreach($images as $cv) : ?>
-				<div class="grid-item col-12 col-sm-6 col-md-6 col-lg-<?php echo $col ?> mb-3">
-					<div class="card">
-						<figure class="default mb-0">
-					    <img src="<?php echo $cv->linkorig ?>" class="img-fluid" alt="<?php echo htmlentities ($cv->odesctitletag, ENT_QUOTES, 'UTF-8') ?>" />
-					    <figcaption class="d-flex justify-content-center align-items-center">
-					      <i class="fas fa-image fa-3x"></i>
-					    </figcaption>
-					    <a href="<?php echo $cv->linkorig ?>" title="<?php echo htmlentities ($cv->odesctitletag, ENT_QUOTES, 'UTF-8') ?>" class="magnific"></a>
-					  </figure>
-						<p class="card-text p-2">
-							<i class="fas fa-image pr-1" aria-hidden="true"></i>
-							<?php echo htmlentities ($cv->odesctitletag, ENT_QUOTES, 'UTF-8') ?>
-						</p>
+			<?php if(isset($images) AND count($images)) : ?>
+				<div class="grid-sizer col-12 col-sm-6 col-md-6 col-lg-<?php echo $col ?>"></div>
+				<?php foreach($images as $cv) : ?>
+					<div class="grid-item col-12 col-sm-6 col-md-6 col-lg-<?php echo $col ?> mb-3">
+						<div class="card">
+							<figure class="default mb-0">
+						    <img src="<?php echo $cv->linkorig ?>" class="img-fluid" alt="<?php echo htmlentities ($cv->odesctitletag, ENT_QUOTES, 'UTF-8') ?>" />
+						    <figcaption class="d-flex justify-content-center align-items-center">
+						      <i class="fas fa-image fa-3x"></i>
+						    </figcaption>
+						    <a href="<?php echo $cv->linkorig ?>" title="<?php echo htmlentities ($cv->odesctitletag, ENT_QUOTES, 'UTF-8') ?>" class="magnific"></a>
+						  </figure>
+							<p class="card-text p-2">
+								<i class="fas fa-image pr-1" aria-hidden="true"></i>
+								<?php echo htmlentities ($cv->odesctitletag, ENT_QUOTES, 'UTF-8') ?>
+							</p>
+						</div>
 					</div>
-				</div>
-			<?php endforeach; ?>
+				<?php endforeach; ?>
+			<?php else: ?>
+				<?php echo JLayoutHelper::render('joomla.content.message.message_info', JText::_('Non ci sono immagini in questa categoria. Ma potrebbero esserci delle immagini organizzate nelle sottocategorie. Dai un occhiata qui a fianco.')); ?>
+			<?php endif; ?>
 		</div>
 	</div>
 	<!-- end immagini -->
