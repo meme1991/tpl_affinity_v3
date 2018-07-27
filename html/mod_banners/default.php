@@ -20,14 +20,19 @@ $doc->addScriptDeclaration("
 	jQuery(document).ready(function($){
 
 		var swiperPartner = new Swiper('.swiper-container.banneritem".$module->id."', {
-	    pagination: '.swiper-pagination',
 	    slidesPerView: 4,
-	    paginationClickable: true,
-	    spaceBetween: 30,
-			nextButton: '.button-next',
-      prevButton: '.button-prev',
-	    autoplay: 2500,
-	    autoplayDisableOnInteraction: false,
+			pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+			autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
 	    breakpoints: {
 	        1024: {
 	            slidesPerView: 4,
@@ -74,8 +79,8 @@ $doc->addScriptDeclaration("
 					<!-- Add Pagination -->
 					<div class="swiper-pagination"></div>
 					<!-- Add Arrows -->
-					<div class="button-next"><i class="fa fa-angle-right fa-5x" aria-hidden="true"></i></div>
-					<div class="button-prev"><i class="fa fa-angle-left fa-5x" aria-hidden="true"></i></div>
+					<div class="button-next"><i class="fal fa-angle-right fa-5x" aria-hidden="true"></i></div>
+					<div class="button-prev"><i class="fal fa-angle-left fa-5x" aria-hidden="true"></i></div>
 				</div>
 
 			</div>
