@@ -30,7 +30,7 @@ $doc->addScriptDeclaration("
 <div class="search-overlay-alt <?php echo $moduleclass_sfx; ?>">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-11 d-flex align-items-center justify-content-center bg-primary">
+			<div class="col-10 col-sm-11 d-flex align-items-center justify-content-center bg-primary">
 				<form class="form-inline w-100" action="<?php echo JRoute::_('index.php'); ?>" method="post">
 					<label class="sr-only" for="mod-search-searchword<?php echo $module->id ?>">Search</label>
 					<div class="input-group w-100">
@@ -42,7 +42,7 @@ $doc->addScriptDeclaration("
 					<input type="hidden" name="Itemid" value="<?php echo $mitemid; ?>" />
 				</form>
 			</div>
-			<div class="col-1 d-flex align-items-center justify-content-center bg-light">
+			<div class="col-2 col-sm-1 d-flex align-items-center justify-content-center bg-light">
 				<a href="#" class="close-icon" title="close">
 					<i class="fal fa-times" aria-hidden="true"></i>
 				</a>
