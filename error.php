@@ -10,18 +10,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="<?php echo $tpath; ?>/dist/font5/css/fontawesome-all.min.css" rel="stylesheet" type="text/css" />
 	<link href="<?php echo $tpath; ?>/css/error_light.min.css?ver=1.0.0" rel="stylesheet" type="text/css" />
 	<title><?php echo $this->error->getMessage(); ?> - <?= $siteName ?></title>
 	<meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-
 	<div class="main">
 		<div class="display-error">
-			<span class="display-1 d-block">
-				<i class="fa fa-meh-o" aria-hidden="true"></i> <?php echo $this->error->getCode() ?>!
-			</span>
+			<span class="display-1 d-block"><?php echo $this->error->getCode() ?>!</span>
 			<span class="message d-block"><?php echo $this->error->getMessage(); ?></span>
 			<span class="message d-block"><?php echo JText::_("TPL_AFFINITY_ERROR_1") ?></span>
 			<span class="message d-block">
