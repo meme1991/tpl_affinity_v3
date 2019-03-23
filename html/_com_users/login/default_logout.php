@@ -9,8 +9,7 @@
 
 defined('_JEXEC') or die;
 ?>
-<?php //echo JLayoutHelper::render('joomla.content.hero', array('height' => '200px')); ?>
-<div class="wrapper container com_users logout bg-light-gray <?php echo $this->pageclass_sfx; ?>">
+<div class="wrapper container com_users logout <?php echo $this->pageclass_sfx; ?>">
 	<div class="row justify-content-center">
 		<div class="col-12 col-sm-8 col-md-6">
 			<?php if ($this->params->get('show_page_heading')) : ?>

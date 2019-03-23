@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  com_users
  *
- * @copyright   Copyright (C) 2005 - 2019 Open Source Matters, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
@@ -20,6 +20,7 @@ $lang = JFactory::getLanguage();
 $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 
 ?>
+<?php //echo JLayoutHelper::render('joomla.content.hero', array('height' => '200px')); ?>
 <div class="wrapper com_users edit bg-light-gray <?php echo $this->pageclass_sfx; ?>">
 	<div class="container">
 		<div class="row justify-content-center">
@@ -43,7 +44,7 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 				</div>
 			<?php endif; ?>
 
-			<div class="col-12 col-sm-12 col-md-8 mt-3 profile-edit<?php echo $this->pageclass_sfx; ?> edit-form">
+			<div class="col-12 col-sm-12 col-md-8 mt-3 edit-form">
 				<script type="text/javascript">
 					Joomla.twoFactorMethodChange = function(e)
 					{
@@ -66,45 +67,47 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 					<?php // Iterate through the form fieldsets and display each one. ?>
 					<?php foreach ($this->form->getFieldsets() as $group => $fieldset) : ?>
 						<?php $fields = $this->form->getFieldset($group); ?>
-						<?php if (count($fields)) : ?>
-							<fieldset>
-								<?php // If the fieldset has a label set, display it as the legend. ?>
-								<?php if (isset($fieldset->label)) : ?>
-									<legend>
-										<?php echo JText::_($fieldset->label); ?>
-									</legend>
-								<?php endif; ?>
-								<?php if (isset($fieldset->description) && trim($fieldset->description)) : ?>
-									<p>
-										<?php echo $this->escape(JText::_($fieldset->description)); ?>
-									</p>
-								<?php endif; ?>
-								<?php // Iterate through the fields in the set and display them. ?>
-								<?php foreach ($fields as $field) : ?>
-									<?php // If the field is hidden, just display the input. ?>
-									<?php if ($field->hidden) : ?>
-										<?php echo $field->input; ?>
-									<?php else : ?>
-										<div class="control-group">
-											<div class="control-label">
-												<?php echo $field->label; ?>
-												<?php if (!$field->required && $field->type !== 'Spacer') : ?>
-													<span class="optional">
-														<?php echo JText::_('COM_USERS_OPTIONAL'); ?>
-													</span>
-												<?php endif; ?>
-											</div>
-											<div class="controls">
-												<?php if ($field->fieldname === 'password1') : ?>
-													<?php // Disables autocomplete ?>
-													<input type="password" style="display:none">
-												<?php endif; ?>
-												<?php echo $field->input; ?>
-											</div>
-										</div>
+						<?php if($fieldset->name != 'actionlogs'): ?>
+							<?php if (count($fields)) : ?>
+								<fieldset>
+									<?php // If the fieldset has a label set, display it as the legend. ?>
+									<?php if (isset($fieldset->label)) : ?>
+										<legend>
+											<?php echo JText::_($fieldset->label); ?>
+										</legend>
 									<?php endif; ?>
-								<?php endforeach; ?>
-							</fieldset>
+									<?php if (isset($fieldset->description) && trim($fieldset->description)) : ?>
+										<p>
+											<?php echo $this->escape(JText::_($fieldset->description)); ?>
+										</p>
+									<?php endif; ?>
+									<?php // Iterate through the fields in the set and display them. ?>
+									<?php foreach ($fields as $field) : ?>
+										<?php // If the field is hidden, just display the input. ?>
+										<?php if ($field->hidden) : ?>
+											<?php echo $field->input; ?>
+										<?php else : ?>
+											<div class="control-group">
+												<div class="control-label">
+													<?php echo $field->label; ?>
+													<?php if (!$field->required && $field->type !== 'Spacer') : ?>
+														<span class="optional">
+															<?php echo JText::_('COM_USERS_OPTIONAL'); ?>
+														</span>
+													<?php endif; ?>
+												</div>
+												<div class="controls">
+													<?php if ($field->fieldname === 'password1') : ?>
+														<?php // Disables autocomplete ?>
+														<input type="password" style="display:none">
+													<?php endif; ?>
+													<?php echo $field->input; ?>
+												</div>
+											</div>
+										<?php endif; ?>
+									<?php endforeach; ?>
+								</fieldset>
+							<?php endif; ?>
 						<?php endif; ?>
 					<?php endforeach; ?>
 					<?php if (count($this->twofactormethods) > 1) : ?>
@@ -151,12 +154,12 @@ $lang->load('plg_user_profile', JPATH_ADMINISTRATOR);
 							<?php endif; ?>
 						</fieldset>
 					<?php endif; ?>
-					<div class="control-group">
+					<div class="control-group mt-3">
 						<div class="controls">
-							<button type="submit" class="btn btn-primary validate">
+							<button type="submit" class="btn btn-primary validate btn-50">
 								<?php echo JText::_('JSUBMIT'); ?>
 							</button>
-							<a class="btn" href="<?php echo JRoute::_('index.php?option=com_users&view=profile'); ?>" title="<?php echo JText::_('JCANCEL'); ?>">
+							<a class="btn btn-light btn-50" href="<?php echo JRoute::_('index.php?option=com_users&view=profile'); ?>" title="<?php echo JText::_('JCANCEL'); ?>">
 								<?php echo JText::_('JCANCEL'); ?>
 							</a>
 							<input type="hidden" name="option" value="com_users" />

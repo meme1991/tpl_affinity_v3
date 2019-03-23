@@ -58,6 +58,36 @@ JHtml::_('behavior.formvalidator');
 
 						</fieldset>
 					<?php endfor; ?>
+
+
+					<!-- <?php foreach ($this->form->getFieldsets() as $fieldset) : ?>
+						<?php $fields = $this->form->getFieldset($fieldset->name); ?>
+						<?php if (count($fields)) : ?>
+							<?php $class = ($fieldset->name == "privacyconsent" OR $fieldset->name == "terms") ? "mt-3" : "" ?>
+							<fieldset class="<?= $class ?>">
+								<?php // If the fieldset has a label set, display it as the legend. ?>
+								<?php if (isset($fieldset->label) AND ($fieldset->name == "privacyconsent" OR $fieldset->name == "terms")) : ?>
+									<legend><?php echo JText::_($fieldset->label); ?></legend>
+								<?php endif; ?>
+								<?php var_dump($fieldset->name) ?>
+								<?php //echo $this->form->renderFieldset($fieldset->name); ?>
+								<?php if($fieldset->name == 'default') : ?>
+									<?php $fields = $this->form->getFieldset($fieldset->name); ?>
+									<?php if (count($fields)) : ?>
+										<?php foreach ($fields as $k => $field) : ?>
+											<?php if($field->name != "jform[captcha]") : ?>
+												<?php echo $field->renderField(); ?>
+											<?php else: ?>
+												<?php $captcha_filed = $field ?>
+											<?php endif; ?>
+										<?php endforeach; ?>
+									<?php endif; ?>
+								<?php else: ?>
+									<?php echo $this->form->renderFieldset($fieldset->name); ?>
+								<?php endif; ?>
+							</fieldset>
+						<?php endif; ?>
+					<?php endforeach; ?> -->
 					<fieldset>
 						<?php echo $captcha_filed->renderField() ?>
 					</fieldset>
