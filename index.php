@@ -236,6 +236,15 @@
 					</div>
 				</div>
 			</div>
+		  			<?php if ($this->countModules('footer-footer')) : ?>
+				<div class="footer-footer bg-dark">
+					<div class="container">
+						<div class="row">
+							<jdoc:include type="modules" name="footer-footer" />
+						</div>
+					</div>
+				</div>
+			<?php endif; ?>
 	  </footer>
 	</div>
 
