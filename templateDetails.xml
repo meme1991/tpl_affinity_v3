@@ -59,6 +59,7 @@
 		<!-- footer position -->
 		<position>footer-bottom</position>
 		<position>footer-links</position>
+		<position>footer-footer</position>
 
 		<!-- pos aside artile layout -->
 		<position>article-aside</position>

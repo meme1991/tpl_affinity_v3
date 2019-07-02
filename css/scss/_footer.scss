@@ -113,5 +113,25 @@
     }
   }
 
+  .footer-footer{
+    margin-top: -15px;
+    p{
+      color: $gray-700 !important;
+    }
+    a,a:hover,a:focus{
+      color: $gray-700 !important;
+      text-decoration: underline;
+    }
+    .custom{
+      position: relative;
+      // &::after{
+      //   content: " | ";
+      //   position: absolute;
+      //   top: 0;
+      //   right: 0;
+      // }
+    }
+  }
+
 
 }

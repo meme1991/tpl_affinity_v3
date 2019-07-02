@@ -236,7 +236,7 @@
 					</div>
 				</div>
 			</div>
-		  			<?php if ($this->countModules('footer-footer')) : ?>
+			<?php if ($this->countModules('footer-footer')) : ?>
 				<div class="footer-footer bg-dark">
 					<div class="container">
 						<div class="row">
