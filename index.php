@@ -222,29 +222,20 @@
 	      </div>
 	      <?php endif; ?>
 	    </div>
-			<div class="footer-links bg-dark py-4">
+			<div class="footer-links">
 				<div class="container">
 					<div class="row">
 						<?php if ($this->countModules('footer-links')) : ?>
-							<div class="col-12 col-sm-12 col-md-12 col-lg-6 d-flex justify-content-start">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-6">
 								<jdoc:include type="modules" name="footer-links" />
 							</div>
 						<?php endif; ?>
-						<div class="col-12 col-sm-12 col-md-12 col-lg footer-copy">
+						<div class="col-12 col-sm-12 col-md-12 col-lg">
 							<?php echo JLayoutHelper::render('joomla.content.spedisrl'); ?>
 						</div>
 					</div>
 				</div>
 			</div>
-			<?php if ($this->countModules('footer-footer')) : ?>
-				<div class="footer-footer bg-dark">
-					<div class="container">
-						<div class="row">
-							<jdoc:include type="modules" name="footer-footer" />
-						</div>
-					</div>
-				</div>
-			<?php endif; ?>
 	  </footer>
 	</div>
 
